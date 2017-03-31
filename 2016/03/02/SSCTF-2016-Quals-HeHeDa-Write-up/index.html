@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="HeHeDa解题说明Description
+Crack Algorithm~
+战题链接">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="junzhepan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="SSCTF 2016 Quals HeHeDa Write-up"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="junzhepan"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>SSCTF 2016 Quals HeHeDa Write-up - junzhepan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
+    <meta name="apple-mobile-web-app-title" content="Jack Pan">
+    <meta name="application-name" content="Jack Pan">
+    <meta name="theme-color" content="#ffffff”>
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/atom.xml">
+                    订阅
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/03/02/SSCTF-2016-Quals-HeHeDa-Write-up/">
+                SSCTF 2016 Quals HeHeDa Write-up
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-02</span>
+            
+            <a href="#disqus_thread" class="comments">评论</a>
+            
+                <span class="category">
+                    <a href="/categories/CTF/">CTF</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>HeHeDa<br>解题说明<br>Description</p>
+<p>Crack Algorithm~</p>
+<p><a href="http://static.lab.seclover.com/crypto/Algorithm1-577265e1.zip" target="_blank" rel="external">战题链接</a></p>
+<a id="more"></a>
+<p>分析源码，发现就是按字节加密，代码中写明密钥长度为8，所以直接爆破即可。具体代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [85, 128, 177, 163, 7, 242, 231, 69, 185, 1, 91, 89, 80, 156, 81, 9, 102,&#10;221, 195, 33, 31, 131, 179, 246, 15, 139, 205, 49, 107, 193, 5, 63, 117, 74,&#10;140, 29, 135, 43, 197, 212, 0, 189, 218, 190, 112, 83, 238, 47, 194, 68, 233,&#10;67, 122, 138, 53, 14, 35, 76, 79, 162, 145, 51, 90, 234, 50, 6, 225, 250, 215,&#10;133, 180, 97, 141, 96, 20, 226, 3, 191, 187, 57, 168, 171, 105, 113, 196, 71,&#10;239, 200, 254, 175, 164, 203, 61, 16, 241, 40, 176, 59, 70, 169, 146, 247, 232,&#10;152, 165, 62, 253, 166, 167, 182, 160, 125, 78, 28, 130, 159, 255, 124, 153, 56,&#10;58, 143, 150, 111, 207, 206, 32, 144,&#10;     75, 39, 10, 201, 204, 77, 104, 65, 219, 98, 210, 173, 249, 13, 12, 103,&#10;101, 21, 115, 48, 157, 147, 11, 99, 227, 45, 202, 158, 213, 100, 244, 54, 17,&#10;161, 123, 92, 181, 243, 184, 188, 84, 95, 27, 72, 106, 192, 52, 44, 55, 129,&#10;208, 109, 26, 24, 223, 64, 114, 19, 198, 23, 82, 120, 142, 178, 214, 186, 116,&#10;94, 222, 86, 251, 36, 4, 248, 132, 25, 211, 199, 30, 87, 60, 127, 155, 41, 224,&#10;151, 237, 136, 245, 37, 170, 252, 8, 42, 209, 46, 108, 88, 183, 149, 110, 66,&#10;235, 229, 134, 73, 38, 118, 236, 119, 154, 216, 217, 240, 22, 121, 174, 93, 126,&#10;230, 228, 18, 148, 220, 172, 2, 137, 34]&#10;B = [0, 2, 3, 7, 1, 5, 6, 4]&#10;C = [179, 132, 74, 60, 94, 252, 166, 242, 208, 217, 117, 255, 20, 99, 225, 58,&#10;54, 184, 243, 37, 96, 106, 64, 151, 148, 248, 44, 175, 152, 40, 171, 251, 210,&#10;118, 56, 6, 138, 77, 45, 169, 209, 232, 68, 182, 91, 203, 9, 16, 172, 95, 154,&#10;90, 164, 161, 231, 11, 21, 3, 97, 70, 34, 86, 124, 114, 119, 223, 123, 167, 47,&#10;219, 197, 221, 193, 192, 126, 78, 39, 233, 4, 120, 33, 131, 145, 183, 143, 31,&#10;76, 121, 92, 153, 85, 100, 52, 109, 159, 112, 71, 62, 8, 244, 116, 245, 240,&#10;215, 111, 134, 199, 214, 196, 213, 180, 189, 224, 101, 202, 201, 168, 32, 250,&#10;59, 43, 27, 198, 239, 137, 238, 50,&#10;     149, 107, 247, 7, 220, 246, 204, 127, 83, 146, 147, 48, 17, 67, 23, 93,&#10;115, 41, 191, 2, 227, 87, 173, 108, 82, 205, 49, 1, 66, 105, 176, 22, 236, 29,&#10;170, 110, 18, 28, 185, 235, 61, 88, 13, 165, 188, 177, 230, 130, 253, 150, 211,&#10;42, 129, 125, 141, 19, 190, 133, 53, 84, 140, 135, 10, 241, 222, 73, 12, 155,&#10;57, 237, 181, 36, 72, 174, 207, 98, 5, 229, 254, 156, 178, 128, 55, 14, 69, 30,&#10;194, 122, 46, 136, 160, 206, 26, 102, 218, 103, 139, 195, 0, 144, 186, 249, 79,&#10;81, 75, 212, 234, 158, 163, 80, 226, 65, 200, 38, 187, 113, 63, 24, 25, 142, 51,&#10;228, 35, 157, 216, 104, 162, 15, 89]&#10;D = [2, 4, 0, 5, 6, 7, 1, 3]&#10;&#10;def LShift(t, k):&#10;    k %= 8&#10;    return ((t &#60;&#60; k) | (t &#62;&#62; (8 - k))) &#38; 0xff&#10;&#10;def RShift(t, k):&#10;    k %= 8&#10;    return ((t &#60;&#60; (8 - k )) | (t &#62;&#62; k)) &#38; 0xff&#10;&#10;def encode(p):&#10;    ret = &#34;&#34;&#10;    for i in range(8):&#10;        ret = (&#39;|&#39; if (p &#62;&#62; i) &#38; 1 else &#39;O&#39;) + ret&#10;    return ret&#10;&#10;def decode(c):&#10;    t = bytearray()&#10;    c = c.replace(&#39;|&#39;, &#39;1&#39;)&#10;    c = c.replace(&#39;O&#39;, &#39;0&#39;)&#10;    for i in xrange(0, len(c), 8):&#10;        t.append(int(c[i:i+8], 2))&#10;    return t&#10;&#10;def encrypt(plain, key):&#10;    global A, B, C, D&#10;    t1 = bytearray()&#10;    for i in plain:&#10;        t1.append(A[i])&#10;    t2 = bytearray()&#10;    for i in range(len(t1)):&#10;        t2.append(LShift(t1[i], B[i % 8]))&#10;    for times in range(16):&#10;        for i in range(len(t2)):&#10;            t2[i] = C[t2[i]]&#10;        for i in range(len(t2)):&#10;            t2[i] = LShift(t2[i], i ^ D[i % 8])&#10;        for i in range(len(t2)):&#10;            t2[i] ^= key[i % 8]&#10;    out = &#34;&#34;&#10;    for i in t2:&#10;        out += encode(i)&#10;    return out&#10;&#10;# out&#10;c_plain =&#10;&#39;OO|OO||OO|||||OO|OO||O||O|O||O|||O|OOOOOOO|O|O|O|||||OO|||O|||OO||O|OOOOOO|O|OO|OO||||OO|||OOOO|||||O||||O|OO|O|O|O||OO|O||O|OO|O||O|||O||O|OO|OOOOOO||OOO|O|O|O|||O|OO|O|O||O||O||OOOOO|||OO|O|&#39;&#10;c_flag =&#10;&#39;OO||O||O|O|||OOOO||||||O|O|||OOO||O|OOOO||O|O|OO|||||OOOO||||O||OO|OO||O||O|O|O|||||OOOOOO|O|O||OOOOOOO||O|||OOOO||OO|OO|||O|OO|O|||O|O|OO|OOOO|OOO|OOO|OOOO||O|OO||||OO||||OOO|O|O||OO||||O||OOO|||O|OO|OO||OO||OOOO|O|&#39;&#10;&#10;plain = bytearray(&#34;asdfghjk123456&#34;)&#10;&#10;d_plain = decode(c_plain)&#10;key = bytearray(&#34;        &#34;)&#10;chars = range(32, 128)&#10;for i in range(8):&#10;    for c in chars:&#10;        key[i] = chr(c)&#10;        tmp = decode(encrypt(plain, key))&#10;        if i &#60;= 2:&#10;            if tmp[i] == d_plain[i] and tmp[i + 8] == d_plain[i + 8]:&#10;                print &#39;[*] key: &#39; + key&#10;                break&#10;        else:&#10;            if tmp[i] == d_plain[i]:&#10;                print &#39;[*] key: &#39; + key&#10;                break&#10;print &#39;[+] key: &#39; + key&#10;&#10;d_flag = decode(c_flag)&#10;flag = bytearray(&#34; &#34; * len(d_flag))&#10;&#10;for i in range(0, len(d_flag)):&#10;    for c in chars:&#10;        flag[i] = chr(c)&#10;        e = decode(encrypt(flag, key))&#10;        if e[:i+1] == d_flag[:i+1]:&#10;            print &#34;[*] flag: &#34; + flag&#10;            break&#10;&#10;print &#39;[+] flag: &#39; + flag</span><br></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*] key: ^&#10;[*] key: ^&#38;&#10;[*] key: ^&#38;#&#10;[*] key: ^&#38;#q&#10;[*] key: ^&#38;#qD&#10;[*] key: ^&#38;#qD9&#10;[*] key: ^&#38;#qD93&#10;[*] key: ^&#38;#qD93_&#10;[+] key: ^&#38;#qD93_&#10;[*] flag: S&#10;[*] flag: SS&#10;[*] flag: SSC&#10;[*] flag: SSCT&#10;[*] flag: SSCTF&#10;[*] flag: SSCTF&#123;&#10;[*] flag: SSCTF&#123;1&#10;[*] flag: SSCTF&#123;1q&#10;[*] flag: SSCTF&#123;1qa&#10;[*] flag: SSCTF&#123;1qaz&#10;[*] flag: SSCTF&#123;1qaz9&#10;[*] flag: SSCTF&#123;1qaz9o&#10;[*] flag: SSCTF&#123;1qaz9ol&#10;[*] flag: SSCTF&#123;1qaz9ol.&#10;[*] flag: SSCTF&#123;1qaz9ol.n&#10;[*] flag: SSCTF&#123;1qaz9ol.nh&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy6&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64r&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rf&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv7&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv7u&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv7uj&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv7ujm&#10;[*] flag: SSCTF&#123;1qaz9ol.nhy64rfv7ujm&#125;&#10;[+] flag: SSCTF&#123;1qaz9ol.nhy64rfv7ujm&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/CTF/">#CTF</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近博客</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Other/">Other</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Android/">Android</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Tool/">Tool</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/jack.pan.965">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/100259285096579239148">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:jack@watch0ut.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="atom.xml">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js" type="text/javascript"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'junzhepan';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

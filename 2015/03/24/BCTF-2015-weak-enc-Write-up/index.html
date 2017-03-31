@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="#weak_encScore: 200
+1$ nc 146.148.79.13 8888
+http://dl.bctf.cn/weak_enc-40eb1171f07d8ebb06bbf36849d829a1.py.xz
+Decrypt: NxQ1NDMYcDcw53gVHzI7
+The flag for this problem does not look like BCTF{xxxxxx}">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="junzhepan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="BCTF 2015 weak_enc Write-up"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="junzhepan"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>BCTF 2015 weak_enc Write-up - junzhepan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
+    <meta name="apple-mobile-web-app-title" content="Jack Pan">
+    <meta name="application-name" content="Jack Pan">
+    <meta name="theme-color" content="#ffffff”>
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/atom.xml">
+                    订阅
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/03/24/BCTF-2015-weak-enc-Write-up/">
+                BCTF 2015 weak_enc Write-up
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-03-24</span>
+            
+            <a href="#disqus_thread" class="comments">评论</a>
+            
+                <span class="category">
+                    <a href="/categories/CTF/">CTF</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>#weak_enc<br>Score: 200</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nc 146.148.79.13 8888</span><br></pre></td></tr></table></figure>
+<p><a href="http://dl.bctf.cn/weak_enc-40eb1171f07d8ebb06bbf36849d829a1.py.xz" target="_blank" rel="external">http://dl.bctf.cn/weak_enc-40eb1171f07d8ebb06bbf36849d829a1.py.xz</a></p>
+<p>Decrypt: NxQ1NDMYcDcw53gVHzI7</p>
+<p>The flag for this problem does not look like BCTF{xxxxxx}</p>
+<a id="more"></a>
+<p>下载源码分析，连上服务器要先过一个验证，具体代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">proof = b64.b64encode(os.urandom(<span class="number">12</span>))</span><br><span class="line"></span><br><span class="line">req.sendall(<span class="string">"Please provide your proof of work, a sha1 sum ending in 16 bit's set to 0, it must be of length %s bytes, starting with %s\n"</span> % (len(proof)+<span class="number">5</span>, proof))</span><br><span class="line"></span><br><span class="line">test = req.recv(<span class="number">21</span>)</span><br><span class="line">ha = hashlib.sha1()</span><br><span class="line">ha.update(test)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (test[<span class="number">0</span>:<span class="number">16</span>] != proof <span class="keyword">or</span> ord(ha.digest()[-<span class="number">1</span>]) != <span class="number">0</span> <span class="keyword">or</span> ord(ha.digest()[-<span class="number">2</span>]) != <span class="number">0</span>):</span><br><span class="line">    req.sendall(<span class="string">"Check failed"</span>)</span><br><span class="line">    req.close()</span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure></p>
+<p>服务器提供一个16字节的<code>proof</code>，在后面加5个字节的内容，产生一个以0结尾的<code>sha1</code>，由于情况不多，这里使用暴力枚举：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_test</span><span class="params">(proof)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> test <span class="keyword">in</span> itertools.permutations(chars, <span class="number">5</span>):</span><br><span class="line">        test = proof + <span class="string">''</span>.join(test)</span><br><span class="line">        ha = hashlib.sha1()</span><br><span class="line">        ha.update(test)</span><br><span class="line">        digest = ha.digest()</span><br><span class="line">        <span class="keyword">if</span> ord(digest[-<span class="number">1</span>]) == <span class="number">0</span> <span class="keyword">and</span> ord(digest[-<span class="number">2</span>]) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> test</span><br></pre></td></tr></table></figure></p>
+<p>然后就是加密函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Encryption function</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span><span class="params">(SALT, m)</span>:</span></span><br><span class="line">    lzwDict = dict()</span><br><span class="line">    toEnc = LZW(SALT + m, lzwDict)</span><br><span class="line">    key = hashlib.md5(SALT*<span class="number">2</span>).digest()</span><br><span class="line">    OTPBase = <span class="string">""</span></span><br><span class="line">    OPT = <span class="string">""</span></span><br><span class="line">    step = HASHLENGTH - SMALLPRIME</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">3</span>*N+step, step):</span><br><span class="line">        rand, key = STRONGPseudoRandomGenerator(key)</span><br><span class="line">        OTPBase += rand</span><br><span class="line">    enc = []</span><br><span class="line">    otpadded = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(toEnc)):</span><br><span class="line">        index = i % N</span><br><span class="line">        iRound = i / N + <span class="number">1</span></span><br><span class="line">        OTP = OTPBase[<span class="number">3</span>*int(pow(ord(OTPBase[<span class="number">3</span>*index]),ord(OTPBase[<span class="number">3</span>*index+<span class="number">1</span>])*iRound, N))+<span class="number">2</span>]</span><br><span class="line">        otpadded.append(ord(OTP))</span><br><span class="line">        enc.append(chr(toEnc[i] ^ ord(OTP)))</span><br><span class="line">    <span class="keyword">return</span> b64.b64encode(<span class="string">''</span>.join(enc))</span><br></pre></td></tr></table></figure></p>
+<p>其中主要用到<code>LZW()</code>函数，而且使用的<code>SALT</code>也是未知的。但是<code>SALT</code>是固定的，可以使用选择明文攻击，根据密文，想办法把<code>SALT</code>还原出来，然后再写一个解密函数即可。<br><code>LZW</code>是一种数据压缩算法，具体介绍见<a href="http://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch" target="_blank" rel="external">Lempel–Ziv–Welch</a>。根据它的原理，先尝试加密26个小写字母的结果，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a -&#62; NxQ1NDIZcTY/5Hka&#10;b -&#62; NxQ1NDIZcTY/5Hka&#10;c -&#62; NxQ1NDIZcTY/5Hka&#10;d -&#62; NxQ1NDIZcTY/5Hka&#10;e -&#62; NxQ1NDIZcTY/5Hka&#10;f -&#62; NxQ1NDIZcTY/5Hka&#10;g -&#62; NxQ1NDIZcTY/5Hka&#10;h -&#62; NxQ1NDIZcTY/5Hka&#10;i -&#62; NxQ1NDMYcDcw53gf&#10;j -&#62; NxQ1NDIZcTY/5Hka&#10;k -&#62; NxQ1NDMYcDcw53gc&#10;l -&#62; NxQ1NDIZcTY/5Hka&#10;m -&#62; NxQ1NDIZcTY/5Hka&#10;n -&#62; NxQ1NDMYcDcw53ge&#10;o -&#62; NxQ1NDMYcDcw53gd&#10;p -&#62; NxQ1NDIZcTY/5Hka&#10;q -&#62; NxQ1NDIZcTY/5Hka&#10;r -&#62; NxQ1NDIZcTY/5Hka&#10;s -&#62; NxQ1NDIZcTY/5Hka&#10;t -&#62; NxQ1NDIZcTY/5Hka&#10;u -&#62; NxQ1NDIZcTY/5Hka&#10;v -&#62; NxQ1NDIZcTY/5Hka&#10;w -&#62; NxQ1NDIZcTY/5Hka&#10;x -&#62; NxQ1NDIZcTY/5Hka&#10;y -&#62; NxQ1NDIZcTY/5Hka&#10;z -&#62; NxQ1NDIZcTY/5Hka</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，只有<code>i, k, n, o</code>这四个字母的结果不一样，猜测<code>SALT</code>只有这四个字母，但是长度未知。单个字母的找到了，现在来遍历2、3、4组合的，这样<code>LZW Dict</code>就有了，可以枚举<code>SALT</code>了，代码如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">def get_crypto(test_msg):</span><br><span class="line">    st = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    st.connect((HOST, 8888))</span><br><span class="line">    s = st.recv(4096)</span><br><span class="line">    proof = s[-17:-1]</span><br><span class="line">    msg = find_test(proof)</span><br><span class="line">    st.send(msg)</span><br><span class="line">    s = st.recv(4096)</span><br><span class="line">    st.send(test_msg + "\n")</span><br><span class="line">    s = st.recv(4096)</span><br><span class="line">    index = s.find(':') + 2</span><br><span class="line">    return s[index:-1]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def test()</span><br><span class="line">    cs = ['n', 'i', 'k', 'o']</span><br><span class="line">    items = []</span><br><span class="line">    for item in itertools.chain.from_iterable((''.join(l) for l in itertools.product(cs, repeat=i)) for i in range(2,  5)):</span><br><span class="line">        c_c = get_crypto(item)</span><br><span class="line">        if len(b64.b64decode(c_c)) - crypto_salt_len == 1:</span><br><span class="line">            items.append(item)</span><br><span class="line"></span><br><span class="line">    for i in xrange(4, crypto_salt_len):</span><br><span class="line">        for test in itertools.permutations(items, i):</span><br><span class="line">            test_salt = ''.join(test)</span><br><span class="line">            if len(LZW(test_salt, dict())) == crypto_salt_len:</span><br><span class="line">                if encrypt(test_salt, '') == crypto_salt:</span><br><span class="line">                    print 'find salt:', test_salt</span><br><span class="line">                    return</span><br></pre></td></tr></table></figure></p>
+<p>目前为止<code>SALT: nikonikoninikonikoni</code>被猜出来了，后面就要还原提供的密文了。有了<code>SALT</code>就可以计算出<code>OTPBase</code>，然后还原出<code>toEnc</code>，计算出<code>SALT</code>的<code>toEnc</code>，这两个作差，剩下的就是密文的<code>toEnc</code>，最后在<code>LZW Dict</code>里找到对应值就可以了，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decrypto</span><span class="params">(crypto, salt)</span>:</span></span><br><span class="line">    enc = b64.b64decode(crypto)</span><br><span class="line">    key = hashlib.md5(salt*<span class="number">2</span>).digest()</span><br><span class="line">    OTPBase = <span class="string">""</span></span><br><span class="line">    OPT = <span class="string">""</span></span><br><span class="line">    step = HASHLENGTH - SMALLPRIME</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">3</span>*N+step, step):</span><br><span class="line">        rand, key = STRONGPseudoRandomGenerator(key)</span><br><span class="line">        OTPBase += rand</span><br><span class="line">    otpadded = []</span><br><span class="line">    toEnc = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(enc)):</span><br><span class="line">        index = i % N</span><br><span class="line">        iRound = i / N + <span class="number">1</span></span><br><span class="line">        OTP = OTPBase[<span class="number">3</span>*int(pow(ord(OTPBase[<span class="number">3</span>*index]),ord(OTPBase[<span class="number">3</span>*index+<span class="number">1</span>])*iRound, N))+<span class="number">2</span>]</span><br><span class="line">        otpadded.append(ord(OTP))</span><br><span class="line">        toEnc.append(ord(enc[i]) ^ ord(OTP))</span><br><span class="line">    <span class="keyword">print</span> toEnc</span><br><span class="line">    salt_dict = dict()</span><br><span class="line">    LZW(salt, salt_dict)</span><br><span class="line">    reverse_dict = dict((v, k) <span class="keyword">for</span> k, v <span class="keyword">in</span> salt_dict.items())</span><br><span class="line">    <span class="keyword">print</span> reverse_dict</span><br><span class="line">    m = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">11</span>, len(toEnc)):</span><br><span class="line">        m += reverse_dict[toEnc[i]]</span><br><span class="line">    <span class="keyword">return</span> m</span><br></pre></td></tr></table></figure></p>
+<p>最后得到<code>flag: nikoninikoni</code>。</p>
+<blockquote>
+<p>如果，明文里的字母不全在<code>SALT</code>里的话，用密文是无法恢复出完整明文的（但是可以把缺的部分暴力破解出来^-^）。<br>完整代码<a href="http://junzhepanblog.qiniudn.com/weak_enc_crack.py" target="_blank" rel="external">点此下载</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/CTF/">#CTF</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近博客</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Other/">Other</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Android/">Android</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Tool/">Tool</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/jack.pan.965">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/100259285096579239148">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:jack@watch0ut.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="atom.xml">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js" type="text/javascript"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'junzhepan';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

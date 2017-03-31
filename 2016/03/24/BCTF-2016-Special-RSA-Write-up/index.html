@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="ProblemWhile studying and learning RSA, I knew a new form of encryption/decryption withthe same safety as RSA.
+I encrypted msg.txt and got msg.enc as an example for you.
+$ python special_rsa.py enc msg.txt msg.enc
+Can you recover flag.txt from flag.enc?
+special_rsa.zip.f6e85b8922b0016d64b1d006529819de">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="junzhepan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="BCTF 2016 Special RSA Write-up"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="junzhepan"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>BCTF 2016 Special RSA Write-up - junzhepan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
+    <meta name="apple-mobile-web-app-title" content="Jack Pan">
+    <meta name="application-name" content="Jack Pan">
+    <meta name="theme-color" content="#ffffff”>
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/atom.xml">
+                    订阅
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/03/24/BCTF-2016-Special-RSA-Write-up/">
+                BCTF 2016 Special RSA Write-up
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-24</span>
+            
+            <a href="#disqus_thread" class="comments">评论</a>
+            
+                <span class="category">
+                    <a href="/categories/CTF/">CTF</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>Problem<br>While studying and learning RSA, I knew a new form of encryption/decryption with<br>the same safety as RSA.</p>
+<p>I encrypted msg.txt and got msg.enc as an example for you.</p>
+<p><code>$ python special_rsa.py enc msg.txt msg.enc</code></p>
+<p>Can you recover flag.txt from flag.enc?</p>
+<p><a href="https://raw.githubusercontent.com/ctfs/write-ups-2016/master/bctf-2016/crypto/special_rsa-200/special_rsa.zip.f6e85b8922b0016d64b1d006529819de" target="_blank" rel="external">special_rsa.zip.f6e85b8922b0016d64b1d006529819de</a></p>
+<a id="more"></a>
+<p>加密过程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = (pow(k, r, N) * m) % N</span><br></pre></td></tr></table></figure></p>
+<p>解密过程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k_inv = modinv(k, N)&#10;m = pow(k_inv, r, N) * c % N</span><br></pre></td></tr></table></figure></p>
+<p>根据提供的<code>msg.txt</code>，可以得到两对m和c，使用的key相同，只是r不同，可以用这两组反推出key来：</p>
+<ul>
+<li>求 m 的逆元<br><code>m_inv = modinv(m, N)</code></li>
+<li>c 乘上m的逆元得到 pow(k, r, N)<br><code>c * m_inv % N = pow(k, r, N) % N = pow(k, r, N)</code></li>
+<li>通过<code>msg.enc</code>得到两段pow(k, r1, N), pow(k, r2, N)<br>p1 = c1 <em> m_inv % N = pow(k, r1, N) % N = pow(k, r1, N)<br>p2 = c2 </em> m_inv % N = pow(k, r2, N) % N = pow(k, r2, N)</li>
+<li>这时候只要找到z1和z2，满足下式，即可得pow(k, r1 <em> z1 + r2 </em> z2, N)=pow(k, 1,<br>N)<br><code>r1 * z1 + r2 * z2 = 1</code></li>
+<li>Extended Euclid Algorithm 可以求解z1，z2<br><code>[gcd(r1, r2), z1, z2] = egcd(r1, r2)</code><br>恰巧gcd(r1, r2) = 1</li>
+</ul>
+<p>结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key:&#10;175971776542095822590595405274258668271271366360140578776612582276966567082080372980811310146217399585938214712928761559525614866113821551467842221588432676885027725038849513527080849158072296957428701767142294778752742980766436072183367444762212399986777124093501619273513421803177347181063254421492621011961&#10;flag: BCTF&#123;q0000000000b3333333333-ju57-w0n-pwn20wn!!!!!!!!!!!!&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/CTF/">#CTF</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近博客</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Other/">Other</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Android/">Android</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Tool/">Tool</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/jack.pan.965">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/100259285096579239148">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:jack@watch0ut.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="atom.xml">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js" type="text/javascript"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'junzhepan';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

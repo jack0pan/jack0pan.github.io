@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="GradleGradle提供了一个DSL(领域特定语言)，一个约定优于配置的方法，还有更强大的依赖管理，Gradle使得我们可以抛弃XML的繁琐配置，引入动态语言Groovy来定义你的构建逻辑。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="junzhepan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Gradle 教程"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="junzhepan"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Gradle 教程 - junzhepan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
+    <meta name="apple-mobile-web-app-title" content="Jack Pan">
+    <meta name="application-name" content="Jack Pan">
+    <meta name="theme-color" content="#ffffff”>
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/atom.xml">
+                    订阅
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/06/27/Gradle-教程/">
+                Gradle 教程
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-06-27</span>
+            
+            <a href="#disqus_thread" class="comments">评论</a>
+            
+                <span class="category">
+                    <a href="/categories/Tool/">Tool</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h1><p><a href="http://gradle.org/" target="_blank" rel="external">Gradle</a>提供了一个DSL(领域特定语言)，一个约定优于配置的方法，还有更强大的依赖管理，Gradle使得我们可以抛弃XML的繁琐配置，引入动态语言Groovy来定义你的构建逻辑。</p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>Gradle</code>的安装非常方便，下载ZIP包，解压到本地目录，设置<code>GRADLE_HOME</code>环境变量，并将<code>GRADLE_HOME/bin</code>加到<code>PATH</code>环境变量中，安装就完成了。然后在命令行下运行<code>gradle -v</code>，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gradle -v</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Gradle <span class="number">2.14</span></span><br><span class="line">------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Build time:   <span class="number">2016</span>-<span class="number">06</span>-<span class="number">14</span> <span class="number">07</span>:<span class="number">16</span>:<span class="number">37</span> UTC</span><br><span class="line">Revision:     cba5fea19f1e0c6a00cc904828a6ec4e11739abc</span><br><span class="line"></span><br><span class="line">Groovy:       <span class="number">2.4</span>.<span class="number">4</span></span><br><span class="line">Ant:          Apache Ant(TM) version <span class="number">1.9</span>.<span class="number">6</span> compiled on June <span class="number">29</span> <span class="number">2015</span></span><br><span class="line">JVM:          <span class="number">1.8</span>.<span class="number">0</span>_91 (Oracle Corporation <span class="number">25.91</span>-b14)</span><br><span class="line">OS:           Mac OS X <span class="number">10.11</span>.<span class="number">5</span> x86_64</span><br></pre></td></tr></table></figure></p>
+<h2 id="构建Java项目"><a href="#构建Java项目" class="headerlink" title="构建Java项目"></a>构建Java项目</h2><p>每个<code>Gradle</code>项目都会创建一个<code>build.gradle</code>文件，相关配置都写在这里。</p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>因为是<code>Java</code>项目，这里要用到<code>Gradle</code>的<code>Java</code>插件：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'java'</span></span><br></pre></td></tr></table></figure></p>
+<p>同时，我们需要指定编译时的<code>Java Lanaguage Level</code>和生成<code>.class</code>文件的<code>JVM</code>，如下：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">compileJava &#123;</span><br><span class="line">    <span class="keyword">sourceCompatibility</span> = <span class="number">1.6</span></span><br><span class="line">    <span class="keyword">targetCompatibility</span> = <span class="number">1.6</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果我们在<code>IDE</code>中使用，可以使用<code>IDE</code>对应的插件，这里我使用<code>IntelliJ IDEA</code>的插件，如下：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'idea'</span></span><br></pre></td></tr></table></figure></p>
+<p>如果构建的是<code>Java</code>应用，还要用如下插件：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'application'</span></span><br></pre></td></tr></table></figure></p>
+<p>添加<code>application</code>插件之后，通常需要指定<code>Main Class</code>：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainClassName = <span class="string">''</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>插件配置完后，通常会用到第三方库，为了引用这些<code>JAR</code>文件，需要在<code>Gradle</code>里面配置。比如，我们使用<code>Maven Repository</code>：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>声明编译时需要的依赖和测试时需要的依赖：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">group</span>: <span class="string">'commons-collections'</span>, name: <span class="string">'commons-collections'</span>, version:</span><br><span class="line"><span class="string">'3.2'</span></span><br><span class="line">    testCompile <span class="keyword">group</span>: <span class="string">'junit'</span>, name: <span class="string">'junit'</span>, version: <span class="string">'4.+'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有些情况下，<code>Maven Repository</code>里并没有我们使用的库，所以我们从本地添加：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: <span class="string">'*.jar'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h3><p>在<code>Java</code>插件添加属性到您的项目。这些属性通常足在启动时使用默认值。这里我们将依赖的<code>library</code>打包到<code>jar</code>包中：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jar &#123;</span><br><span class="line">    manifest &#123;</span><br><span class="line">        attributes <span class="string">'Main-Class'</span>: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> &#123;</span><br><span class="line">        <span class="keyword">configurations</span>.<span class="keyword">compile</span>.<span class="keyword">collect</span> &#123; it.isDirectory() ? it : zipTree(it) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>之后需要告诉<code>Gradle</code>要发布<code>jar</code>的位置。在<code>Gradle</code>中， 比如<code>jar</code>文件等是发布到库中的。我们的例子中是发布到了本地路径。你也可以发布到远程位置或者多个位置。<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uploadArchives &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">        <span class="keyword">flatDir</span> &#123;</span><br><span class="line">            dirs <span class="string">'repos'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gradle uploadArchives</span><br><span class="line">:compileJava UP-TO-DATE</span><br><span class="line">:processResources UP-TO-DATE</span><br><span class="line">:classes UP-TO-DATE</span><br><span class="line">:jar UP-TO-DATE</span><br><span class="line">:startScripts UP-TO-DATE</span><br><span class="line">:distTar UP-TO-DATE</span><br><span class="line">:distZip UP-TO-DATE</span><br><span class="line">:uploadArchives</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL</span><br><span class="line"></span><br><span class="line">Total time: <span class="number">3.279</span> secs</span><br></pre></td></tr></table></figure></p>
+<p>这样之后，会在<code>repos</code>目录下看到生成的发布文件。</p>
+<h3 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h3><p>有时候，我们需要在运行的时候给定参数：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">run &#123;</span><br><span class="line">    <span class="keyword">if</span> (System.getProperty(<span class="string">"exec.args"</span>) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        args System.getProperty(<span class="string">"exec.args"</span>).split()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>传递参数的时候，需要这样运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">gradle run -Dexec.args=<span class="string">"-h"</span></span><br><span class="line">:compileJava UP-TO-DATE</span><br><span class="line">:processResources UP-TO-DATE</span><br><span class="line">:classes UP-TO-DATE</span><br><span class="line">:run</span><br><span class="line">usage: ra-tool</span><br><span class="line"> -h,--help   Shows this <span class="built_in">help</span> message.</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL</span><br><span class="line"></span><br><span class="line">Total time: <span class="number">2.724</span> secs</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Tool/">#Tool</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近博客</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Other/">Other</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Android/">Android</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Tool/">Tool</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/junzhepan">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/jack.pan.965">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/100259285096579239148">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:jack@watch0ut.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="atom.xml">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js" type="text/javascript"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'junzhepan';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
