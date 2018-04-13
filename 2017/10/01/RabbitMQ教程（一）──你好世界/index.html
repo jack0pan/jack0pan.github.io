@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="RabbitMQ教程（一）──你好世界介绍RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。 RabbitMQ和邮局的主要区别在于，它不是处理纸张，而是接收、存储和转发消息（message）──二进制数据。 下面是RabbitMQ和消息所涉及到">
+<meta name="keywords" content="Ruby,RabbitMQ,翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ教程（一）──你好世界">
+<meta property="og:url" content="http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="RabbitMQ教程（一）──你好世界介绍RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。 RabbitMQ和邮局的主要区别在于，它不是处理纸张，而是接收、存储和转发消息（message）──二进制数据。 下面是RabbitMQ和消息所涉及到">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/producer.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/queue.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/consumer.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/python-one.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/sending.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/receiving.png">
+<meta property="og:updated_time" content="2018-04-13T15:18:58.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMQ教程（一）──你好世界">
+<meta name="twitter:description" content="RabbitMQ教程（一）──你好世界介绍RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。 RabbitMQ和邮局的主要区别在于，它不是处理纸张，而是接收、存储和转发消息（message）──二进制数据。 下面是RabbitMQ和消息所涉及到">
+<meta name="twitter:image" content="https://www.rabbitmq.com/img/tutorials/producer.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>RabbitMQ教程（一）──你好世界</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/10/02/RabbitMQ教程（二）──工作队列/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/11/13/技术分析之黑客军团第二季/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RabbitMQ教程（一）──你好世界"><span class="toc-number">1.</span> <span class="toc-text">RabbitMQ教程（一）──你好世界</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你好世界"><span class="toc-number">1.2.</span> <span class="toc-text">你好世界!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#发送"><span class="toc-number">1.2.1.</span> <span class="toc-text">发送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收"><span class="toc-number">1.2.2.</span> <span class="toc-text">接收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整合到一起"><span class="toc-number">1.2.3.</span> <span class="toc-text">整合到一起</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        RabbitMQ教程（一）──你好世界
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-10-01T14:08:31.000Z" itemprop="datePublished">2017-10-01</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/RabbitMQ/">RabbitMQ</a>, <a class="tag-link" href="/tags/Ruby/">Ruby</a>, <a class="tag-link" href="/tags/翻译/">翻译</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="RabbitMQ教程（一）──你好世界"><a href="#RabbitMQ教程（一）──你好世界" class="headerlink" title="RabbitMQ教程（一）──你好世界"></a>RabbitMQ教程（一）──你好世界</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。</p>
+<p>RabbitMQ和邮局的主要区别在于，它不是处理纸张，而是接收、存储和转发消息（message）──二进制数据。</p>
+<p>下面是RabbitMQ和消息所涉及到的一些术语：</p>
+<ul>
+<li><code>生产(Producing)</code>的意思就是发送。发送消息的程序就是一个生产者(producer)。我们一般用”P”来表示:</li>
+</ul>
+<p><img src="https://www.rabbitmq.com/img/tutorials/producer.png" alt="producer"></p>
+<ul>
+<li><code>队列(queue)</code>就是存在于RabbitMQ中邮箱的名称。虽然消息的传输经过了RabbitMQ和你的应用程序，但是它只能被存储于队列当中。实质上队列就是个巨大的消息缓冲区，它的大小只受主机内存和硬盘限制。多个生产者（producers）可以把消息发送给同一个队列，同样，多个消费者（consumers）也能够从同一个队列（queue）中获取数据。队列可以绘制成这样（图上是队列的名称）：</li>
+</ul>
+<p><img src="https://www.rabbitmq.com/img/tutorials/queue.png" alt="queue"></p>
+<ul>
+<li><code>消费（Consuming）</code>，和接收(receiving)是同一个意思。一个消费者（consumer）就是一个等待获取消息的程序。我们把它绘制为”C”：</li>
+</ul>
+<p><img src="https://www.rabbitmq.com/img/tutorials/consumer.png" alt="consumer"></p>
+<p>需要指出的是生产者、消费者、代理需不要待在同一个设备上；事实上大多数应用也确实不在会将他们放在一台机器上。</p>
+<h2 id="你好世界"><a href="#你好世界" class="headerlink" title="你好世界!"></a>你好世界!</h2><p>（使用Bunny Ruby客户端）</p>
+<p>接下来我们用Ruby写两个小程序。一个发送单条消息的生产者（producer）和一个接收消息并将其输出的消费者（consumer）。我们将详细介绍<a href="http://rubybunny.info/" target="_blank" rel="noopener">Bunny</a> API中的一些细节，从传递”Hello World”消息，这种简单的事情开始。</p>
+<p>下图中，“P”代表生产者，“C”代表消费者，中间的盒子代表为消费者保留的消息缓冲区，也就是我们的队列。</p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-one.png" alt="python-one"></p>
+<p>生产者（producer）把消息发送到一个名为“hello”的队列中。消费者（consumer）从这个队列中获取消息。</p>
+<blockquote>
+<p><strong>Bunny客户端</strong></p>
+<p>RabbitMQ有多种协议，教程中使用的是AMQP 0.9.1协议。这是一个用于消息传递的开放、通用的协议。针对<a href="http://rabbitmq.com/devtools.html" target="_blank" rel="noopener">不同编程语言</a>有大量的RabbitMQ客户端可用。在这个系列教程中，RabbitMQ团队推荐使用Bunny这个最常用的Ruby客户端。</p>
+<p>首先，使用<a href="http://rubygems.org/" target="_blank" rel="noopener">Rubygems</a>安装Bunny：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install bunny --version &quot;&gt;= 2.6.4&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>现在，我们已经安装了Bunny，我们可以写点代码了。</p>
+<h3 id="发送"><a href="#发送" class="headerlink" title="发送"></a>发送</h3><p><img src="https://www.rabbitmq.com/img/tutorials/sending.png" alt="sending"></p>
+<p>我们称消息生产者为<code>send.rb</code>，消息消费者为<code>receive.rb</code>。生产者将先连接RabbitMQ，发送一个消息，然后直接退出。</p>
+<p>在<code>send.rb</code>中，我们先应用库：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env ruby</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'bunny'</span></span><br></pre></td></tr></table></figure></p>
+<p>然后连接RabbitMQ服务器<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">connection = Bunny.new</span><br><span class="line">connection.start</span><br></pre></td></tr></table></figure></p>
+<p>这里的连接帮我们简化了一些socket连接事项，比如协议版本、认证等等。现在我们已经用默认配置跟本地机器的代理建立了连接。</p>
+<p>如果你想连接到其他机器的代理上，需要把<code>:hostname</code>改为指定的名字或IP地址。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">connection = Bunny.new(<span class="symbol">hostname:</span> <span class="string">'rabbit.local'</span>)</span><br><span class="line">connection.start</span><br></pre></td></tr></table></figure></p>
+<p>接下来，我们创建一个通道，大部分的API功能都是在这里完成的：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">channel = connection.create_channel</span><br></pre></td></tr></table></figure></p>
+<p>在发送消息之前，我们需要声明一个队列，然后推送消息到这个队列中：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">queue = channel.queue(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line">channel.default_exchange.publish(<span class="string">'Hello World!'</span>, <span class="symbol">routing_key:</span> queue.name)</span><br><span class="line">puts <span class="string">" [x] Sent 'Hello World!'"</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，我们需要关闭这个连接：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connection.close()</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/send.rb" target="_blank" rel="noopener">完整的<code>send.rb</code>代码</a></p>
+<blockquote>
+<p>发送不成功！</p>
+<p>如果这是你第一次使用RabbitMQ，并且没有看到“Sent”消息出现在屏幕上，你可能会抓耳挠腮不知所以。这也许是因为没有足够的磁盘空间给代理使用所造成的（代理默认需要200MB的空闲空间），所以它才会拒绝接收消息。查看一下代理的日志文件进行确认，如果需要的话也可以减少限制。<a href="http://www.rabbitmq.com/configure.html#config-items" target="_blank" rel="noopener">配置文件文档</a>会告诉你如何更改磁盘空间限制（disk_free_limit）。</p>
+</blockquote>
+<h3 id="接收"><a href="#接收" class="headerlink" title="接收"></a>接收</h3><p>之前是我们的生产者。我们的消费者是从RabbitMQ中取消息，和生产者只推送一条消息不同，我们将会一直监听消息，并将它们打印出来。</p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/receiving.png" alt="receiving"></p>
+<p>和<code>send.rb</code>一样，<code>receive.rb</code>代码也要先引入库：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env ruby</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'bunny'</span></span><br></pre></td></tr></table></figure></p>
+<p>初始化和生产者一样，我们打开连接和通道，并声明一个队列用来消费。需要注意的是这里队列名要和生产者的一直。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">connection = Bunny.new</span><br><span class="line">connection.start</span><br><span class="line"></span><br><span class="line">channel = connection.create_channel</span><br><span class="line">queue = channel.queue(<span class="string">'hello'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>注意在这里我们也要声明队列。因为消费者可能在生产者之前启动，我们要确保在从队列里去消息前，这个队列已被创建。</p>
+<p>现在我们要告诉服务器把消息交付给我们。由于服务器是异步的推送给我们消息，我们需要提供一个回调函数，当RabbitMQ推送消息给我们时就执行回调函数。这里用<code>Bunny::Queue#subscribe</code>来实现。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  puts <span class="string">' [*] Waiting for messages. To exit press CTRL+C'</span></span><br><span class="line">  queue.subscribe(<span class="symbol">block:</span> <span class="literal">true</span>) <span class="keyword">do</span> <span class="params">|_delivery_info, _properties, body|</span></span><br><span class="line">    puts <span class="string">" [x] Received <span class="subst">#&#123;body&#125;</span>"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">rescue</span> Interrupt =&gt; <span class="number">_</span></span><br><span class="line">  connection.close</span><br><span class="line"></span><br><span class="line">  exit(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Bunny::Queue#subscribe</code>使用了<code>:block</code>选项来阻塞线程（因为我们不想脚本立马执行完）。</p>
+<p><a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/receive.rb" target="_blank" rel="noopener">完整的<code>receive.rb</code>代码</a>。</p>
+<h3 id="整合到一起"><a href="#整合到一起" class="headerlink" title="整合到一起"></a>整合到一起</h3><p>现在我们可以运行前面的脚本了。在终端里，运行消费者：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby receive.rb</span><br></pre></td></tr></table></figure></p>
+<p>然后运行生产者：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby send.rb</span><br></pre></td></tr></table></figure></p>
+<p>消费者会打印从RabbitMQ获得的生产发送的消息。消费者将会一直运行，等待消息（通过Ctrl-C来中止它），所以在另一个终端运行生产者吧。</p>
+<blockquote>
+<p><strong>列出所有队列</strong></p>
+<p>你也许希望查看RabbitMQ中有哪些队列、有多少消息在队列中。此时你可以使用<code>rabbitmqctl</code>工具（使用有权限的用户）：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rabbitmqctl list_queues</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在Windows中不需要sudo命令:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl.bat list_queues</span><br></pre></td></tr></table></figure>
+<p>是时候移步到第二部分了，我们将会建立一个简单的工作队列（work queue）。</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RabbitMQ教程（一）──你好世界"><span class="toc-number">1.</span> <span class="toc-text">RabbitMQ教程（一）──你好世界</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你好世界"><span class="toc-number">1.2.</span> <span class="toc-text">你好世界!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#发送"><span class="toc-number">1.2.1.</span> <span class="toc-text">发送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收"><span class="toc-number">1.2.2.</span> <span class="toc-text">接收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整合到一起"><span class="toc-number">1.2.3.</span> <span class="toc-text">整合到一起</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

@@ -1,371 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-
+    <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="密码算法-Ruby本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。">
+<meta name="keywords" content="Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码算法-Ruby">
+<meta property="og:url" content="http://junzhepan.github.io/2016/08/17/密码算法-Ruby/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="密码算法-Ruby本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-09-17T04:50:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="密码算法-Ruby">
+<meta name="twitter:description" content="密码算法-Ruby本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。">
     
-        <meta name="description" content="密码算法-Ruby本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。">
     
-
-    <!--Author-->
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
     
-        <meta name="author" content="junzhepan">
+    <!-- title -->
+    <title>密码算法-Ruby</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
     
-
-    <!--Open Graph Title-->
     
-        <meta property="og:title" content="密码算法-Ruby"/>
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
     
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="junzhepan"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>密码算法-Ruby - junzhepan</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-    <!-- Google Analytics -->
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
-    <meta name="apple-mobile-web-app-title" content="Jack Pan">
-    <meta name="application-name" content="Jack Pan">
-    <meta name="theme-color" content="#ffffff”>
-
 </head>
 
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/09/22/数字证书-Ruby/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/08/06/三星应用商店接口/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&text=密码算法-Ruby"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&is_video=false&description=密码算法-Ruby"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=密码算法-Ruby&body=Check out this article: http://junzhepan.github.io/2016/08/17/密码算法-Ruby/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&name=密码算法-Ruby&description=&lt;h1 id=&quot;密码算法-Ruby&quot;&gt;&lt;a href=&quot;#密码算法-Ruby&quot; class=&quot;headerlink&quot; title=&quot;密码算法-Ruby&quot;&gt;&lt;/a&gt;密码算法-Ruby&lt;/h1&gt;&lt;p&gt;本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。&lt;br&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/atom.xml">
-                    订阅
-                </a>
-            </li>
-            
-        </ul>
     </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#密码算法-Ruby"><span class="toc-number">1.</span> <span class="toc-text">密码算法-Ruby</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对称密码"><span class="toc-number">1.1.</span> <span class="toc-text">对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DES"><span class="toc-number">1.1.1.</span> <span class="toc-text">DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AES"><span class="toc-number">1.1.2.</span> <span class="toc-text">AES</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥密码"><span class="toc-number">1.2.</span> <span class="toc-text">公钥密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA"><span class="toc-number">1.2.1.</span> <span class="toc-text">RSA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#认证"><span class="toc-number">1.3.</span> <span class="toc-text">认证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数字签名"><span class="toc-number">1.3.1.</span> <span class="toc-text">数字签名</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+    
+    <div class="content index my4">
         
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        密码算法-Ruby
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-08-17T04:48:12.000Z" itemprop="datePublished">2016-08-17</time>
     </div>
-</header>
 
-        <section class="main">
-            
-<div class="post">
 
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2016/08/17/密码算法-Ruby/">
-                密码算法-Ruby
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2016-08-17</span>
-            
-            <a href="#disqus_thread" class="comments">评论</a>
-            
-                <span class="category">
-                    <a href="/categories/Ruby/">Ruby</a>
-                </span>
-            
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Ruby/">Ruby</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="密码算法-Ruby"><a href="#密码算法-Ruby" class="headerlink" title="密码算法-Ruby"></a>密码算法-Ruby</h1><p>本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。<br><a id="more"></a></p>
+<h2 id="对称密码"><a href="#对称密码" class="headerlink" title="对称密码"></a>对称密码</h2><h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"></span><br><span class="line">cipher = OpenSSL::Cipher.new(<span class="string">'DES-ECB'</span>)</span><br><span class="line">cipher.encrypt()</span><br><span class="line">cipher.key = KEY</span><br><span class="line">encrypted = cipher.update(plain) + cipher.final()</span><br><span class="line"></span><br><span class="line">cipher.decrypt()</span><br><span class="line">cipher.key = KEY</span><br><span class="line">decrypt_palin = cipher.update(encrypted) + cipher.final()</span><br></pre></td></tr></table></figure>
+<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"></span><br><span class="line">cipher = OpenSSL::Cipher.new(<span class="string">'AES-128-ECB'</span>)</span><br><span class="line">cipher.encrypt()</span><br><span class="line">cipher.key = KEY</span><br><span class="line">encrypted = cipher.update(plain) + cipher.final()</span><br><span class="line"></span><br><span class="line">cipher.decrypt()</span><br><span class="line">cipher.key = KEY</span><br><span class="line">decrypt_palin = cipher.update(encrypted) + cipher.final()</span><br></pre></td></tr></table></figure>
+<h2 id="公钥密码"><a href="#公钥密码" class="headerlink" title="公钥密码"></a>公钥密码</h2><h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'base64'</span></span><br><span class="line"></span><br><span class="line">encrypt_cert = OpenSSL::X509::Certificate.new(File.read(<span class="string">'encrypt_cert_path'</span>))</span><br><span class="line">public_key = encrypt_cert.public_key</span><br><span class="line">c = Base64.strict_encode64(public_key.public_encrypt(m))</span><br><span class="line"></span><br><span class="line">key = encrypt_cert.key</span><br><span class="line">decrypt_m = key.private_decrypt(Base64.decode64(c))</span><br></pre></td></tr></table></figure>
+<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>RSA签名<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'digest/sha1'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'base64'</span></span><br><span class="line"></span><br><span class="line">sign_cert = OpenSSL::PKCS12.new(File.read(sign_cert_path<span class="string">'), '</span>password<span class="string">')</span></span><br><span class="line"><span class="string">key = sign_cert.key</span></span><br><span class="line"><span class="string">digest = Digest::SHA1.hexdigest(data)</span></span><br><span class="line"><span class="string">sign = Base64.strict_encode64(key.sign('</span>sha1<span class="string">', digest))</span></span><br></pre></td></tr></table></figure></p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
 
-    <div class="content">
-
-        <!-- Gallery -->
-        
-
-        <!-- Post Content -->
-        <h1 id="密码算法-Ruby"><a href="#密码算法-Ruby" class="headerlink" title="密码算法-Ruby"></a>密码算法-Ruby</h1><p>本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。<br><a id="more"></a></p>
-<h2 id="对称密码"><a href="#对称密码" class="headerlink" title="对称密码"></a>对称密码</h2><h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"></span><br><span class="line">cipher = <span class="constant">OpenSSL::Cipher</span>.new(<span class="string">'DES-ECB'</span>)</span><br><span class="line">cipher.encrypt()</span><br><span class="line">cipher.key = <span class="constant">KEY</span></span><br><span class="line">encrypted = cipher.update(plain) + cipher.final()</span><br><span class="line"></span><br><span class="line">cipher.decrypt()</span><br><span class="line">cipher.key = <span class="constant">KEY</span></span><br><span class="line">decrypt_palin = cipher.update(encrypted) + cipher.final()</span><br></pre></td></tr></table></figure>
-<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"></span><br><span class="line">cipher = <span class="constant">OpenSSL::Cipher</span>.new(<span class="string">'AES-128-ECB'</span>)</span><br><span class="line">cipher.encrypt()</span><br><span class="line">cipher.key = <span class="constant">KEY</span></span><br><span class="line">encrypted = cipher.update(plain) + cipher.final()</span><br><span class="line"></span><br><span class="line">cipher.decrypt()</span><br><span class="line">cipher.key = <span class="constant">KEY</span></span><br><span class="line">decrypt_palin = cipher.update(encrypted) + cipher.final()</span><br></pre></td></tr></table></figure>
-<h2 id="公钥密码"><a href="#公钥密码" class="headerlink" title="公钥密码"></a>公钥密码</h2><h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'base64'</span></span><br><span class="line"></span><br><span class="line">encrypt_cert = <span class="constant">OpenSSL::X509::Certificate</span>.new(<span class="constant">File</span>.read(<span class="string">'encrypt_cert_path'</span>))</span><br><span class="line">public_key = encrypt_cert.public_key</span><br><span class="line">c = <span class="constant">Base64</span>.strict_encode64(public_key.public_encrypt(m))</span><br><span class="line"></span><br><span class="line">key = encrypt_cert.key</span><br><span class="line">decrypt_m = key.private_decrypt(<span class="constant">Base64</span>.decode64(c))</span><br></pre></td></tr></table></figure>
-<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>RSA签名<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'openssl'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'digest/sha1'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'base64'</span></span><br><span class="line"></span><br><span class="line">sign_cert = <span class="constant">OpenSSL::PKCS12</span>.new(<span class="constant">File</span>.read(sign_cert_path<span class="string">'), '</span>password<span class="string">')</span><br><span class="line">key = sign_cert.key</span><br><span class="line">digest = Digest::SHA1.hexdigest(data)</span><br><span class="line">sign = Base64.strict_encode64(key.sign('</span>sha1<span class="string">', digest))</span></span><br></pre></td></tr></table></figure></p>
-
-    </div>
-
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/Ruby/">#Ruby</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-    <div class="comments">
-        
-<div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
 
 
     </div>
     
+      <div id="footer-post-container">
+  <div id="footer-post">
 
-</div>
-        </section>
-
-    </div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近博客</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
-            </li>
-            
-        </ul>
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
     </div>
 
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#密码算法-Ruby"><span class="toc-number">1.</span> <span class="toc-text">密码算法-Ruby</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对称密码"><span class="toc-number">1.1.</span> <span class="toc-text">对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DES"><span class="toc-number">1.1.1.</span> <span class="toc-text">DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AES"><span class="toc-number">1.1.2.</span> <span class="toc-text">AES</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥密码"><span class="toc-number">1.2.</span> <span class="toc-text">公钥密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA"><span class="toc-number">1.2.1.</span> <span class="toc-text">RSA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#认证"><span class="toc-number">1.3.</span> <span class="toc-text">认证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数字签名"><span class="toc-number">1.3.1.</span> <span class="toc-text">数字签名</span></a></li></ol></li></ol></li></ol>
+    </div>
 
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&text=密码算法-Ruby"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&is_video=false&description=密码算法-Ruby"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=密码算法-Ruby&body=Check out this article: http://junzhepan.github.io/2016/08/17/密码算法-Ruby/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&title=密码算法-Ruby"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/08/17/密码算法-Ruby/&name=密码算法-Ruby&description=&lt;h1 id=&quot;密码算法-Ruby&quot;&gt;&lt;a href=&quot;#密码算法-Ruby&quot; class=&quot;headerlink&quot; title=&quot;密码算法-Ruby&quot;&gt;&lt;/a&gt;密码算法-Ruby&lt;/h1&gt;&lt;p&gt;本文只是对常用的一些密码算法做个汇总，方便在使用Ruby实现时查询。&lt;br&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Other/">Other</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Android/">Android</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Tool/">Tool</a>
-        </li>
-        
-    </ul>
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
 </div>
 
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/jack.pan.965">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/100259285096579239148">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:jack@watch0ut.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="atom.xml">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<!-- After footer scripts -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!-- Google Analytics -->
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js" type="text/javascript"></script>
+<!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
-<script type="text/javascript">
-    var disqus_shortname = 'junzhepan';
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
 
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
-
-</body>
-
-</html>

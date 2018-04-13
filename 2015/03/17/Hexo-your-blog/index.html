@@ -1,189 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-
+    <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="#前言之前使用了几个现有博客平台，然后又用团队的博客环境WordPress，感觉编辑文章太麻烦。接触到Markdown，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用Markdown来写博客，网上搜索一番，发现Hexo用起来最方便。最终决定用Hexo+GitHub Pages来搭建。GitHub Pages本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo your blog">
+<meta property="og:url" content="http://junzhepan.github.io/2015/03/17/Hexo-your-blog/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="#前言之前使用了几个现有博客平台，然后又用团队的博客环境WordPress，感觉编辑文章太麻烦。接触到Markdown，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用Markdown来写博客，网上搜索一番，发现Hexo用起来最方便。最终决定用Hexo+GitHub Pages来搭建。GitHub Pages本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-09-16T12:34:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo your blog">
+<meta name="twitter:description" content="#前言之前使用了几个现有博客平台，然后又用团队的博客环境WordPress，感觉编辑文章太麻烦。接触到Markdown，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用Markdown来写博客，网上搜索一番，发现Hexo用起来最方便。最终决定用Hexo+GitHub Pages来搭建。GitHub Pages本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博">
     
-        <meta name="description" content="#前言之前使用了几个现有博客平台，然后又用团队的博客环境WordPress，感觉编辑文章太麻烦。接触到Markdown，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用Markdown来写博客，网上搜索一番，发现Hexo用起来最方便。最终决定用Hexo+GitHub Pages来搭建。GitHub Pages本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。">
     
-
-    <!--Author-->
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
     
-        <meta name="author" content="junzhepan">
+    <!-- title -->
+    <title>Hexo your blog</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
     
-
-    <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo your blog"/>
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
     
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="junzhepan"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Hexo your blog - junzhepan</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-    <!-- Google Analytics -->
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
-    <meta name="apple-mobile-web-app-title" content="Jack Pan">
-    <meta name="application-name" content="Jack Pan">
-    <meta name="theme-color" content="#ffffff”>
-
 </head>
 
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2015/03/17/Hexo-优化/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/11/10/HCTF-2014-Write-ups/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&text=Hexo your blog"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&is_video=false&description=Hexo your blog"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo your blog&body=Check out this article: http://junzhepan.github.io/2015/03/17/Hexo-your-blog/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&name=Hexo your blog&description=&lt;p&gt;#前言&lt;br&gt;之前使用了几个现有博客平台，然后又用团队的博客环境&lt;code&gt;WordPress&lt;/code&gt;，感觉编辑文章太麻烦。接触到&lt;code&gt;Markdown&lt;/code&gt;，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用&lt;code&gt;Markdown&lt;/code&gt;来写博客，网上搜索一番，发现&lt;code&gt;Hexo&lt;/code&gt;用起来最方便。最终决定用&lt;code&gt;Hexo&lt;/code&gt;+&lt;code&gt;GitHub Pages&lt;/code&gt;来搭建。&lt;code&gt;GitHub Pages&lt;/code&gt;本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/atom.xml">
-                    订阅
-                </a>
-            </li>
-            
-        </ul>
     </div>
+    <div id="toc">
+      
+    </div>
+  </span>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+    
+    <div class="content index my4">
         
-    </div>
-</header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hexo your blog
+    </h1>
 
-        <section class="main">
-            
-<div class="post">
 
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2015/03/17/Hexo-your-blog/">
-                Hexo your blog
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2015-03-17</span>
-            
-            <a href="#disqus_thread" class="comments">评论</a>
-            
-                <span class="category">
-                    <a href="/categories/Hexo/">Hexo</a>
-                </span>
-            
-        </div>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2015-03-17T11:57:35.000Z" itemprop="datePublished">2015-03-17</time>
     </div>
 
-    <div class="content">
 
-        <!-- Gallery -->
-        
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Hexo/">Hexo</a>
+    </div>
 
-        <!-- Post Content -->
-        <p>#前言<br>之前使用了几个现有博客平台，然后又用团队的博客环境<code>WordPress</code>，感觉编辑文章太麻烦。接触到<code>Markdown</code>，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用<code>Markdown</code>来写博客，网上搜索一番，发现<code>Hexo</code>用起来最方便。最终决定用<code>Hexo</code>+<code>GitHub Pages</code>来搭建。<code>GitHub Pages</code>本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。</p>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>#前言<br>之前使用了几个现有博客平台，然后又用团队的博客环境<code>WordPress</code>，感觉编辑文章太麻烦。接触到<code>Markdown</code>，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用<code>Markdown</code>来写博客，网上搜索一番，发现<code>Hexo</code>用起来最方便。最终决定用<code>Hexo</code>+<code>GitHub Pages</code>来搭建。<code>GitHub Pages</code>本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。</p>
 <a id="more"></a>
 <p>#环境准备</p>
-<p>##Node.js<br>到<a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</p>
-<p>##Git<br><code>Git</code>的客户端很多，我目前用Windows操作系统，使用的是<a href="http://git-scm.com/download/win" target="_blank" rel="external">Git for Windows</a>，下载后根据提示安装即可。</p>
-<p>##GitHub<br>注册一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>帐号，添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』。<br>对于SSH Keys，看一下步骤：</p>
+<p>##Node.js<br>到<a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</p>
+<p>##Git<br><code>Git</code>的客户端很多，我目前用Windows操作系统，使用的是<a href="http://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a>，下载后根据提示安装即可。</p>
+<p>##GitHub<br>注册一个<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>帐号，添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』。<br>对于SSH Keys，看一下步骤：</p>
 <ol>
 <li><p>首先设置你的用户名密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &#34;xxx@xxx.com&#34; #xxx&#20026;github&#27880;&#20876;&#37038;&#31665;&#10;git config --global user.name &#34;xxx&#34; #xxx&#26159;github&#27880;&#20876;&#29992;&#25143;&#21517;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;xxx@xxx.com&quot; #xxx为github注册邮箱</span><br><span class="line">git config --global user.name &quot;xxx&quot; #xxx是github注册用户名</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#34;xxx@xxx.com&#34;&#10;Generating public/private rsa key pair.&#10;Enter file in which to save the key (//.ssh/id_rsa): H:\git\myssh\ssh&#10;Enter passphrase (empty for no passphrase):&#10;Enter same passphrase again:&#10;Your identification has been saved in H:\git\myssh\ssh.&#10;Your public key has been saved in H:\git\myssh\ssh.pub.&#10;The key fingerprint is:&#10;b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 xxx@xxx.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (//.ssh/id_rsa): H:\git\myssh\ssh</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in H:\git\myssh\ssh.</span><br><span class="line">Your public key has been saved in H:\git\myssh\ssh.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 xxx@xxx.com</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>上述命令若执行成功，会在H:\git\myssh目录下生成两个文件id_rsa和id_rsa.pub，然后用文本编辑器打开id_rsa.pub文件，拷贝其中的内容，将其添加到Add SSH Key，将id_rsa和id_rsa.pub拷贝至你Git安装目录下的.ssh目录。</p>
-<ol>
+<ol start="3">
 <li>验证<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>正常情况下会收到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.&#10;RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.&#10;Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
-<p>输入yes就好，然后会看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<p>正常情况下会收到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
+<p>输入yes就好，然后会看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>中间可能遇到以下问题：<br><a href="http://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">GitHub Help - Generating SSH Keys</a><br><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">GitHub Help - Error Permission denied (publickey)</a></p>
+<p>中间可能遇到以下问题：<br><a href="http://help.github.com/articles/generating-ssh-keys" target="_blank" rel="noopener">GitHub Help - Generating SSH Keys</a><br><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="noopener">GitHub Help - Error Permission denied (publickey)</a></p>
 </blockquote>
 <p>##GitHub Pages<br>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。<br>想建立个人博客是用的第一种，形如username.github.io这样的可访问的站，每个用户名下面只能建立一个。<br>登录后系统，在github首页，点击页面右下角『New Repository』，然后填写Repository信息。</p>
 <blockquote>
@@ -191,13 +170,13 @@
 </blockquote>
 <p>##Hexo</p>
 <p>###安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></p>
-<p>###建站<br>安装<code>Hexo</code>完成后，请执行下列命令，<code>Hexo</code>将会在指定文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &#60;folder&#62;&#10;$ cd &#60;folder&#62;&#10;$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>新建完成后，指定文件夹的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#10;&#9500;&#9472;&#9472; _config.yml&#10;&#9500;&#9472;&#9472; package.json&#10;&#9500;&#9472;&#9472; scaffolds&#10;&#9500;&#9472;&#9472; scripts&#10;&#9500;&#9472;&#9472; source&#10;|   &#9500;&#9472;&#9472; _drafts&#10;|   &#9492;&#9472;&#9472; _posts&#10;&#9492;&#9472;&#9472; themes</span><br></pre></td></tr></table></figure></p>
+<p>###建站<br>安装<code>Hexo</code>完成后，请执行下列命令，<code>Hexo</code>将会在指定文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<p>新建完成后，指定文件夹的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── scripts</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>_config.yml<br>网站的<code>配置</code>信息，您可以在此配置大部分的参数。</p>
 </li>
 <li><p>package.json<br>应用程序的信息。<code>EJS</code>,<code>Stylus</code>和<code>Markdown renderer</code>默认安装，您可以自由移除。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package.json&#10;&#123;&#10;  &#34;name&#34;: &#34;hexo-site&#34;,&#10;  &#34;version&#34;: &#34;&#34;,&#10;  &#34;private&#34;: true,&#10;  &#34;hexo&#34;: &#123;&#10;    &#34;version&#34;: &#34;&#34;&#10;  &#125;,&#10;  &#34;dependencies&#34;: &#123;&#10;    &#34;hexo-renderer-ejs&#34;: &#34;*&#34;,&#10;    &#34;hexo-renderer-stylus&#34;: &#34;*&#34;,&#10;    &#34;hexo-renderer-marked&#34;: &#34;*&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;*&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;*&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;*&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>scaffolds<br>模版文件夹。当您新建文章时，<code>Hexo</code>会根据<code>scaffold</code>来建立文件。</p>
 </li>
@@ -208,20 +187,20 @@
 <li><p>themes<br>主题文件夹。<code>Hexo</code>会根据主题来生成静态页面。</p>
 </li>
 </ul>
-<p>#自定义Hexo<br><code>Hexo</code>的主题很多，我这里使用的是<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a>。</p>
+<p>#自定义Hexo<br><code>Hexo</code>的主题很多，我这里使用的是<a href="https://github.com/wuchong/jacman" target="_blank" rel="noopener">Jacman</a>。</p>
 <p>##安装<br>在博客根目录下执行如下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/wuchong/jacman.git themes/jacman</span><br></pre></td></tr></table></figure></p>
 <p><code>Jacman</code>需要安装<code>Hexo 2.7</code>及以上版本，支持<code>Hexo 3.0</code>。请先升级您的<code>Hexo</code>程序，再启用此主题。</p>
-<p>##启用<br>修改你的博客根目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为<code>jacman</code>。同时建议设置<code>stylus</code>属性中的<code>compress</code>值为<code>true</code>，会自动压缩<code>CSS</code>文件，<code>hexo</code>默认配置中不包含这一项，建议开启。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: jacman&#10;stylus:&#10;  compress: true</span><br></pre></td></tr></table></figure></p>
-<p>##更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd themes/jacman&#10;git pull origin master</span><br></pre></td></tr></table></figure></p>
+<p>##启用<br>修改你的博客根目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为<code>jacman</code>。同时建议设置<code>stylus</code>属性中的<code>compress</code>值为<code>true</code>，会自动压缩<code>CSS</code>文件，<code>hexo</code>默认配置中不包含这一项，建议开启。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">theme: jacman</span><br><span class="line">stylus:</span><br><span class="line">  compress: true</span><br></pre></td></tr></table></figure></p>
+<p>##更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/jacman</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure></p>
 <p>请先备份您主题目录下的<code>_config.yml</code>文件后再升级。</p>
-<p>##配置指南<br>Jacman主题提供了丰富的配置属性，可以实现您对主题的自定义。配置文件<code>_config.yml</code>位于主题根目录下。本次更新对配置文件进行了较大调整，如您之前就使用了Jacman，也需要您根据以下指南进行相应的修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### &#33756;&#21333;&#10;menu:&#10;  &#20027;&#39029;: /&#10;  &#24402;&#26723;: /archives&#10;  &#20851;&#20110;: /about&#10;&#10;#### &#25511;&#20214;&#10;widgets:&#10;- category&#10;- tag&#10;- links&#10;- rss&#10;&#10;#### RSS&#10;rss: /atom.xml&#10;&#10;#### &#22270;&#29255;&#30456;&#20851;&#10;imglogo:&#10;  enable: true               ## &#26159;&#21542;&#26174;&#31034;&#32593;&#31449; logo&#10;  src: img/logo.png        &#10;favicon: img/favicon.ico     ## &#32593;&#31449;&#22270;&#26631;    &#10;apple_icon: img/jacman.jpg   ## &#33529;&#26524;&#35774;&#22791;&#19978;&#30340;&#22270;&#26631;&#65292;&#32972;&#26223;&#19981;&#35201;&#36879;&#26126;&#10;author_img: img/author.jpg   ## &#32593;&#31449;&#24213;&#37096;&#30340;&#21338;&#20027;&#22836;&#20687;&#10;banner_img: img/banner.jpg   ## &#21338;&#23458;&#39030;&#37096;&#30340;&#22270;&#29255;&#10;&#10;### &#20027;&#39064;&#39068;&#33394;&#10;theme_color:&#10;    theme: &#39;#2ca6cb&#39;    ##&#40664;&#35748;&#20027;&#39064;&#39068;&#33394;&#20026;&#34013;&#33394;&#10;&#10;&#10;#### &#39318;&#39029;&#30456;&#20851;&#10;index:&#10;  expand: true              ## &#39318;&#39029;&#25991;&#31456;&#26159;&#21542;&#23637;&#24320;&#12290;&#40664;&#35748;&#20026;&#23637;&#24320;&#24335;&#65292;&#26174;&#31034; Read More&#12290;&#10;  excerpt_link: Read More    &#10;&#10;#### &#20316;&#32773;&#20449;&#24687;&#10;author:&#10;  intro_line1:  &#34;Hello ,I&#39;m Larry Page in Google.&#34;    ## &#32593;&#31449;&#24213;&#37096;&#30340;&#20010;&#20154;&#20171;&#32461;&#10;  intro_line2:  &#34;This is my blog,believe it or not.&#34;  &#10;  weibo_verifier:  ## &#24494;&#21338;&#31168;&#30340;&#39564;&#35777;&#30721;&#10;  tsina:           ## &#29992;&#20110;&#24494;&#21338;&#31168;&#21644;&#24494;&#21338;&#20998;&#20139;&#10;  weibo:           ## &#29992;&#20110;&#26174;&#31034;&#32593;&#31449;&#24213;&#37096;&#31038;&#20132;&#25353;&#38062;&#65292;&#19979;&#21516;&#10;  douban:         &#10;  zhihu:  &#10;  email:     &#10;  twitter:   &#10;  github:     &#10;  facebook:&#10;  linkedin:   &#10;  google_plus:   &#10;  stackoverflow:  &#10;&#10;&#10;#### &#30446;&#24405;&#10;toc:&#10;  article: true   ## &#26159;&#21542;&#22312;&#25991;&#31456;&#20013;&#26174;&#31034;&#30446;&#24405;&#10;  aside: true     ## &#26159;&#21542;&#22312;&#20391;&#36793;&#26639;&#26174;&#31034;&#30446;&#24405;&#10;&#10;#### &#21451;&#24773;&#38142;&#25509;&#10;links:&#10;  xxx: https://xxx.com,xxxxxx&#10;&#10;#### &#35780;&#35770;&#10;duoshuo_shortname:&#10;disqus_shortname:  &#10;&#10;#### &#20998;&#20139;&#25353;&#38062;&#10;jiathis:&#10;  enable: false   ## &#40664;&#35748;&#20351;&#29992;&#20027;&#39064;&#20869;&#24314;&#20998;&#20139;&#10;  id:    &#10;  tsina:&#10;&#10;#### &#32593;&#31449;&#32479;&#35745;&#10;google_analytics:&#10;  enable: false&#10;  id:            ## google analytics ID.&#10;  site:          ## &#32593;&#31449;&#22320;&#22336;.&#10;baidu_tongji:&#10;  enable: false&#10;  sitecode:      ## &#30334;&#24230;&#32479;&#35745;&#31449;&#28857;&#29305;&#24449;&#30721;&#10;cnzz_tongji:&#10;  enable: false&#10;  siteid:        ## CNZZ&#32479;&#35745;&#31449;&#28857;ID&#10;&#10;#### &#26434;&#39033;&#10;ShowCustomFont: true  &#10;fancybox: true        &#10;totop: true           &#10;&#10;#### &#33258;&#23450;&#20041;&#25628;&#32034;&#10;google_cse:&#10;  enable: false&#10;  cx:  &#10;baidu_search:    &#10;  enable: false&#10;  id:   &#10;  site: http://zhannei.baidu.com/cse/search</span><br></pre></td></tr></table></figure></p>
+<p>##配置指南<br>Jacman主题提供了丰富的配置属性，可以实现您对主题的自定义。配置文件<code>_config.yml</code>位于主题根目录下。本次更新对配置文件进行了较大调整，如您之前就使用了Jacman，也需要您根据以下指南进行相应的修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">##### 菜单</span><br><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  归档: /archives</span><br><span class="line">  关于: /about</span><br><span class="line"></span><br><span class="line">#### 控件</span><br><span class="line">widgets:</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">- links</span><br><span class="line">- rss</span><br><span class="line"></span><br><span class="line">#### RSS</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line">#### 图片相关</span><br><span class="line">imglogo:</span><br><span class="line">  enable: true               ## 是否显示网站 logo</span><br><span class="line">  src: img/logo.png        </span><br><span class="line">favicon: img/favicon.ico     ## 网站图标    </span><br><span class="line">apple_icon: img/jacman.jpg   ## 苹果设备上的图标，背景不要透明</span><br><span class="line">author_img: img/author.jpg   ## 网站底部的博主头像</span><br><span class="line">banner_img: img/banner.jpg   ## 博客顶部的图片</span><br><span class="line"></span><br><span class="line">### 主题颜色</span><br><span class="line">theme_color:</span><br><span class="line">    theme: &apos;#2ca6cb&apos;    ##默认主题颜色为蓝色</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 首页相关</span><br><span class="line">index:</span><br><span class="line">  expand: true              ## 首页文章是否展开。默认为展开式，显示 Read More。</span><br><span class="line">  excerpt_link: Read More    </span><br><span class="line"></span><br><span class="line">#### 作者信息</span><br><span class="line">author:</span><br><span class="line">  intro_line1:  &quot;Hello ,I&apos;m Larry Page in Google.&quot;    ## 网站底部的个人介绍</span><br><span class="line">  intro_line2:  &quot;This is my blog,believe it or not.&quot;  </span><br><span class="line">  weibo_verifier:  ## 微博秀的验证码</span><br><span class="line">  tsina:           ## 用于微博秀和微博分享</span><br><span class="line">  weibo:           ## 用于显示网站底部社交按钮，下同</span><br><span class="line">  douban:         </span><br><span class="line">  zhihu:  </span><br><span class="line">  email:     </span><br><span class="line">  twitter:   </span><br><span class="line">  github:     </span><br><span class="line">  facebook:</span><br><span class="line">  linkedin:   </span><br><span class="line">  google_plus:   </span><br><span class="line">  stackoverflow:  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 目录</span><br><span class="line">toc:</span><br><span class="line">  article: true   ## 是否在文章中显示目录</span><br><span class="line">  aside: true     ## 是否在侧边栏显示目录</span><br><span class="line"></span><br><span class="line">#### 友情链接</span><br><span class="line">links:</span><br><span class="line">  xxx: https://xxx.com,xxxxxx</span><br><span class="line"></span><br><span class="line">#### 评论</span><br><span class="line">duoshuo_shortname:</span><br><span class="line">disqus_shortname:  </span><br><span class="line"></span><br><span class="line">#### 分享按钮</span><br><span class="line">jiathis:</span><br><span class="line">  enable: false   ## 默认使用主题内建分享</span><br><span class="line">  id:    </span><br><span class="line">  tsina:</span><br><span class="line"></span><br><span class="line">#### 网站统计</span><br><span class="line">google_analytics:</span><br><span class="line">  enable: false</span><br><span class="line">  id:            ## google analytics ID.</span><br><span class="line">  site:          ## 网站地址.</span><br><span class="line">baidu_tongji:</span><br><span class="line">  enable: false</span><br><span class="line">  sitecode:      ## 百度统计站点特征码</span><br><span class="line">cnzz_tongji:</span><br><span class="line">  enable: false</span><br><span class="line">  siteid:        ## CNZZ统计站点ID</span><br><span class="line"></span><br><span class="line">#### 杂项</span><br><span class="line">ShowCustomFont: true  </span><br><span class="line">fancybox: true        </span><br><span class="line">totop: true           </span><br><span class="line"></span><br><span class="line">#### 自定义搜索</span><br><span class="line">google_cse:</span><br><span class="line">  enable: false</span><br><span class="line">  cx:  </span><br><span class="line">baidu_search:    </span><br><span class="line">  enable: false</span><br><span class="line">  id:   </span><br><span class="line">  site: http://zhannei.baidu.com/cse/search</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>菜单 menu<br>默认没有启用<code>tags</code>和<code>categories</code>页面，如果需要启用请在博客目录下的<code>source</code>文件夹中分别建立<code>tags</code>和 <code>categories</code>文件夹每个文件夹中分别包含一个<code>index.md</code>文件。内容为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout: tags (&#25110;categories)&#10;title: tags (&#25110;categories)&#10;---</span><br></pre></td></tr></table></figure>
+<li>菜单 menu<br>默认没有启用<code>tags</code>和<code>categories</code>页面，如果需要启用请在博客目录下的<code>source</code>文件夹中分别建立<code>tags</code>和 <code>categories</code>文件夹每个文件夹中分别包含一个<code>index.md</code>文件。内容为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout: tags (或categories)</span><br><span class="line">title: tags (或categories)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>因为主题中已经内置了这两个页面的模板，所以他们会被正确的解析出来。</p>
 <ul>
-<li><p>控件 widgets<br>提供了7种小工具。包括标签、标签云、分类、归档、RSS、友情链接、微博秀。<br>友情链接：友情链接的网址添加可以在<code>links</code>属性下添加。<br>微博秀：需要注意的是，如果要启用微博秀，您必须填上<code>author</code>属性下<code>tsina</code>和<code>weibo_verifier</code>的值，前者是您微博ID，后者是您微博秀的验证码，访问<a href="http://app.weibo.com/tool/weiboshow，可以获得您的" target="_blank" rel="external">http://app.weibo.com/tool/weiboshow，可以获得您的</a> verifier。</p>
+<li><p>控件 widgets<br>提供了7种小工具。包括标签、标签云、分类、归档、RSS、友情链接、微博秀。<br>友情链接：友情链接的网址添加可以在<code>links</code>属性下添加。<br>微博秀：需要注意的是，如果要启用微博秀，您必须填上<code>author</code>属性下<code>tsina</code>和<code>weibo_verifier</code>的值，前者是您微博ID，后者是您微博秀的验证码，访问<a href="http://app.weibo.com/tool/weiboshow，可以获得您的" target="_blank" rel="noopener">http://app.weibo.com/tool/weiboshow，可以获得您的</a> verifier。</p>
 </li>
 <li><p>图片相关 Image<br>本主题可以设置网站相关图片，例如网站图标（favicon）、网站logo（imglogo）、作者头像（author_img）。建议启用网站logo，格式建议为.svg或.png格式。同时建议提供配套的 favicon 以及在苹果设备上的图标apple_icon（背景不要透明）。</p>
 </li>
@@ -246,11 +225,11 @@
 <li><p>自定义字体 ShowCustomFont<br>是否启用自定义字体，默认开启，主要用于显示网站底部的字体。如果你有一定前端基础可以修改<code>font.style</code>替换为你喜欢的字体。</p>
 </li>
 <li><p>主题颜色更改 Theme Color</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### Theme Color&#10;theme_color:&#10;  theme: &#39;#2ca6cb&#39;    ##the defaut theme color is blue</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Theme Color</span><br><span class="line">theme_color:</span><br><span class="line">  theme: &apos;#2ca6cb&apos;    ##the defaut theme color is blue</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>#使用</p>
-<p>##写文章<br>接下来，我们要在网站中建立第一篇文章，您可以直接从现有的示例文章『Hello World』改写，但我们更建议您学习<code>new</code>指令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &#60;title&#62;</span><br></pre></td></tr></table></figure></p>
+<p>##写文章<br>接下来，我们要在网站中建立第一篇文章，您可以直接从现有的示例文章『Hello World』改写，但我们更建议您学习<code>new</code>指令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
 <p>您可以在命令中指定文章的布局（layout），默认为<code>post</code>，可以通过修改<code>_config.yml</code>中的<code>default_layout</code>参数来指定默认布局。</p>
 <ul>
 <li><p>布局（Layout）<br><code>Hexo</code>有三种默认布局：<code>post</code>、<code>page</code>和<code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和<code>post</code>相同，都将储存到<code>source/_posts</code>文件夹。</p>
@@ -258,12 +237,12 @@
 <li><p>文件名称<br>Hexo 默认以标题做为文件名称，但您可编辑<code>new_post_name</code>参数来改变默认的文件名称，举例来说，设为<code>:year-:month-:day-:title.md</code>可让您更方便的通过日期来管理文章。</p>
 </li>
 <li><p>草稿<br>刚刚提到了<code>Hexo</code>的一种特殊布局<code>：draft</code>，这种布局在建立时会被保存到<code>source/_drafts</code>文件夹，您可通过<code>publish</code>命令将草稿移动到<code>source/_posts</code>文件夹，该命令的使用方式与<code>new</code>十分类似，您也可在命令中指定<code>layout</code>来指定布局。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish [layout] &#60;title&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>草稿默认不会显示在页面中，您可在执行时加上<code>--draft</code>参数，或是把<code>render_drafts</code>参数设为<code>true</code>来预览草稿。</p>
 <ul>
-<li>模版（Scaffold）<br>在新建文章时，<code>Hexo</code>会根据<code>scaffolds</code>文件夹内相对应的文件来建立文件，例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo &#34;My Gallery&#34;</span><br></pre></td></tr></table></figure>
+<li>模版（Scaffold）<br>在新建文章时，<code>Hexo</code>会根据<code>scaffolds</code>文件夹内相对应的文件来建立文件，例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo &quot;My Gallery&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>在执行这行指令时，<code>Hexo</code>会尝试在<code>scaffolds</code>文件夹中寻找<code>photo.md</code>，并根据其内容建立文章。</p>
@@ -281,218 +260,129 @@
 </li>
 </ul>
 <p>##部署<br><code>Hexo</code>提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>在开始之前，您必须先在<code>_config.yml</code>中修改参数，一个正确的部署配置中至少要有<code>type</code>参数，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git</span><br></pre></td></tr></table></figure></p>
-<p>您可同时使用多个<code>deployer</code>，<code>Hexo</code>会依照顺序执行每个<code>deployer</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;- type: git&#10;  repo:&#10;- type: heroku&#10;  repo:</span><br></pre></td></tr></table></figure></p>
+<p>在开始之前，您必须先在<code>_config.yml</code>中修改参数，一个正确的部署配置中至少要有<code>type</code>参数，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br></pre></td></tr></table></figure></p>
+<p>您可同时使用多个<code>deployer</code>，<code>Hexo</code>会依照顺序执行每个<code>deployer</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- type: git</span><br><span class="line">  repo:</span><br><span class="line">- type: heroku</span><br><span class="line">  repo:</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>Git<br>安装<code>hexo-deployer-git</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repo: &#60;repository url&#62;&#10;  branch: [branch]&#10;  message: [message]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>参数和对应的描述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo    &#24211;&#65288;Repository&#65289;&#22320;&#22336;&#10;branch  &#20998;&#25903;&#21517;&#31216;&#12290;&#22914;&#26524;&#24744;&#20351;&#29992;&#30340;&#26159; GitHub &#25110; GitCafe &#30340;&#35805;&#65292;&#31243;&#24207;&#20250;&#23581;&#35797;&#33258;&#21160;&#26816;&#27979;&#12290;&#10;message &#33258;&#23450;&#25552;&#20132;&#20449;&#24687; (&#40664;&#35748;&#20026; Site updated: &#123;&#123; now(&#34;YYYY-MM-DD HH:mm:ss&#34;) &#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>参数和对应的描述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repo    库（Repository）地址</span><br><span class="line">branch  分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。</span><br><span class="line">message 自定提交信息 (默认为 Site updated: &#123;&#123; now(&quot;YYYY-MM-DD HH:mm:ss&quot;) &#125;&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>至此，Hexo基本使用已完成，对于搜索功能打算在另一片博客中单独介绍。</p>
 
-    </div>
+  </div>
+</article>
 
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/Hexo/">#Hexo</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-    <div class="comments">
-        
-<div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-
-    </div>
-    
-
-</div>
-        </section>
-
-    </div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近博客</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Other/">Other</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Android/">Android</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Tool/">Tool</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/jack.pan.965">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/100259285096579239148">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:jack@watch0ut.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="atom.xml">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
-                </div>
-            </div>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&text=Hexo your blog"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&is_video=false&description=Hexo your blog"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo your blog&body=Check out this article: http://junzhepan.github.io/2015/03/17/Hexo-your-blog/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&title=Hexo your blog"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2015/03/17/Hexo-your-blog/&name=Hexo your blog&description=&lt;p&gt;#前言&lt;br&gt;之前使用了几个现有博客平台，然后又用团队的博客环境&lt;code&gt;WordPress&lt;/code&gt;，感觉编辑文章太麻烦。接触到&lt;code&gt;Markdown&lt;/code&gt;，瞬间就喜欢上了，编辑起来方便，显示效果简介。于是，就想用&lt;code&gt;Markdown&lt;/code&gt;来写博客，网上搜索一番，发现&lt;code&gt;Hexo&lt;/code&gt;用起来最方便。最终决定用&lt;code&gt;Hexo&lt;/code&gt;+&lt;code&gt;GitHub Pages&lt;/code&gt;来搭建。&lt;code&gt;GitHub Pages&lt;/code&gt;本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<!-- After footer scripts -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!-- Google Analytics -->
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js" type="text/javascript"></script>
+<!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
-<script type="text/javascript">
-    var disqus_shortname = 'junzhepan';
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
 
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
-
-</body>
-
-</html>

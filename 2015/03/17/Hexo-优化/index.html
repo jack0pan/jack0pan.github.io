@@ -1,173 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-
+    <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="#RSS 插件使用插件hexo-generator-feed能生成Atom 1.0或者RSS 2.0 feed。安装很简单1npm install hexo-generator-feed --save 然后在Hexo根目录下的_config.yml里配置一下1234feed:    type: atom    path: atom.xml    limit: 20  type 表示类型, 是 at">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 优化">
+<meta property="og:url" content="http://junzhepan.github.io/2015/03/17/Hexo-优化/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="#RSS 插件使用插件hexo-generator-feed能生成Atom 1.0或者RSS 2.0 feed。安装很简单1npm install hexo-generator-feed --save 然后在Hexo根目录下的_config.yml里配置一下1234feed:    type: atom    path: atom.xml    limit: 20  type 表示类型, 是 at">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-09-16T12:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 优化">
+<meta name="twitter:description" content="#RSS 插件使用插件hexo-generator-feed能生成Atom 1.0或者RSS 2.0 feed。安装很简单1npm install hexo-generator-feed --save 然后在Hexo根目录下的_config.yml里配置一下1234feed:    type: atom    path: atom.xml    limit: 20  type 表示类型, 是 at">
     
-        <meta name="description" content="#RSS 插件使用插件hexo-generator-feed能生成Atom 1.0或者RSS 2.0 feed。安装很简单1npm install hexo-generator-feed --save
-然后在Hexo根目录下的_config.yml里配置一下1feed:&amp;#10;    type: atom&amp;#10;    path: atom.xml&amp;#10;    limit: 20
-
-type 表示类型, 是 atom 还是 rss2.
-path 表示 Feed 路径
-limit 最多多少篇最近文章根据使用的主题不同配置也可能不同，我使用的是jacman，RSS配置就在主题目录下的_config.yml文件里。">
     
-
-    <!--Author-->
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
     
-        <meta name="author" content="junzhepan">
+    <!-- title -->
+    <title>Hexo 优化</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
     
-
-    <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo 优化"/>
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
     
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="junzhepan"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Hexo 优化 - junzhepan</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-    <!-- Google Analytics -->
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
-    <meta name="apple-mobile-web-app-title" content="Jack Pan">
-    <meta name="application-name" content="Jack Pan">
-    <meta name="theme-color" content="#ffffff”>
-
 </head>
 
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2015/03/23/BCTF-2015-checkin-warmup-Write-ups/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2015/03/17/Hexo-your-blog/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2015/03/17/Hexo-优化/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&text=Hexo 优化"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&is_video=false&description=Hexo 优化"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo 优化&body=Check out this article: http://junzhepan.github.io/2015/03/17/Hexo-优化/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&name=Hexo 优化&description=&lt;p&gt;#RSS 插件&lt;br&gt;使用插件&lt;code&gt;hexo-generator-feed&lt;/code&gt;能生成&lt;code&gt;Atom 1.0&lt;/code&gt;或者&lt;code&gt;RSS 2.0 feed&lt;/code&gt;。安装很简单&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后在&lt;code&gt;Hexo&lt;/code&gt;根目录下的&lt;code&gt;_config.yml&lt;/code&gt;里配置一下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;feed:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: atom&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: atom.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    limit: 20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;type 表示类型, 是 atom 还是 rss2.&lt;/li&gt;
+&lt;li&gt;path 表示 Feed 路径&lt;/li&gt;
+&lt;li&gt;limit 最多多少篇最近文章&lt;br&gt;根据使用的主题不同配置也可能不同，我使用的是&lt;code&gt;jacman&lt;/code&gt;，&lt;code&gt;RSS&lt;/code&gt;配置就在主题目录下的&lt;code&gt;_config.yml&lt;/code&gt;文件里。&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/atom.xml">
-                    订阅
-                </a>
-            </li>
-            
-        </ul>
     </div>
+    <div id="toc">
+      
+    </div>
+  </span>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+    
+    <div class="content index my4">
         
-    </div>
-</header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hexo 优化
+    </h1>
 
-        <section class="main">
-            
-<div class="post">
 
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2015/03/17/Hexo-优化/">
-                Hexo 优化
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2015-03-17</span>
-            
-            <a href="#disqus_thread" class="comments">评论</a>
-            
-                <span class="category">
-                    <a href="/categories/Hexo/">Hexo</a>
-                </span>
-            
-        </div>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2015-03-17T15:22:06.000Z" itemprop="datePublished">2015-03-17</time>
     </div>
 
-    <div class="content">
 
-        <!-- Gallery -->
-        
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Hexo/">Hexo</a>
+    </div>
 
-        <!-- Post Content -->
-        <p>#RSS 插件<br>使用插件<code>hexo-generator-feed</code>能生成<code>Atom 1.0</code>或者<code>RSS 2.0 feed</code>。安装很简单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
-<p>然后在<code>Hexo</code>根目录下的<code>_config.yml</code>里配置一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feed:&#10;    type: atom&#10;    path: atom.xml&#10;    limit: 20</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>#RSS 插件<br>使用插件<code>hexo-generator-feed</code>能生成<code>Atom 1.0</code>或者<code>RSS 2.0 feed</code>。安装很简单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>Hexo</code>根目录下的<code>_config.yml</code>里配置一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">    type: atom</span><br><span class="line">    path: atom.xml</span><br><span class="line">    limit: 20</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>type 表示类型, 是 atom 还是 rss2.</li>
 <li>path 表示 Feed 路径</li>
@@ -175,9 +155,9 @@ limit 最多多少篇最近文章根据使用的主题不同配置也可能不�
 </ul>
 <a id="more"></a>
 <p>#网站地图 Sitemap<br>使用插件·hexo-generator-sitemap·能生成站点地图, 方法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></p>
-<p>然后在 Hexo 根目录下的<code>_config.yml</code>里配置一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sitemap:&#10;  path: sitemap.xml</span><br></pre></td></tr></table></figure></p>
+<p>然后在 Hexo 根目录下的<code>_config.yml</code>里配置一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></p>
 <p><code>path</code>表示<code>Sitemap</code>的路径，默认为<code>sitemap.xml</code>。</p>
-<p>#Swiftype 站内搜索<br>使用百度站内搜索, 但是这依赖于网站在百度的索引量, 如果百度收录情况不好的话, 这个搜索效果微乎其微。而在收录方面很快的 Google, 因为你懂的原因现在也不能使用。那么可以考虑这个替换方案, 使用<a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a>。</p>
+<p>#Swiftype 站内搜索<br>使用百度站内搜索, 但是这依赖于网站在百度的索引量, 如果百度收录情况不好的话, 这个搜索效果微乎其微。而在收录方面很快的 Google, 因为你懂的原因现在也不能使用。那么可以考虑这个替换方案, 使用<a href="https://swiftype.com/" target="_blank" rel="noopener">Swiftype</a>。</p>
 <p>##Swiftype网站配置</p>
 <ol>
 <li>首先去<code>Swiftype</code>注册, 然后登录。</li>
@@ -197,219 +177,136 @@ limit 最多多少篇最近文章根据使用的主题不同配置也可能不�
 <p>其中的网址注意把<code>junzhepan.github.io</code>部分替换成自己的网址。<br><code>SWIFTYPE INSTALL CODE</code>部分替换成自己的代码</p>
 </blockquote>
 <p>至此<code>Swiftype</code>网站部分的配置结束，下面要对本地的<code>Jacman</code>主题进行一些简单的配置就可以了。</p>
-<p>##Jacman主题配置<br>首先打开<code>Jacman</code>主题下的<code>_config.yml</code>文件在末尾添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swiftype_search:&#10;  enable: true</span><br></pre></td></tr></table></figure></p>
-<p>然后到<code>Hexo</code>的<code>source</code>目录下建立一个<code>search</code>文件夹，再在其下建立一个<code>index.md</code>，<code>index.md</code>中写入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout: search&#10;title: search&#10;----</span><br></pre></td></tr></table></figure></p>
-<p>然后再切换的到<code>pacman\layout\_partial</code>目录下，最后需要做的收尾工作全部都在这个目录下。<br>先打开<code>header.ejs</code>，在<code>&lt;% } else { %&gt;</code>前面添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;% &#125;else if (theme.swiftype_search&#38;&#38;theme.swiftype_search.enable)&#123; %&#62;&#10;                        &#60;form class=&#34;search&#34; action=&#34;&#60;%- config.root %&#62;search/index.html&#34; method=&#34;get&#34; accept-charset=&#34;utf-8&#34;&#62;&#10;                        &#60;label&#62;Search&#60;/label&#62;&#10;                        &#60;input type=&#34;text&#34; id=&#34;st-search-input&#34; maxlength=&#34;20&#34; placeholder=&#34;&#25628;&#32034;&#34; /&#62;&#10;                        &#60;/form&#62;</span><br></pre></td></tr></table></figure></p>
-<p><code>header.ejs</code>的处理完成。接下来处理<code>search.ejs</code>。将原来的<code>search.ejs</code>中的代码清空，替换为如下的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;% if(theme.swiftype_search.enable) &#123; %&#62;&#10;&#60;div  id=&#34;container&#34; class=&#34;page&#34;&#62;&#10;  &#60;div id=&#34;st-results-container&#34; style=&#34;width:80%&#34;&#62;&#27491;&#22312;&#21152;&#36733;&#25628;&#32034;&#32467;&#26524;&#65292;&#35831;&#31245;&#31561;&#12290;&#60;/div&#62;&#10;  &#60;style&#62;.st-result-text &#123;&#10;  background: #fafafa;&#10;  display: block;&#10;  border-left: 0.5em solid #ccc;&#10;  -webkit-transition: border-left 0.45s;&#10;  -moz-transition: border-left 0.45s;&#10;  -o-transition: border-left 0.45s;&#10;  -ms-transition: border-left 0.45s;&#10;  transition: border-left 0.45s;&#10;  padding: 0.5em;&#10;&#125;&#10;@media only screen and (min-width: 768px) &#123;&#10;  .st-result-text &#123;&#10;    padding: 1em;&#10;  &#125;&#10;&#125;&#10;.st-result-text:hover &#123;&#10;  border-left: 0.5em solid #ea6753;&#10;&#125;&#10;.st-result-text h3 a&#123;&#10;  color: #2ca6cb;&#10;  line-height: 1.5;&#10;  font-size: 22px;&#10;&#125;&#10;.st-snippet em &#123;&#10;  font-weight: bold;&#10;  color: #ea6753;&#10;&#125;&#60;/style&#62;&#10;&#60;% &#125; %&#62;</span><br></pre></td></tr></table></figure></p>
+<p>##Jacman主题配置<br>首先打开<code>Jacman</code>主题下的<code>_config.yml</code>文件在末尾添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swiftype_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></p>
+<p>然后到<code>Hexo</code>的<code>source</code>目录下建立一个<code>search</code>文件夹，再在其下建立一个<code>index.md</code>，<code>index.md</code>中写入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout: search</span><br><span class="line">title: search</span><br><span class="line">----</span><br></pre></td></tr></table></figure></p>
+<p>然后再切换的到<code>pacman\layout\_partial</code>目录下，最后需要做的收尾工作全部都在这个目录下。<br>先打开<code>header.ejs</code>，在<code>&lt;% } else { %&gt;</code>前面添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125;else if (theme.swiftype_search&amp;&amp;theme.swiftype_search.enable)&#123; %&gt;</span><br><span class="line">                        &lt;form class=&quot;search&quot; action=&quot;&lt;%- config.root %&gt;search/index.html&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;</span><br><span class="line">                        &lt;label&gt;Search&lt;/label&gt;</span><br><span class="line">                        &lt;input type=&quot;text&quot; id=&quot;st-search-input&quot; maxlength=&quot;20&quot; placeholder=&quot;搜索&quot; /&gt;</span><br><span class="line">                        &lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>header.ejs</code>的处理完成。接下来处理<code>search.ejs</code>。将原来的<code>search.ejs</code>中的代码清空，替换为如下的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if(theme.swiftype_search.enable) &#123; %&gt;</span><br><span class="line">&lt;div  id=&quot;container&quot; class=&quot;page&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;st-results-container&quot; style=&quot;width:80%&quot;&gt;正在加载搜索结果，请稍等。&lt;/div&gt;</span><br><span class="line">  &lt;style&gt;.st-result-text &#123;</span><br><span class="line">  background: #fafafa;</span><br><span class="line">  display: block;</span><br><span class="line">  border-left: 0.5em solid #ccc;</span><br><span class="line">  -webkit-transition: border-left 0.45s;</span><br><span class="line">  -moz-transition: border-left 0.45s;</span><br><span class="line">  -o-transition: border-left 0.45s;</span><br><span class="line">  -ms-transition: border-left 0.45s;</span><br><span class="line">  transition: border-left 0.45s;</span><br><span class="line">  padding: 0.5em;</span><br><span class="line">&#125;</span><br><span class="line">@media only screen and (min-width: 768px) &#123;</span><br><span class="line">  .st-result-text &#123;</span><br><span class="line">    padding: 1em;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.st-result-text:hover &#123;</span><br><span class="line">  border-left: 0.5em solid #ea6753;</span><br><span class="line">&#125;</span><br><span class="line">.st-result-text h3 a&#123;</span><br><span class="line">  color: #2ca6cb;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  font-size: 22px;</span><br><span class="line">&#125;</span><br><span class="line">.st-snippet em &#123;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  color: #ea6753;</span><br><span class="line">&#125;&lt;/style&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>其实主要就是为了控制结果的显示样式。</p>
 </blockquote>
 <p>最后打开<code>footer.ejs</code>，在最后一个标签之前添加一开始拷贝的那段<code>js</code>代码，我的是：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">w,d,t,u,n,s,e</span>)</span>&#123;w[<span class="string">'SwiftypeObject'</span>]=n;w[n]=w[n]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  (w[n].q=w[n].q||[]).push(<span class="built_in">arguments</span>);&#125;;s=d.createElement(t);</span><br><span class="line">  e=d.getElementsByTagName(t)[<span class="number">0</span>];s.async=<span class="number">1</span>;s.src=u;e.parentNode.insertBefore(s,e);</span><br><span class="line">  &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//s.swiftypecdn.com/install/v1/st.js'</span>,<span class="string">'_st'</span>);</span><br><span class="line"></span><br><span class="line">  _st(<span class="string">'install'</span>,<span class="string">'a1otTFzsfxyzwWtgmnWU'</span>);</span><br></pre></td></tr></table></figure></p>
 <p>至此所有的操作均已经完成。</p>
-<p>#使用图床<br>国内最好用的免费图床应该是<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛</a>了, 我的Blog的图片都是上传的七牛生链接然后拿过来用的。</p>
+<p>#使用图床<br>国内最好用的免费图床应该是<a href="http://www.qiniu.com/" target="_blank" rel="noopener">七牛</a>了, 我的Blog的图片都是上传的七牛生链接然后拿过来用的。</p>
 <p>#优化<br>为了优化<code>HTML,CSS,JS</code>, 我们需要安装插件<code>Hexo Optimize</code>, 安装非常简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-console-optimize</span><br></pre></td></tr></table></figure></p>
 <p>利用命令<code>hexo optimize</code>或者<code>hexo o</code>即可优化资源：HTML、CSS、JS、Image.</p>
 <p>#About页面<br>首先在主目录找到<code>_config.yml</code>，找到<code>url</code>添加<code>about_dir: about</code>到这个板块。然后在<code>/source</code>里面建立<code>about</code>文件夹。在<code>about</code>文件夹里建立<code>index.md</code>。编辑<code>index.md</code>就和发布其他的文章一样，格式都一样。</p>
 
-    </div>
+  </div>
+</article>
 
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/Hexo/">#Hexo</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-    <div class="comments">
-        
-<div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-
-    </div>
-    
-
-</div>
-        </section>
-
-    </div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近博客</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Other/">Other</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Android/">Android</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Tool/">Tool</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/jack.pan.965">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/100259285096579239148">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:jack@watch0ut.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="atom.xml">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
-                </div>
-            </div>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2015/03/17/Hexo-优化/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&text=Hexo 优化"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&is_video=false&description=Hexo 优化"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo 优化&body=Check out this article: http://junzhepan.github.io/2015/03/17/Hexo-优化/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&title=Hexo 优化"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2015/03/17/Hexo-优化/&name=Hexo 优化&description=&lt;p&gt;#RSS 插件&lt;br&gt;使用插件&lt;code&gt;hexo-generator-feed&lt;/code&gt;能生成&lt;code&gt;Atom 1.0&lt;/code&gt;或者&lt;code&gt;RSS 2.0 feed&lt;/code&gt;。安装很简单&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后在&lt;code&gt;Hexo&lt;/code&gt;根目录下的&lt;code&gt;_config.yml&lt;/code&gt;里配置一下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;feed:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: atom&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: atom.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    limit: 20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;type 表示类型, 是 atom 还是 rss2.&lt;/li&gt;
+&lt;li&gt;path 表示 Feed 路径&lt;/li&gt;
+&lt;li&gt;limit 最多多少篇最近文章&lt;br&gt;根据使用的主题不同配置也可能不同，我使用的是&lt;code&gt;jacman&lt;/code&gt;，&lt;code&gt;RSS&lt;/code&gt;配置就在主题目录下的&lt;code&gt;_config.yml&lt;/code&gt;文件里。&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<!-- After footer scripts -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!-- Google Analytics -->
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js" type="text/javascript"></script>
+<!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
-<script type="text/javascript">
-    var disqus_shortname = 'junzhepan';
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
 
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
-
-</body>
-
-</html>

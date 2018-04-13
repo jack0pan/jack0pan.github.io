@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="RabbitMQ教程（四）──路由（使用Bunny） 在前面的教程中，我们实现了一个简单的日志系统。可以把日志消息广播给多个接收者。 本篇教程中我们打算新增一个功能 ——使得它能够只订阅消息的一个字集。例如，我们只需要把严重的错误日志信息写入日志文件（存储到磁盘），但同时仍然把所有的日志信息输出到控制台中。 绑定（Bindings）前面的例子，我们已经创建过绑定（bindings），代码如下：ru">
+<meta name="keywords" content="Ruby,RabbitMQ,翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ教程（四）──路由">
+<meta property="og:url" content="http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="RabbitMQ教程（四）──路由（使用Bunny） 在前面的教程中，我们实现了一个简单的日志系统。可以把日志消息广播给多个接收者。 本篇教程中我们打算新增一个功能 ——使得它能够只订阅消息的一个字集。例如，我们只需要把严重的错误日志信息写入日志文件（存储到磁盘），但同时仍然把所有的日志信息输出到控制台中。 绑定（Bindings）前面的例子，我们已经创建过绑定（bindings），代码如下：ru">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/direct-exchange.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/direct-exchange-multiple.png">
+<meta property="og:image" content="https://www.rabbitmq.com/img/tutorials/python-four.png">
+<meta property="og:updated_time" content="2018-04-13T15:16:22.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMQ教程（四）──路由">
+<meta name="twitter:description" content="RabbitMQ教程（四）──路由（使用Bunny） 在前面的教程中，我们实现了一个简单的日志系统。可以把日志消息广播给多个接收者。 本篇教程中我们打算新增一个功能 ——使得它能够只订阅消息的一个字集。例如，我们只需要把严重的错误日志信息写入日志文件（存储到磁盘），但同时仍然把所有的日志信息输出到控制台中。 绑定（Bindings）前面的例子，我们已经创建过绑定（bindings），代码如下：ru">
+<meta name="twitter:image" content="https://www.rabbitmq.com/img/tutorials/direct-exchange.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>RabbitMQ教程（四）──路由</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/10/05/RabbitMQ教程（五）──主题/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/10/03/RabbitMQ教程（三）──发布、订阅/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RabbitMQ教程（四）──路由"><span class="toc-number">1.</span> <span class="toc-text">RabbitMQ教程（四）──路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定（Bindings）"><span class="toc-number">1.1.</span> <span class="toc-text">绑定（Bindings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直连交换机（Direct-exchange）"><span class="toc-number">1.2.</span> <span class="toc-text">直连交换机（Direct exchange）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多个绑定（Multiple-bindings）"><span class="toc-number">1.3.</span> <span class="toc-text">多个绑定（Multiple bindings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送日志"><span class="toc-number">1.4.</span> <span class="toc-text">发送日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#订阅"><span class="toc-number">1.5.</span> <span class="toc-text">订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码整合"><span class="toc-number">1.6.</span> <span class="toc-text">代码整合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gt-Waiting-for-logs-To-exit-press-CTRL-C"><span class="toc-number">2.</span> <span class="toc-text">=&gt; [*] Waiting for logs. To exit press CTRL+C</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gt-x-Sent-‘error’-’Run-Run-Or-it-will-explode-’"><span class="toc-number">3.</span> <span class="toc-text">=&gt; [x] Sent ‘error’:’Run. Run. Or it will explode.’</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        RabbitMQ教程（四）──路由
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-10-04T14:12:11.000Z" itemprop="datePublished">2017-10-04</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/RabbitMQ/">RabbitMQ</a>, <a class="tag-link" href="/tags/Ruby/">Ruby</a>, <a class="tag-link" href="/tags/翻译/">翻译</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="RabbitMQ教程（四）──路由"><a href="#RabbitMQ教程（四）──路由" class="headerlink" title="RabbitMQ教程（四）──路由"></a>RabbitMQ教程（四）──路由</h1><p>（使用Bunny）</p>
+<p>在前面的教程中，我们实现了一个简单的日志系统。可以把日志消息广播给多个接收者。</p>
+<p>本篇教程中我们打算新增一个功能 ——<br>使得它能够只订阅消息的一个字集。例如，我们只需要把严重的错误日志信息写入日志文件（存储到磁盘），但同时仍然把所有的日志信息输出到控制台中。</p>
+<h2 id="绑定（Bindings）"><a href="#绑定（Bindings）" class="headerlink" title="绑定（Bindings）"></a>绑定（Bindings）</h2><p>前面的例子，我们已经创建过绑定（bindings），代码如下：<br><code>ruby
+queue.bind(exchange_name)</code></p>
+<p>绑定（binding）是指交换机（exchange）和队列（queue）的关系。可以简单理解为：这个队列（queue）对这个交换机（exchange）的消息感兴趣。</p>
+<p>绑定的时候可以带上一个额外的<code>:routing_key</code>参数。为了避免与<code>Bunny::Exchange#publish</code>的参数混淆，我们把它叫做绑定键（binding<br>key）。以下是如何创建一个带绑定键的绑定：<br><code>ruby
+queue.bind(exchange_name, routing_key: &#39;black&#39;)</code></p>
+<p>绑定键的意义取决于交换机（exchange）的类型。我们之前使用过的扇型交换机（fanout<br>exchanges）会忽略这个值。</p>
+<h2 id="直连交换机（Direct-exchange）"><a href="#直连交换机（Direct-exchange）" class="headerlink" title="直连交换机（Direct exchange）"></a>直连交换机（Direct exchange）</h2><p>我们的日志系统广播所有的消息给所有的消费者（consumers）。我们打算扩展它，使其基于日志的严重程度进行消息过滤。例如我们也许只是希望将比较严重的错误（error）日志写入磁盘，以免在警告（warning）或者信息（info）日志上浪费磁盘空间。</p>
+<p>我们使用的扇型交换机（fanout exchange）没有足够的灵活性 —— 它能做的仅仅是广播。</p>
+<p>我们将会使用直连交换机（direct exchange）来代替。路由的算法很简单 ——<br>交换机将会对绑定键（binding key）和路由键（routing<br>key）进行精确匹配，从而确定消息该分发到哪个队列。</p>
+<p>下图能够很好的描述这个场景：</p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange.png" alt="direct-exchange"></p>
+<p>在这个场景中，我们可以看到直连交换机<br>X和两个队列进行了绑定。第一个队列使用orange作为绑定键，第二个队列有两个绑定，一个使用black作为绑定键，另外一个使用green。</p>
+<p>这样以来，当路由键为orange的消息发布到交换机，就会被路由到队列Q1。路由键为black或者green的消息就会路由到Q2。其他的所有消息都将会被丢弃。</p>
+<h2 id="多个绑定（Multiple-bindings）"><a href="#多个绑定（Multiple-bindings）" class="headerlink" title="多个绑定（Multiple bindings）"></a>多个绑定（Multiple bindings）</h2><p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange-multiple.png" alt="direct-exchange-multiple"></p>
+<p>多个队列使用相同的绑定键是合法的。这个例子中，我们可以添加一个X和Q1之间的绑定，使用black绑定键。这样一来，直连交换机就和扇型交换机的行为一样，会将消息广播到所有匹配的队列。带有black路由键的消息会同时发送到Q1和Q2。</p>
+<h2 id="发送日志"><a href="#发送日志" class="headerlink" title="发送日志"></a>发送日志</h2><p>我们将会发送消息到一个直连交换机，把日志级别作为路由键。这样接收日志的脚本就可以根据严重级别来选择它想要处理的日志。我们先看看发送日志。</p>
+<p>我们需要创建一个交换机（exchange）：<br><code>ruby
+channel.direct(&#39;logs&#39;)</code></p>
+<p>然后我们发送一则消息：<br><code>ruby
+exchange = channel.direct(&#39;logs&#39;)
+exchange.publish(message, routing_key: severity)</code></p>
+<p>我们先假设“severity”的值是info、warning、error中的一个。</p>
+<h2 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h2><p>处理接收消息的方式和之前差不多，只有一个例外，我们将会为我们感兴趣的每个严重级别分别创建一个新的绑定。<br><code></code>ruby<br>queue = channel.queue(‘’)</p>
+<p>ARGV.each do |severity|<br>  queue.bind(‘logs’, routing_key: severity)<br>end<br><code></code></p>
+<h2 id="代码整合"><a href="#代码整合" class="headerlink" title="代码整合"></a>代码整合</h2><p><img src="https://www.rabbitmq.com/img/tutorials/python-four.png" alt="python-four"></p>
+<p><code>emit_log_direct.rb</code>的代码：<br><code></code>ruby</p>
+<p>#!/usr/bin/env ruby<br>require ‘bunny’</p>
+<p>connection = Bunny.new<br>connection.start</p>
+<p>channel = connection.create_channel<br>exchange = channel.direct(‘direct_logs’)<br>severity = ARGV.shift || ‘info’<br>message = ARGV.empty? ? ‘Hello World!’ : ARGV.join(‘ ‘)</p>
+<p>exchange.publish(message, routing_key: severity)<br>puts “ [x] Sent ‘#{message}’”</p>
+<p>connection.close<br><code></code></p>
+<p><code>receive_logs_direct.rb</code>的代码：<br><code></code>ruby</p>
+<p>#!/usr/bin/env ruby<br>require ‘bunny’</p>
+<p>abort “Usage: #{$PROGRAM_NAME} [info] [warning] [error]” if ARGV.empty?</p>
+<p>connection = Bunny.new<br>connection.start</p>
+<p>channel = connection.create_channel<br>exchange = channel.direct(‘direct_logs’)<br>queue = channel.queue(‘’, exclusive: true)</p>
+<p>ARGV.each do |severity|<br>  queue.bind(exchange, routing_key: severity)<br>end</p>
+<p>puts ‘ [*] Waiting for logs. To exit press CTRL+C’</p>
+<p>begin<br>  queue.subscribe(block: true) do |delivery_info, _properties, body|<br>    puts “ [x] #{delivery_info.routing_key}:#{body}”<br>  end<br>rescue Interrupt =&gt; _<br>  channel.close<br>  connection.close</p>
+<p>  exit(0)<br>end<br><code></code></p>
+<p>如果你希望只是保存warning和error级别的日志到磁盘，只需要打开控制台并输入：<br><code>bash
+ruby receive_logs_direct.rb warning error &gt; logs_from_rabbit.log</code></p>
+<p>如果你希望所有的日志信息都输出到屏幕中，打开一个新的终端，然后输入：<br><code></code>bash<br>ruby receive_logs_direct.rb info warning error</p>
+<h1 id="gt-Waiting-for-logs-To-exit-press-CTRL-C"><a href="#gt-Waiting-for-logs-To-exit-press-CTRL-C" class="headerlink" title="=&gt; [*] Waiting for logs. To exit press CTRL+C"></a>=&gt; [*] Waiting for logs. To exit press CTRL+C</h1><p><code></code></p>
+<p>如果要触发一个error级别的日志，只需要输入：<br><code></code>bash<br>ruby emit_log_direct.rb error “Run. Run. Or it will explode.”</p>
+<h1 id="gt-x-Sent-‘error’-’Run-Run-Or-it-will-explode-’"><a href="#gt-x-Sent-‘error’-’Run-Run-Or-it-will-explode-’" class="headerlink" title="=&gt; [x] Sent ‘error’:’Run. Run. Or it will explode.’"></a>=&gt; [x] Sent ‘error’:’Run. Run. Or it will explode.’</h1><p><code></code></p>
+<p>这里是完整的代码：(<a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/emit_log_direct.rb" target="_blank" rel="noopener">emit_log_direct.rb</a>和<a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/receive_logs_direct.rb" target="_blank" rel="noopener">receive_logs_direct.rb</a>)</p>
+<p>下一篇教程告诉我们如何基于模式来监听消息。</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RabbitMQ教程（四）──路由"><span class="toc-number">1.</span> <span class="toc-text">RabbitMQ教程（四）──路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定（Bindings）"><span class="toc-number">1.1.</span> <span class="toc-text">绑定（Bindings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直连交换机（Direct-exchange）"><span class="toc-number">1.2.</span> <span class="toc-text">直连交换机（Direct exchange）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多个绑定（Multiple-bindings）"><span class="toc-number">1.3.</span> <span class="toc-text">多个绑定（Multiple bindings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送日志"><span class="toc-number">1.4.</span> <span class="toc-text">发送日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#订阅"><span class="toc-number">1.5.</span> <span class="toc-text">订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码整合"><span class="toc-number">1.6.</span> <span class="toc-text">代码整合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gt-Waiting-for-logs-To-exit-press-CTRL-C"><span class="toc-number">2.</span> <span class="toc-text">=&gt; [*] Waiting for logs. To exit press CTRL+C</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gt-x-Sent-‘error’-’Run-Run-Or-it-will-explode-’"><span class="toc-number">3.</span> <span class="toc-text">=&gt; [x] Sent ‘error’:’Run. Run. Or it will explode.’</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

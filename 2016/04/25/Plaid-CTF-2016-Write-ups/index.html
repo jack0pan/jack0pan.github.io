@@ -1,178 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-
+    <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Plaid CTF 2016Miscsanity checkMisc (1 pts)The flag is PCTF{poop}">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Plaid CTF 2016 Write-ups">
+<meta property="og:url" content="http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="Plaid CTF 2016Miscsanity checkMisc (1 pts)The flag is PCTF{poop}">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/plane-site-flag.bmp">
+<meta property="og:image" content="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/out.avi.png">
+<meta property="og:image" content="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/flag.jpg">
+<meta property="og:updated_time" content="2016-09-16T12:34:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Plaid CTF 2016 Write-ups">
+<meta name="twitter:description" content="Plaid CTF 2016Miscsanity checkMisc (1 pts)The flag is PCTF{poop}">
+<meta name="twitter:image" content="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/plane-site-flag.bmp">
     
-        <meta name="description" content="Plaid CTF 2016Miscsanity checkMisc (1 pts)The flag is PCTF{poop}">
     
-
-    <!--Author-->
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
     
-        <meta name="author" content="junzhepan">
+    <!-- title -->
+    <title>Plaid CTF 2016 Write-ups</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
     
-
-    <!--Open Graph Title-->
     
-        <meta property="og:title" content="Plaid CTF 2016 Write-ups"/>
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
     
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="junzhepan"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Plaid CTF 2016 Write-ups - junzhepan</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-    <!-- Google Analytics -->
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
-    <meta name="apple-mobile-web-app-title" content="Jack Pan">
-    <meta name="application-name" content="Jack Pan">
-    <meta name="theme-color" content="#ffffff”>
-
 </head>
 
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/05/02/Google-CTF-2016-Write-ups/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/03/24/BCTF-2016-Special-RSA-Write-up/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&text=Plaid CTF 2016 Write-ups"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&is_video=false&description=Plaid CTF 2016 Write-ups"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Plaid CTF 2016 Write-ups&body=Check out this article: http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&name=Plaid CTF 2016 Write-ups&description=&lt;h1 id=&quot;Plaid-CTF-2016&quot;&gt;&lt;a href=&quot;#Plaid-CTF-2016&quot; class=&quot;headerlink&quot; title=&quot;Plaid CTF 2016&quot;&gt;&lt;/a&gt;Plaid CTF 2016&lt;/h1&gt;&lt;h2 id=&quot;Misc&quot;&gt;&lt;a href=&quot;#Misc&quot; class=&quot;headerlink&quot; title=&quot;Misc&quot;&gt;&lt;/a&gt;Misc&lt;/h2&gt;&lt;h3 id=&quot;sanity-check&quot;&gt;&lt;a href=&quot;#sanity-check&quot; class=&quot;headerlink&quot; title=&quot;sanity check&quot;&gt;&lt;/a&gt;sanity check&lt;/h3&gt;&lt;p&gt;Misc (1 pts)&lt;br&gt;The flag is PCTF{poop}&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/atom.xml">
-                    订阅
-                </a>
-            </li>
-            
-        </ul>
     </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plaid-CTF-2016"><span class="toc-number">1.</span> <span class="toc-text">Plaid CTF 2016</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sanity-check"><span class="toc-number">1.1.1.</span> <span class="toc-text">sanity check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plane-site"><span class="toc-number">1.1.2.</span> <span class="toc-text">plane_site</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#morset"><span class="toc-number">1.1.3.</span> <span class="toc-text">morset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Untitled-1-pdf"><span class="toc-number">1.1.4.</span> <span class="toc-text">Untitled-1.pdf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hevc"><span class="toc-number">1.1.5.</span> <span class="toc-text">hevc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-stuff"><span class="toc-number">1.1.6.</span> <span class="toc-text">the stuff</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+    
+    <div class="content index my4">
         
-    </div>
-</header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Plaid CTF 2016 Write-ups
+    </h1>
 
-        <section class="main">
-            
-<div class="post">
 
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2016/04/25/Plaid-CTF-2016-Write-ups/">
-                Plaid CTF 2016 Write-ups
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2016-04-25</span>
-            
-            <a href="#disqus_thread" class="comments">评论</a>
-            
-                <span class="category">
-                    <a href="/categories/CTF/">CTF</a>
-                </span>
-            
-        </div>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-04-25T12:43:28.000Z" itemprop="datePublished">2016-04-25</time>
     </div>
 
-    <div class="content">
 
-        <!-- Gallery -->
-        
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/CTF/">CTF</a>
+    </div>
 
-        <!-- Post Content -->
-        <h1 id="Plaid-CTF-2016"><a href="#Plaid-CTF-2016" class="headerlink" title="Plaid CTF 2016"></a>Plaid CTF 2016</h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="sanity-check"><a href="#sanity-check" class="headerlink" title="sanity check"></a>sanity check</h3><p>Misc (1 pts)<br>The flag is PCTF{poop}</p>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Plaid-CTF-2016"><a href="#Plaid-CTF-2016" class="headerlink" title="Plaid CTF 2016"></a>Plaid CTF 2016</h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="sanity-check"><a href="#sanity-check" class="headerlink" title="sanity check"></a>sanity check</h3><p>Misc (1 pts)<br>The flag is PCTF{poop}</p>
 <a id="more"></a>
 <h3 id="plane-site"><a href="#plane-site" class="headerlink" title="plane_site"></a>plane_site</h3><p>Misc (75 pts)<br>What? You can’t see the flag?</p>
 <p>下载文件后，用神器<code>Stegsolve</code>打开，查看各个通道，得到：<br><img src="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/plane-site-flag.bmp" alt="plane site
 flag"><br><code>PCTF{3_many_s3cr3ts}</code></p>
 <h3 id="morset"><a href="#morset" class="headerlink" title="morset"></a>morset</h3><p>Misc (50 pts)<br>A mysterious signal… can you decode it? </p>
 <p>Running at morset.pwning.xxx:11821</p>
-<p>直接去连服务器，返回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--. ...-- .---- --. .--. .-. -.... -.-. . .--- .---- -... ---.. --.. .-- ...--&#10;...-- -..- ...- .--. .-. .--. .. -.-. -.. --.- . ..- .... ..-. -.. .. .. ---..&#10;.-.. -... .. -.... .-. --.. --... .- ...-- .... - .... ..-. -.-- -. .---- ....-&#10;.. -.- ..- .-. -.-. .... -.... ----- --... .-- -. .-.. --- -.-. ---.. -.-. - ...&#10;.--- ..- ----. ... - ..-. .- .--- .- ..-. ..- --. . -..- --. -.- ..... .-.. ...-&#10;-.... ..--- - -. ..- --.. -.. -.-. -. -.... .---- ..-. ... -..- .-.</span><br></pre></td></tr></table></figure></p>
+<p>直接去连服务器，返回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--. ...-- .---- --. .--. .-. -.... -.-. . .--- .---- -... ---.. --.. .-- ...--</span><br><span class="line">...-- -..- ...- .--. .-. .--. .. -.-. -.. --.- . ..- .... ..-. -.. .. .. ---..</span><br><span class="line">.-.. -... .. -.... .-. --.. --... .- ...-- .... - .... ..-. -.-- -. .---- ....-</span><br><span class="line">.. -.- ..- .-. -.-. .... -.... ----- --... .-- -. .-.. --- -.-. ---.. -.-. - ...</span><br><span class="line">.--- ..- ----. ... - ..-. .- .--- .- ..-. ..- --. . -..- --. -.- ..... .-.. ...-</span><br><span class="line">-.... ..--- - -. ..- --.. -.. -.-. -. -.... .---- ..-. ... -..- .-.</span><br></pre></td></tr></table></figure></p>
 <p>是摩斯码，解码后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G31GPR6CEJ1B8ZW33XVPRPICDQEUHFDII8LBI6RZ7A3HTHFYN14IKURCH607WNLOC8CTSJU9STFAJAFUGEXGK5LV62TNUZDCN61FSXR</span><br></pre></td></tr></table></figure></p>
 <p>发现是<code>BASE36</code>编码，解码后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8897369972590062872663949970759944050758061394015713023721761165709499616078748844055640215564311564036488485901952528001379266489687681558591511507697302448447</span><br></pre></td></tr></table></figure></p>
-<p>将这一串数字按字符串形式显示得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10; ,+.&#10;//|\\&#10;|||||&#10;\\|//&#10; `+&#39;&#10;What is the SHA256(Coconut3215323173)?</span><br></pre></td></tr></table></figure></p>
-<p>算一下给出字符串的<code>SHA256</code>，然后按照以上方式编码，再传给服务器，就可以得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nice! Here&#39;s a flag for you: PCTF&#123;c0c0c0nutBaze_4__d4ys&#125;.</span><br></pre></td></tr></table></figure></p>
+<p>将这一串数字按字符串形式显示得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> ,+.</span><br><span class="line">//|\\</span><br><span class="line">|||||</span><br><span class="line">\\|//</span><br><span class="line"> `+&apos;</span><br><span class="line">What is the SHA256(Coconut3215323173)?</span><br></pre></td></tr></table></figure></p>
+<p>算一下给出字符串的<code>SHA256</code>，然后按照以上方式编码，再传给服务器，就可以得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nice! Here&apos;s a flag for you: PCTF&#123;c0c0c0nutBaze_4__d4ys&#125;.</span><br></pre></td></tr></table></figure></p>
 <h3 id="Untitled-1-pdf"><a href="#Untitled-1-pdf" class="headerlink" title="Untitled-1.pdf"></a>Untitled-1.pdf</h3><p>Misc (50 pts)<br>This PDF has a flag on it, but I can’t find it… can you?</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdftotext Untitled.pdf</span><br></pre></td></tr></table></figure>
 <p><code>PCTF{how_2_pdf_yo}</code></p>
@@ -181,210 +164,121 @@ flag"><br><code>PCTF{3_many_s3cr3ts}</code></p>
 <p>视频中是手写的镜像flag：<br><img src="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/out.avi.png" alt="hevc
 flag"><br>人工识别下得到：<code>PCTF{DAT_CODEC_THO}</code></p>
 <h3 id="the-stuff"><a href="#the-stuff" class="headerlink" title="the stuff"></a>the stuff</h3><p>Misc (50 pts)<br>Can you believe Ryan uses Bing?</p>
-<p>用<code>wireshark</code>打开流量文件发现其中有邮件内容，过滤出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Message-ID: &#60;1460851088.7821.1.camel@ubuntu&#62;&#10;Subject: The Stuff&#10;From: John Doe &#60;jdoe@example.com&#62;&#10;To: jsmith@example.com&#10;Date: Sat, 16 Apr 2016 16:58:08 -0700&#10;Content-Type: multipart/mixed; boundary=&#34;=-zAAY+FBv9yZgwoZy4KHy&#34;&#10;X-Mailer: Evolution 3.10.4-0ubuntu2 &#10;Mime-Version: 1.0&#10;&#10;&#10;--=-zAAY+FBv9yZgwoZy4KHy&#10;Content-Type: text/plain&#10;Content-Transfer-Encoding: 7bit&#10;&#10;Yo, I got the stuff.&#10;&#10;--=-zAAY+FBv9yZgwoZy4KHy&#10;Content-Type: application/zip; name=&#34;flag.zip&#34;&#10;Content-Disposition: attachment; filename=&#34;flag.zip&#34;&#10;Content-Transfer-Encoding: base64&#10;&#10;Message-ID: &#60;1460851191.7821.2.camel@ubuntu&#62;&#10;Subject: Wait, hang on&#10;From: John Doe &#60;jdoe@example.com&#62;&#10;To: jsmith@example.com&#10;Date: Sat, 16 Apr 2016 16:59:51 -0700&#10;Content-Type: text/plain&#10;X-Mailer: Evolution 3.10.4-0ubuntu2 &#10;Mime-Version: 1.0&#10;Content-Transfer-Encoding: 7bit&#10;&#10;Yo, you&#39;ll need this too: super_password1</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>flag.zip</code>的文件内容被编码了，先提取出来，然后解码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base64 -d base64-flag &#62; flag.zip</span><br></pre></td></tr></table></figure></p>
+<p>用<code>wireshark</code>打开流量文件发现其中有邮件内容，过滤出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Message-ID: &lt;1460851088.7821.1.camel@ubuntu&gt;</span><br><span class="line">Subject: The Stuff</span><br><span class="line">From: John Doe &lt;jdoe@example.com&gt;</span><br><span class="line">To: jsmith@example.com</span><br><span class="line">Date: Sat, 16 Apr 2016 16:58:08 -0700</span><br><span class="line">Content-Type: multipart/mixed; boundary=&quot;=-zAAY+FBv9yZgwoZy4KHy&quot;</span><br><span class="line">X-Mailer: Evolution 3.10.4-0ubuntu2 </span><br><span class="line">Mime-Version: 1.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--=-zAAY+FBv9yZgwoZy4KHy</span><br><span class="line">Content-Type: text/plain</span><br><span class="line">Content-Transfer-Encoding: 7bit</span><br><span class="line"></span><br><span class="line">Yo, I got the stuff.</span><br><span class="line"></span><br><span class="line">--=-zAAY+FBv9yZgwoZy4KHy</span><br><span class="line">Content-Type: application/zip; name=&quot;flag.zip&quot;</span><br><span class="line">Content-Disposition: attachment; filename=&quot;flag.zip&quot;</span><br><span class="line">Content-Transfer-Encoding: base64</span><br><span class="line"></span><br><span class="line">Message-ID: &lt;1460851191.7821.2.camel@ubuntu&gt;</span><br><span class="line">Subject: Wait, hang on</span><br><span class="line">From: John Doe &lt;jdoe@example.com&gt;</span><br><span class="line">To: jsmith@example.com</span><br><span class="line">Date: Sat, 16 Apr 2016 16:59:51 -0700</span><br><span class="line">Content-Type: text/plain</span><br><span class="line">X-Mailer: Evolution 3.10.4-0ubuntu2 </span><br><span class="line">Mime-Version: 1.0</span><br><span class="line">Content-Transfer-Encoding: 7bit</span><br><span class="line"></span><br><span class="line">Yo, you&apos;ll need this too: super_password1</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>flag.zip</code>的文件内容被编码了，先提取出来，然后解码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base64 -d base64-flag &gt; flag.zip</span><br></pre></td></tr></table></figure></p>
 <p>用后面邮件中的密码来解压<code>flag.zip</code>文件，得到图片：<br><img src="http://7oxj8e.com1.z0.glb.clouddn.com/2016/PlaidCTF/Misc/flag.jpg" alt="the stuff
 flag"></p>
 
-    </div>
+  </div>
+</article>
 
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/CTF/">#CTF</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-    <div class="comments">
-        
-<div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-
-    </div>
-    
-
-</div>
-        </section>
-
-    </div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近博客</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Other/">Other</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Android/">Android</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Tool/">Tool</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/jack.pan.965">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/100259285096579239148">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:jack@watch0ut.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="atom.xml">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
-                </div>
-            </div>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plaid-CTF-2016"><span class="toc-number">1.</span> <span class="toc-text">Plaid CTF 2016</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sanity-check"><span class="toc-number">1.1.1.</span> <span class="toc-text">sanity check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plane-site"><span class="toc-number">1.1.2.</span> <span class="toc-text">plane_site</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#morset"><span class="toc-number">1.1.3.</span> <span class="toc-text">morset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Untitled-1-pdf"><span class="toc-number">1.1.4.</span> <span class="toc-text">Untitled-1.pdf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hevc"><span class="toc-number">1.1.5.</span> <span class="toc-text">hevc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-stuff"><span class="toc-number">1.1.6.</span> <span class="toc-text">the stuff</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&text=Plaid CTF 2016 Write-ups"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&is_video=false&description=Plaid CTF 2016 Write-ups"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Plaid CTF 2016 Write-ups&body=Check out this article: http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&title=Plaid CTF 2016 Write-ups"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/04/25/Plaid-CTF-2016-Write-ups/&name=Plaid CTF 2016 Write-ups&description=&lt;h1 id=&quot;Plaid-CTF-2016&quot;&gt;&lt;a href=&quot;#Plaid-CTF-2016&quot; class=&quot;headerlink&quot; title=&quot;Plaid CTF 2016&quot;&gt;&lt;/a&gt;Plaid CTF 2016&lt;/h1&gt;&lt;h2 id=&quot;Misc&quot;&gt;&lt;a href=&quot;#Misc&quot; class=&quot;headerlink&quot; title=&quot;Misc&quot;&gt;&lt;/a&gt;Misc&lt;/h2&gt;&lt;h3 id=&quot;sanity-check&quot;&gt;&lt;a href=&quot;#sanity-check&quot; class=&quot;headerlink&quot; title=&quot;sanity check&quot;&gt;&lt;/a&gt;sanity check&lt;/h3&gt;&lt;p&gt;Misc (1 pts)&lt;br&gt;The flag is PCTF{poop}&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<!-- After footer scripts -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!-- Google Analytics -->
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js" type="text/javascript"></script>
+<!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
-<script type="text/javascript">
-    var disqus_shortname = 'junzhepan';
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
 
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
-
-</body>
-
-</html>

@@ -1,172 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-
+    <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="梯子配置工具列表 智能路由器 OpenWrt shadowsocks-libev-spec ChinaDNS Dnsmasq">
+<meta name="keywords" content="OpenWrt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由器配置梯子">
+<meta property="og:url" content="http://junzhepan.github.io/2016/03/13/路由器配置梯子/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="梯子配置工具列表 智能路由器 OpenWrt shadowsocks-libev-spec ChinaDNS Dnsmasq">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-09-16T12:36:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="路由器配置梯子">
+<meta name="twitter:description" content="梯子配置工具列表 智能路由器 OpenWrt shadowsocks-libev-spec ChinaDNS Dnsmasq">
     
-        <meta name="description" content="梯子配置工具列表
-智能路由器
-OpenWrt
-shadowsocks-libev-spec
-ChinaDNS
-Dnsmasq">
     
-
-    <!--Author-->
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
     
-        <meta name="author" content="junzhepan">
+    <!-- title -->
+    <title>路由器配置梯子</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
     
-
-    <!--Open Graph Title-->
     
-        <meta property="og:title" content="路由器配置梯子"/>
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
     
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="junzhepan"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>路由器配置梯子 - junzhepan</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-    <!-- Google Analytics -->
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#fff">
-    <meta name="apple-mobile-web-app-title" content="Jack Pan">
-    <meta name="application-name" content="Jack Pan">
-    <meta name="theme-color" content="#ffffff”>
-
 </head>
 
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/03/24/BCTF-2016-Special-RSA-Write-up/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/03/11/Boston-Key-Party-CTF-2016-des-ofb-Write-up/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/03/13/路由器配置梯子/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&text=路由器配置梯子"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&is_video=false&description=路由器配置梯子"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=路由器配置梯子&body=Check out this article: http://junzhepan.github.io/2016/03/13/路由器配置梯子/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&name=路由器配置梯子&description=&lt;h1 id=&quot;梯子配置&quot;&gt;&lt;a href=&quot;#梯子配置&quot; class=&quot;headerlink&quot; title=&quot;梯子配置&quot;&gt;&lt;/a&gt;梯子配置&lt;/h1&gt;&lt;h2 id=&quot;工具列表&quot;&gt;&lt;a href=&quot;#工具列表&quot; class=&quot;headerlink&quot; title=&quot;工具列表&quot;&gt;&lt;/a&gt;工具列表&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;智能路由器&lt;/li&gt;
+&lt;li&gt;OpenWrt&lt;/li&gt;
+&lt;li&gt;shadowsocks-libev-spec&lt;/li&gt;
+&lt;li&gt;ChinaDNS&lt;/li&gt;
+&lt;li&gt;Dnsmasq&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/atom.xml">
-                    订阅
-                </a>
-            </li>
-            
-        </ul>
     </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#梯子配置"><span class="toc-number">1.</span> <span class="toc-text">梯子配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具列表"><span class="toc-number">1.1.</span> <span class="toc-text">工具列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能路由器"><span class="toc-number">1.2.</span> <span class="toc-text">智能路由器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt"><span class="toc-number">1.3.</span> <span class="toc-text">OpenWrt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shadowsocks"><span class="toc-number">1.4.</span> <span class="toc-text">shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ChinaDNS"><span class="toc-number">1.4.1.</span> <span class="toc-text">ChinaDNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dnsmasq"><span class="toc-number">1.4.2.</span> <span class="toc-text">Dnsmasq</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+    
+    <div class="content index my4">
         
-    </div>
-</header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        路由器配置梯子
+    </h1>
 
-        <section class="main">
-            
-<div class="post">
 
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2016/03/13/路由器配置梯子/">
-                路由器配置梯子
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2016-03-13</span>
-            
-            <a href="#disqus_thread" class="comments">评论</a>
-            
-                <span class="category">
-                    <a href="/categories/OpenWrt/">OpenWrt</a>
-                </span>
-            
-        </div>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-03-13T09:57:57.000Z" itemprop="datePublished">2016-03-13</time>
     </div>
 
-    <div class="content">
 
-        <!-- Gallery -->
-        
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/OpenWrt/">OpenWrt</a>
+    </div>
 
-        <!-- Post Content -->
-        <h1 id="梯子配置"><a href="#梯子配置" class="headerlink" title="梯子配置"></a>梯子配置</h1><h2 id="工具列表"><a href="#工具列表" class="headerlink" title="工具列表"></a>工具列表</h2><ol>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="梯子配置"><a href="#梯子配置" class="headerlink" title="梯子配置"></a>梯子配置</h1><h2 id="工具列表"><a href="#工具列表" class="headerlink" title="工具列表"></a>工具列表</h2><ol>
 <li>智能路由器</li>
 <li>OpenWrt</li>
 <li>shadowsocks-libev-spec</li>
@@ -175,18 +155,18 @@ Dnsmasq">
 </ol>
 <a id="more"></a>
 <hr>
-<p>2016-03-22 更新<br>现在来介绍另一种方法：shadowsocks+gfwlist<br>去下载<a href="https://github.com/bettermanbao/openwrt-shadowsocks-libev-full" target="_blank" rel="external">openwrt-shadowsocks-lebev-full</a>，根据需要安装相应版本。<br>安装好之后重启路由器，然后修改shadowsocks的配置，保存之后就可以用了，相当方便。<br>使用这种发方法的好处是无需<code>ChinaDNS</code>来判断<code>DNS</code>是否被污染，另外通过<code>gfwlist</code>来判断，这样大部分无需走代理，速度会快很多。<br>另外，发现<code>shadowsocks</code>不是很稳定，我就把每隔10分钟调用<code>watchdog</code>的任务给关闭了，这样我自己手动判断就好，不能用就直接上PC端的<code>shadowsocks</code>。</p>
+<p>2016-03-22 更新<br>现在来介绍另一种方法：shadowsocks+gfwlist<br>去下载<a href="https://github.com/bettermanbao/openwrt-shadowsocks-libev-full" target="_blank" rel="noopener">openwrt-shadowsocks-lebev-full</a>，根据需要安装相应版本。<br>安装好之后重启路由器，然后修改shadowsocks的配置，保存之后就可以用了，相当方便。<br>使用这种发方法的好处是无需<code>ChinaDNS</code>来判断<code>DNS</code>是否被污染，另外通过<code>gfwlist</code>来判断，这样大部分无需走代理，速度会快很多。<br>另外，发现<code>shadowsocks</code>不是很稳定，我就把每隔10分钟调用<code>watchdog</code>的任务给关闭了，这样我自己手动判断就好，不能用就直接上PC端的<code>shadowsocks</code>。</p>
 <hr>
 <h2 id="智能路由器"><a href="#智能路由器" class="headerlink" title="智能路由器"></a>智能路由器</h2><p>现在智能路由器很多，根据自己喜好来选吧，记住一点可以自己刷系统就行。我这里使用的是Lenovo<br>Y1，主要是因为便宜。^_^</p>
-<h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a>OpenWrt</h2><p><a href="https://openwrt.org/" target="_blank" rel="external">OpenWrt</a>是嵌入式设备上运行的Linux系统。自己去官网上找路由器对应的系统固件，然后刷入。我使用的是<a href="http://downloads.openwrt.org.cn/PandoraBox/Lenovo-Y1_RY-1S/" target="_blank" rel="external">PandoraBox</a>。</p>
+<h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a>OpenWrt</h2><p><a href="https://openwrt.org/" target="_blank" rel="noopener">OpenWrt</a>是嵌入式设备上运行的Linux系统。自己去官网上找路由器对应的系统固件，然后刷入。我使用的是<a href="http://downloads.openwrt.org.cn/PandoraBox/Lenovo-Y1_RY-1S/" target="_blank" rel="noopener">PandoraBox</a>。</p>
 <blockquote>
 <p>PandoraBox<br>是OpenWrt的一条分支，前身是DreamBox，由OpenWrt中国创始人之一的Lintel<br>所带领的技术团队维护。<br>用它的主要原因是对Y1的2.4G和5G信号支持的好。</p>
 </blockquote>
-<p>登录后，先把基本内容配好，能联网。PandoraBox自带的软件源不太稳定，而且软件包都比较旧，我用OpenWrt的国内源替换了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch all 100&#10;arch noarch 200&#10;arch ralink 300&#10;arch ramips_24kec 400&#10;dest root /&#10;dest ram /tmp&#10;lists_dir ext /var/opkg-lists&#10;option overlay_root /overlay&#10;&#10;src/gz r2_base&#10;http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/base&#10;src/gz r2_management&#10;http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/management&#10;src/gz r2_packages&#10;http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/packages&#10;src/gz r2_routing&#10;http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/routing&#10;src/gz r2_telephony&#10;http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/telephony</span><br></pre></td></tr></table></figure></p>
+<p>登录后，先把基本内容配好，能联网。PandoraBox自带的软件源不太稳定，而且软件包都比较旧，我用OpenWrt的国内源替换了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">arch all 100</span><br><span class="line">arch noarch 200</span><br><span class="line">arch ralink 300</span><br><span class="line">arch ramips_24kec 400</span><br><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line"></span><br><span class="line">src/gz r2_base</span><br><span class="line">http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/base</span><br><span class="line">src/gz r2_management</span><br><span class="line">http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/management</span><br><span class="line">src/gz r2_packages</span><br><span class="line">http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/packages</span><br><span class="line">src/gz r2_routing</span><br><span class="line">http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/routing</span><br><span class="line">src/gz r2_telephony</span><br><span class="line">http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ramips/mt7620/packages/telephony</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>前四行是为了支持rampis架构的软件包，后面会用到。<br>如果界面语言是英文，需要先安装中文语言包<code>luci-i18n-chinese</code>。</p>
 </blockquote>
-<h2 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h2><p>如果用的是OpenWrt的源，软件包里的Shadowsocks应该是最新版的。如果不是的话去<a href="https://sourceforge.net/projects/openwrt-dist/files/" target="_blank" rel="external">OpenWrt-dist</a>下载，手动安装。</p>
+<h2 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h2><p>如果用的是OpenWrt的源，软件包里的Shadowsocks应该是最新版的。如果不是的话去<a href="https://sourceforge.net/projects/openwrt-dist/files/" target="_blank" rel="noopener">OpenWrt-dist</a>下载，手动安装。</p>
 <ul>
 <li><p>shadowsocks-libev<br>官方原版<br>可执行文件 ss-{local,redir,tunnel}<br>默认启动: ss-local 提供 SOCKS 代理</p>
 </li>
@@ -197,222 +177,139 @@ Dnsmasq">
 <blockquote>
 <p>记得安装shadowsocks的luci，这样才可以在Web界面下配置。</p>
 </blockquote>
-<p>服务器配置那里不用说了，说一下UDP转发：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UDP&#26412;&#22320;&#31471;&#21475;&#65306;5300&#10;UDP&#36716;&#21457;&#22320;&#22336;&#65306;8.8.8.8:53</span><br></pre></td></tr></table></figure></p>
+<p>服务器配置那里不用说了，说一下UDP转发：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UDP本地端口：5300</span><br><span class="line">UDP转发地址：8.8.8.8:53</span><br></pre></td></tr></table></figure></p>
 <p>转发地址一般用的是<code>Google DNS：8.8.8.8</code>。<br>忽略IP列表选择使用ChinaDNS路由表。</p>
-<h3 id="ChinaDNS"><a href="#ChinaDNS" class="headerlink" title="ChinaDNS"></a>ChinaDNS</h3><p>在配置之前先下载<a href="https://raw.githubusercontent.com/softwaredownload/openwrt-fanqiang/master/openwrt/default/etc/chinadns_chnroute.txt" target="_blank" rel="external">ChinaDNS<br>Route</a>，然后上传到路由器的<code>/etc/</code>下。</p>
+<h3 id="ChinaDNS"><a href="#ChinaDNS" class="headerlink" title="ChinaDNS"></a>ChinaDNS</h3><p>在配置之前先下载<a href="https://raw.githubusercontent.com/softwaredownload/openwrt-fanqiang/master/openwrt/default/etc/chinadns_chnroute.txt" target="_blank" rel="noopener">ChinaDNS<br>Route</a>，然后上传到路由器的<code>/etc/</code>下。</p>
 <blockquote>
 <p>可以用scp命令也可以用WinSCP软件，原理都是一样的。</p>
 </blockquote>
-<p>下面是ChinaDNS的主要配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#26412;&#22320;&#31471;&#21475;&#65306;5353&#10;&#22269;&#20869;&#36335;&#30001;&#34920;&#65306;/etc/chinadns_chnroute.txt&#10;&#19978;&#28216;&#26381;&#21153;&#22120;&#65306;114.114.114.114,127.0.0.1:5300</span><br></pre></td></tr></table></figure></p>
+<p>下面是ChinaDNS的主要配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">本地端口：5353</span><br><span class="line">国内路由表：/etc/chinadns_chnroute.txt</span><br><span class="line">上游服务器：114.114.114.114,127.0.0.1:5300</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>国内路由表是为了让国内的IP不走代理。</p>
 </blockquote>
-<h3 id="Dnsmasq"><a href="#Dnsmasq" class="headerlink" title="Dnsmasq"></a>Dnsmasq</h3><p>一般自带，如果不是<code>dnsmasq-full</code>版，把之前的卸载。<br>然后去<code>网络-&gt;DHCP/DNS</code>那里配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS&#36716;&#21457;&#65306;127.0.0.1#5353&#10;&#24573;&#30053;&#35299;&#26512;&#25991;&#20214;&#65306;&#36873;&#20013;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Dnsmasq"><a href="#Dnsmasq" class="headerlink" title="Dnsmasq"></a>Dnsmasq</h3><p>一般自带，如果不是<code>dnsmasq-full</code>版，把之前的卸载。<br>然后去<code>网络-&gt;DHCP/DNS</code>那里配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS转发：127.0.0.1#5353</span><br><span class="line">忽略解析文件：选中</span><br></pre></td></tr></table></figure></p>
 <p>经过以上设置后，DNS的查询变为</p>
 <ul>
 <li>设备查询dns-&gt;路由器:53-&gt;chinaDNS-&gt;114.114.114.114:53</li>
 <li>设备查询dns-&gt;路由器:53-&gt;chinaDNS-&gt;ss:5300-&gt;8.8.8.8:53</li>
 </ul>
 
-    </div>
+  </div>
+</article>
 
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/OpenWrt/">#OpenWrt</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-    <div class="comments">
-        
-<div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-
-    </div>
-    
-
-</div>
-        </section>
-
-    </div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    本人，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗。同时，我也是<a href='https://www.watch0ut.com'>watch0ut</a>的一员。
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近博客</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2016/11/13/技术分析之黑客军团第二季/">技术分析之黑客军团第二季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/10/30/技术分析之黑客军团第一季/">技术分析之黑客军团第一季</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/09/22/数字证书-Ruby/">数字证书-Ruby</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2016/08/17/密码算法-Ruby/">密码算法-Ruby</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/OpenWrt/">OpenWrt</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Other/">Other</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Android/">Android</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Tool/">Tool</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/junzhepan">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/jack.pan.965">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/100259285096579239148">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:jack@watch0ut.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="atom.xml">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @junzhepan. All right reserved | Powerd by Hexo & <a href='https://github.com/klugjo'>Jonathan Klughertz</a>
-                </div>
-            </div>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#梯子配置"><span class="toc-number">1.</span> <span class="toc-text">梯子配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具列表"><span class="toc-number">1.1.</span> <span class="toc-text">工具列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能路由器"><span class="toc-number">1.2.</span> <span class="toc-text">智能路由器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt"><span class="toc-number">1.3.</span> <span class="toc-text">OpenWrt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shadowsocks"><span class="toc-number">1.4.</span> <span class="toc-text">shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ChinaDNS"><span class="toc-number">1.4.1.</span> <span class="toc-text">ChinaDNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dnsmasq"><span class="toc-number">1.4.2.</span> <span class="toc-text">Dnsmasq</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2016/03/13/路由器配置梯子/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&text=路由器配置梯子"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&is_video=false&description=路由器配置梯子"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=路由器配置梯子&body=Check out this article: http://junzhepan.github.io/2016/03/13/路由器配置梯子/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&title=路由器配置梯子"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2016/03/13/路由器配置梯子/&name=路由器配置梯子&description=&lt;h1 id=&quot;梯子配置&quot;&gt;&lt;a href=&quot;#梯子配置&quot; class=&quot;headerlink&quot; title=&quot;梯子配置&quot;&gt;&lt;/a&gt;梯子配置&lt;/h1&gt;&lt;h2 id=&quot;工具列表&quot;&gt;&lt;a href=&quot;#工具列表&quot; class=&quot;headerlink&quot; title=&quot;工具列表&quot;&gt;&lt;/a&gt;工具列表&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;智能路由器&lt;/li&gt;
+&lt;li&gt;OpenWrt&lt;/li&gt;
+&lt;li&gt;shadowsocks-libev-spec&lt;/li&gt;
+&lt;li&gt;ChinaDNS&lt;/li&gt;
+&lt;li&gt;Dnsmasq&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/junzhepan">项目</a></li>
+         
+          <li><a href="/Search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<!-- After footer scripts -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!-- Google Analytics -->
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js" type="text/javascript"></script>
+<!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
-<script type="text/javascript">
-    var disqus_shortname = 'junzhepan';
+    <script type="text/javascript">
+        var disqus_shortname = 'junzhepan';
 
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
-
-</body>
-
-</html>
