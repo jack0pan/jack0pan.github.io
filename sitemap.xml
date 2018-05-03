@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jack0pan.github.io/2018/04/27/Binary%20Tree%20Deep%20Traversal/</loc>
+    <loc>http://jack0pan.github.io/2018/05/03/Binary-Tree-Level-Order-Traversal/</loc>
+    
+    <lastmod>2018-05-03T13:59:09.765Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/27/Binary-Tree-Deep-Traversal/</loc>
     
     <lastmod>2018-04-27T15:09:13.165Z</lastmod>
     
