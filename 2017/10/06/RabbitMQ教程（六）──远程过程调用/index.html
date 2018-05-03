@@ -10,7 +10,7 @@
 <meta name="keywords" content="RabbitMQ,Ruby,翻译">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ教程（六）──远程过程调用">
-<meta property="og:url" content="http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/index.html">
+<meta property="og:url" content="http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/index.html">
 <meta property="og:site_name" content="Jack Pan">
 <meta property="og:description" content="远程过程调用（使用Ruby客户端） 在第二篇教程中我们介绍了如何使用工作队列（work queue）在多个工作者（woker）中间分发耗时的任务。 可是如果我们需要将一个函数运行在远程计算机上并且等待从那儿获取结果时，该怎么办呢？这就是另外的故事了。这种模式通常被称为远程过程调用（Remote Procedure Call）或者RPC。 这篇教程中，我们会使用RabbitMQ来构建一个RPC系统：">
 <meta property="og:locale" content="zh-CN">
@@ -87,16 +87,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&text=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&is_video=false&description=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（六）──远程过程调用&body=Check out this article: http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&name=RabbitMQ教程（六）──远程过程调用&description=&lt;h1 id=&quot;远程过程调用&quot;&gt;&lt;a href=&quot;#远程过程调用&quot; class=&quot;headerlink&quot; title=&quot;远程过程调用&quot;&gt;&lt;/a&gt;远程过程调用&lt;/h1&gt;&lt;p&gt;（使用Ruby客户端）&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&text=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&is_video=false&description=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（六）──远程过程调用&body=Check out this article: http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&name=RabbitMQ教程（六）──远程过程调用&description=&lt;h1 id=&quot;远程过程调用&quot;&gt;&lt;a href=&quot;#远程过程调用&quot; class=&quot;headerlink&quot; title=&quot;远程过程调用&quot;&gt;&lt;/a&gt;远程过程调用&lt;/h1&gt;&lt;p&gt;（使用Ruby客户端）&lt;/p&gt;
 &lt;p&gt;在第二篇教程中我们介绍了如何使用工作队列（work queue）在多个工作者（woker）中间分发耗时的任务。&lt;/p&gt;
 &lt;p&gt;可是如果我们需要将一个函数运行在远程计算机上并且等待从那儿获取结果时，该怎么办呢？这就是另外的故事了。这种模式通常被称为远程过程调用（Remote Procedure Call）或者RPC。&lt;/p&gt;
 &lt;p&gt;这篇教程中，我们会使用RabbitMQ来构建一个RPC系统：包含一个客户端和一个RPC服务器。现在的情况是，我们没有一个值得被分发的足够耗时的任务，所以接下来，我们会创建一个模拟RPC服务来返回斐波那契数列。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
@@ -261,16 +261,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&text=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&is_video=false&description=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（六）──远程过程调用&body=Check out this article: http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&name=RabbitMQ教程（六）──远程过程调用&description=&lt;h1 id=&quot;远程过程调用&quot;&gt;&lt;a href=&quot;#远程过程调用&quot; class=&quot;headerlink&quot; title=&quot;远程过程调用&quot;&gt;&lt;/a&gt;远程过程调用&lt;/h1&gt;&lt;p&gt;（使用Ruby客户端）&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&text=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&is_video=false&description=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（六）──远程过程调用&body=Check out this article: http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&title=RabbitMQ教程（六）──远程过程调用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/06/RabbitMQ教程（六）──远程过程调用/&name=RabbitMQ教程（六）──远程过程调用&description=&lt;h1 id=&quot;远程过程调用&quot;&gt;&lt;a href=&quot;#远程过程调用&quot; class=&quot;headerlink&quot; title=&quot;远程过程调用&quot;&gt;&lt;/a&gt;远程过程调用&lt;/h1&gt;&lt;p&gt;（使用Ruby客户端）&lt;/p&gt;
 &lt;p&gt;在第二篇教程中我们介绍了如何使用工作队列（work queue）在多个工作者（woker）中间分发耗时的任务。&lt;/p&gt;
 &lt;p&gt;可是如果我们需要将一个函数运行在远程计算机上并且等待从那儿获取结果时，该怎么办呢？这就是另外的故事了。这种模式通常被称为远程过程调用（Remote Procedure Call）或者RPC。&lt;/p&gt;
 &lt;p&gt;这篇教程中，我们会使用RabbitMQ来构建一个RPC系统：包含一个客户端和一个RPC服务器。现在的情况是，我们没有一个值得被分发的足够耗时的任务，所以接下来，我们会创建一个模拟RPC服务来返回斐波那契数列。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>

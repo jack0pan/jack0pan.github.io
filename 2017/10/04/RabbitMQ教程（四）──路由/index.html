@@ -10,7 +10,7 @@
 <meta name="keywords" content="RabbitMQ,Ruby,翻译">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ教程（四）──路由">
-<meta property="og:url" content="http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/index.html">
+<meta property="og:url" content="http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/index.html">
 <meta property="og:site_name" content="Jack Pan">
 <meta property="og:description" content="RabbitMQ教程（四）──路由（使用Bunny） 在前面的教程中，我们实现了一个简单的日志系统。可以把日志消息广播给多个接收者。 本篇教程中我们打算新增一个功能 ——使得它能够只订阅消息的一个字集。例如，我们只需要把严重的错误日志信息写入日志文件（存储到磁盘），但同时仍然把所有的日志信息输出到控制台中。 绑定（Bindings）前面的例子，我们已经创建过绑定（bindings），代码如下：ru">
 <meta property="og:locale" content="zh-CN">
@@ -89,16 +89,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -228,16 +228,16 @@ ruby receive_logs_direct.rb warning error &gt; logs_from_rabbit.log</code></p>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&text=RabbitMQ教程（四）──路由"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&is_video=false&description=RabbitMQ教程（四）──路由"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（四）──路由&body=Check out this article: http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&title=RabbitMQ教程（四）──路由"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/04/RabbitMQ教程（四）──路由/&name=RabbitMQ教程（四）──路由&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

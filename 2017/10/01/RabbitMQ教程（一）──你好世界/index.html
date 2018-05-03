@@ -10,7 +10,7 @@
 <meta name="keywords" content="RabbitMQ,Ruby,翻译">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ教程（一）──你好世界">
-<meta property="og:url" content="http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/index.html">
+<meta property="og:url" content="http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/index.html">
 <meta property="og:site_name" content="Jack Pan">
 <meta property="og:description" content="RabbitMQ教程（一）──你好世界介绍RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。 RabbitMQ和邮局的主要区别在于，它不是处理纸张，而是接收、存储和转发消息（message）──二进制数据。 下面是RabbitMQ和消息所涉及到">
 <meta property="og:locale" content="zh-CN">
@@ -92,16 +92,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -242,16 +242,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://junzhepan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&text=RabbitMQ教程（一）──你好世界"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&is_video=false&description=RabbitMQ教程（一）──你好世界"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ教程（一）──你好世界&body=Check out this article: http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&title=RabbitMQ教程（一）──你好世界"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/10/01/RabbitMQ教程（一）──你好世界/&name=RabbitMQ教程（一）──你好世界&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
