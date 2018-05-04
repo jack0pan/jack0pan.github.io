@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jack0pan.github.io/2018/05/03/Unique-Binary-Search-Trees/</loc>
+    <loc>http://jack0pan.github.io/2018/05/04/Construct-Binary-Tree-from-Traversal/</loc>
     
-    <lastmod>2018-05-03T14:35:34.249Z</lastmod>
+    <lastmod>2018-05-04T14:33:00.420Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://jack0pan.github.io/2018/05/03/Binary-Tree-Level-Order-Traversal/</loc>
+    <loc>http://jack0pan.github.io/2018/05/04/Binary-Tree-Level-Order-Traversal/</loc>
     
-    <lastmod>2018-05-03T13:59:09.765Z</lastmod>
+    <lastmod>2018-05-04T14:29:10.445Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/05/03/Unique-Binary-Search-Trees/</loc>
+    
+    <lastmod>2018-05-03T14:35:34.249Z</lastmod>
     
   </url>
   
