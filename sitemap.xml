@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/04/28/Validate-Binary-Search-Tree/</loc>
+    
+    <lastmod>2018-05-05T02:47:39.475Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/28/Binary-Tree-Deep-Traversal/</loc>
+    
+    <lastmod>2018-05-05T02:38:49.333Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/27/Restore-IP-Addresses/</loc>
+    
+    <lastmod>2018-05-05T02:31:44.290Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/05/04/Construct-Binary-Tree-from-Traversal/</loc>
     
     <lastmod>2018-05-04T14:33:00.420Z</lastmod>
@@ -19,13 +40,6 @@
     <loc>http://jack0pan.github.io/2018/05/03/Unique-Binary-Search-Trees/</loc>
     
     <lastmod>2018-05-03T14:35:34.249Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jack0pan.github.io/2018/04/27/Binary-Tree-Deep-Traversal/</loc>
-    
-    <lastmod>2018-04-27T15:09:13.165Z</lastmod>
     
   </url>
   
