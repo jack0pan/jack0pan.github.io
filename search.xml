@@ -192,6 +192,27 @@
     </entry>
     
     <entry>
+      <title>Gray Code</title>
+      <link href="/2018/04/23/Gray-Code/"/>
+      <url>/2018/04/23/Gray-Code/</url>
+      <content type="html"><![CDATA[<h1 id="89-Gray-Code"><a href="#89-Gray-Code" class="headerlink" title="89. Gray Code"></a>89. Gray Code</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>The gray code is a binary numeral system where two successive values differ in only one bit.</p><p>Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.</p><p>For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00 - 0</span><br><span class="line">01 - 1</span><br><span class="line">11 - 3</span><br><span class="line">10 - 2</span><br></pre></td></tr></table></figure></p><p>Note:<br>For a given n, a gray code sequence is not uniquely defined.</p><p>For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.</p><p>For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>题目让生成格雷码，要生成n的格雷码，总共有2的n次方个，第i个生成方式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i &gt;&gt; 1) ^ i</span><br></pre></td></tr></table></figure></p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gray_code</span><span class="params">(n)</span></span></span><br><span class="line">  i, total, result = <span class="number">0</span>, <span class="number">1</span> &lt;&lt; n, []</span><br><span class="line">  total.times.each <span class="keyword">do</span> <span class="params">|i|</span></span><br><span class="line">    result.push((i <span class="meta">&gt;&gt; </span><span class="number">1</span>) ^ i)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  result</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(2^n)</code></li><li>空间复杂度：<code>O(2^n)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>RabbitMQ教程（六）──远程过程调用</title>
       <link href="/2017/10/06/RabbitMQ%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%94%80%E2%94%80%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8/"/>
       <url>/2017/10/06/RabbitMQ%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%94%80%E2%94%80%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8/</url>
