@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="2 3 4 Sum1. Two Sum题目Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you m">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2 3 4 Sum">
+<meta property="og:url" content="http://jack0pan.github.io/2018/03/12/2-3-4-Sum/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="2 3 4 Sum1. Two Sum题目Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you m">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-22T15:14:52.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2 3 4 Sum">
+<meta name="twitter:description" content="2 3 4 Sum1. Two Sum题目Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you m">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2 3 4 Sum</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/04/08/Combinations/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&text=2 3 4 Sum"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&is_video=false&description=2 3 4 Sum"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2 3 4 Sum&body=Check out this article: http://jack0pan.github.io/2018/03/12/2-3-4-Sum/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&name=2 3 4 Sum&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3-4-Sum"><span class="toc-number">1.</span> <span class="toc-text">2 3 4 Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Two-Sum"><span class="toc-number">1.1.</span> <span class="toc-text">1. Two Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-3Sum"><span class="toc-number">1.2.</span> <span class="toc-text">15. 3Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-3Sum-Closest"><span class="toc-number">1.3.</span> <span class="toc-text">16. 3Sum Closest</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-2"><span class="toc-number">1.3.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-4Sum"><span class="toc-number">1.4.</span> <span class="toc-text">18. 4Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-3"><span class="toc-number">1.4.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-3"><span class="toc-number">1.4.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-3"><span class="toc-number">1.4.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2 3 4 Sum
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-03-12T13:35:17.000Z" itemprop="datePublished">2018-03-12</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/LeetCode/">LeetCode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="2-3-4-Sum"><a href="#2-3-4-Sum" class="headerlink" title="2 3 4 Sum"></a>2 3 4 Sum</h1><h2 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>主要思路是用哈希存储元素和索引，key是元素，value是索引。</p>
+<p>遍历数组，用<code>target</code>减去当前元素，得到的差去哈希里找，有对应的值就和当前索引一起返回即可。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; target</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span><span class="params">(nums, target)</span></span></span><br><span class="line">  h = Hash.new</span><br><span class="line">  nums.each_with_index <span class="keyword">do</span> <span class="params">|num, index|</span></span><br><span class="line">    left = target - num</span><br><span class="line">    <span class="keyword">if</span> h[left] </span><br><span class="line">      <span class="keyword">return</span> [h[left], index]</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    h[num] = index</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n)</code></li>
+<li>空间复杂度：<code>O(n)</code></li>
+</ul>
+<h2 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15. 3Sum"></a>15. 3Sum</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+<p>Note:</p>
+<p>The solution set must not contain duplicate triplets.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Given array nums = [-1, 0, 1, 2, -1, -4],</span><br><span class="line"></span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>先把数组排序，这样在遍历数组的时候，如果遇到大于0的数直接结束即可，排序算法最快的是<code>O(nlogn)</code>。</p>
+<p>遍历到当前元素后，取两个指针，分别代表它后面的首尾元素：</p>
+<ul>
+<li>如果和为0，第一个指针后移，第二个前移，直接跳过重复元素</li>
+<li>如果和小于0，第一个指针后移</li>
+<li>如果和大于0，第二个指针前移</li>
+</ul>
+<p>这样直到两个指针相遇。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">three_sum</span><span class="params">(nums)</span></span></span><br><span class="line">  nums.sort!</span><br><span class="line">  set = Array.new</span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length - <span class="number">2</span></span><br><span class="line">    <span class="keyword">break</span> <span class="keyword">if</span> nums[i] &gt; <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i - <span class="number">1</span>]</span><br><span class="line">      i += <span class="number">1</span></span><br><span class="line">      <span class="keyword">next</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    j = i + <span class="number">1</span></span><br><span class="line">    k = nums.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; k</span><br><span class="line">      <span class="keyword">if</span> nums[i] + nums[j] + nums[k] == <span class="number">0</span></span><br><span class="line">        triplet = [nums[i], nums[j], nums[k]]</span><br><span class="line">        set.push triplet</span><br><span class="line">        j += <span class="number">1</span> <span class="keyword">while</span> nums[j] == nums[j + <span class="number">1</span>]</span><br><span class="line">        k -= <span class="number">1</span> <span class="keyword">while</span> nums[k] == nums[k - <span class="number">1</span>]</span><br><span class="line">        j, k = j + <span class="number">1</span>, k - <span class="number">1</span></span><br><span class="line">      <span class="keyword">elsif</span> nums[i] + nums[j] + nums[k] &lt; <span class="number">0</span></span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        k -= <span class="number">1</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> set</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n^2)</code></li>
+<li>空间复杂度：<code>O(n)</code></li>
+</ul>
+<h2 id="16-3Sum-Closest"><a href="#16-3Sum-Closest" class="headerlink" title="16. 3Sum Closest"></a>16. 3Sum Closest</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given array nums = [-1, 2, 1, -4], and target = 1.</span><br><span class="line"></span><br><span class="line">The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h3><p>这题同样是先排序，然后从头到尾遍历，取当前元素首尾指针：</p>
+<ul>
+<li>如果三个数的和与目标值相同，直接返回目标值；</li>
+<li>比目标值小，首指针后移；</li>
+<li>比目标值大，尾指针前移；</li>
+</ul>
+<p>在整个过程中记录最小距离，最后用目标值减去最小距离即可。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; target</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">three_sum_closest</span><span class="params">(nums, target)</span></span></span><br><span class="line">  nums.sort!</span><br><span class="line">  min_diff = <span class="string">"#"</span></span><br><span class="line">  nums.each_with_index <span class="keyword">do</span> <span class="params">|i, index|</span></span><br><span class="line">    j, k = index + <span class="number">1</span>, nums.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; k</span><br><span class="line">      diff = target - nums[j] - nums[k] - i</span><br><span class="line">      <span class="keyword">return</span> target <span class="keyword">if</span> diff == <span class="number">0</span></span><br><span class="line">      min_diff = diff <span class="keyword">if</span> min_diff == <span class="string">"#"</span> <span class="keyword">or</span> diff.abs &lt; min_diff.abs</span><br><span class="line">      <span class="keyword">if</span> diff &gt; <span class="number">0</span></span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        k -= <span class="number">1</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  target - min_diff</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n^2)</code></li>
+<li>空间复杂度：<code>O(1)</code></li>
+</ul>
+<h2 id="18-4Sum"><a href="#18-4Sum" class="headerlink" title="18. 4Sum"></a>18. 4Sum</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
+<p>Note:</p>
+<p>The solution set must not contain duplicate quadruplets.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.</span><br><span class="line"></span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [-1,  0, 0, 1],</span><br><span class="line">  [-2, -1, 1, 2],</span><br><span class="line">  [-2,  0, 0, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h3><p>这题主要思路是把<code>Four Sum</code>问题转化成<code>Two Sum</code>问题：</p>
+<ul>
+<li>先把数组的数两两配对，以它们的和为key，配对为value，存到hash中；</li>
+<li>两两取数，用<code>target</code>减去这两个数的和，用差值去上一步的hash中去找；</li>
+<li>如果找到了，那就和当前两个数组和成结果，这里需要去重。</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; target</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">four_sum</span><span class="params">(nums, target)</span></span></span><br><span class="line">  nums.sort!</span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  table = Hash.new</span><br><span class="line">  result = Array.new</span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length - <span class="number">1</span></span><br><span class="line">    j = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; nums.length</span><br><span class="line">      sum = nums[i] + nums[j]</span><br><span class="line">      <span class="keyword">if</span> table.has_key?(sum)</span><br><span class="line">        table[sum].push([i, j])</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        table[sum] = [[i, j]]</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length - <span class="number">3</span></span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i - <span class="number">1</span>]</span><br><span class="line">      i += <span class="number">1</span></span><br><span class="line">      <span class="keyword">next</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    j = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; nums.length - <span class="number">2</span></span><br><span class="line">      <span class="keyword">if</span> j &gt; i + <span class="number">1</span> <span class="keyword">and</span> nums[j] == nums[j - <span class="number">1</span>]</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">next</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      other = target - nums[i] - nums[j]</span><br><span class="line">      <span class="keyword">if</span> table.has_key?(other)</span><br><span class="line">        pairs = table[other]</span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> k &lt; pairs.length</span><br><span class="line">          <span class="keyword">if</span> pairs[k][<span class="number">0</span>] &gt; j</span><br><span class="line">            p = [nums[i], nums[j], nums[pairs[k][<span class="number">0</span>]], nums[pairs[k][<span class="number">1</span>]]]</span><br><span class="line">            result.push(p) <span class="keyword">if</span> <span class="keyword">not</span> result.<span class="keyword">include</span>?(p)</span><br><span class="line">          <span class="keyword">end</span></span><br><span class="line">          k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> result </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度-3"><a href="#复杂度-3" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n^4)</code>，最坏的情况是hash只有一组值，每次需要把这组值都遍历一遍。</li>
+<li>空间复杂度：<code>O(n^2)</code></li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3-4-Sum"><span class="toc-number">1.</span> <span class="toc-text">2 3 4 Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Two-Sum"><span class="toc-number">1.1.</span> <span class="toc-text">1. Two Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-3Sum"><span class="toc-number">1.2.</span> <span class="toc-text">15. 3Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-3Sum-Closest"><span class="toc-number">1.3.</span> <span class="toc-text">16. 3Sum Closest</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-2"><span class="toc-number">1.3.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-4Sum"><span class="toc-number">1.4.</span> <span class="toc-text">18. 4Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-3"><span class="toc-number">1.4.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-3"><span class="toc-number">1.4.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-3"><span class="toc-number">1.4.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&text=2 3 4 Sum"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&is_video=false&description=2 3 4 Sum"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2 3 4 Sum&body=Check out this article: http://jack0pan.github.io/2018/03/12/2-3-4-Sum/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&title=2 3 4 Sum"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/12/2-3-4-Sum/&name=2 3 4 Sum&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'jack0pan';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
