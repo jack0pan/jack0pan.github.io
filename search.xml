@@ -318,6 +318,27 @@
     </entry>
     
     <entry>
+      <title>Reverse Integer</title>
+      <link href="/2018/02/23/Reverse-Integer/"/>
+      <url>/2018/02/23/Reverse-Integer/</url>
+      <content type="html"><![CDATA[<h1 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7. Reverse Integer"></a>7. Reverse Integer</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a 32-bit signed integer, reverse digits of an integer.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 123</span><br><span class="line">Output: 321</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: -123</span><br><span class="line">Output: -321</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 120</span><br><span class="line">Output: 21</span><br></pre></td></tr></table></figure></p><p><strong>Note:</strong><br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这个好办，就是求所给数除以10的商和余数，将先前的余数乘以10加上余数；得到的商作为下一轮的被除数。<br>一直循环，直到被除数为0。</p><blockquote><p>需要判断溢出的情况</p></blockquote><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(x)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> x == <span class="number">0</span></span><br><span class="line">  s = x / x.abs</span><br><span class="line">  x = x.abs</span><br><span class="line">  result = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> x &gt; <span class="number">0</span></span><br><span class="line">    x, mod = x.divmod(<span class="number">10</span>)</span><br><span class="line">    result = result * <span class="number">10</span> + mod</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  result *= s</span><br><span class="line">  (result &gt; <span class="number">2147483647</span> <span class="keyword">or</span> result &lt; -<span class="number">2147483648</span>) ? <span class="number">0</span> : result</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(log10n)</code>，n为输入的整数。</li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>2 3 4 Sum</title>
       <link href="/2018/02/22/2-3-4-Sum/"/>
       <url>/2018/02/22/2-3-4-Sum/</url>
