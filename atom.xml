@@ -317,6 +317,31 @@
   </entry>
   
   <entry>
+    <title>Palindrome Number</title>
+    <link href="http://jack0pan.github.io/2018/03/03/Palindrome-Number/"/>
+    <id>http://jack0pan.github.io/2018/03/03/Palindrome-Number/</id>
+    <published>2018-03-03T14:01:03.000Z</published>
+    <updated>2018-08-19T12:25:49.737Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9. Palindrome Number"></a>9. Palindrome Number</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 121</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: -121</span><br><span class="line">Output: false</span><br><span class="line">Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: false</span><br><span class="line">Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure></p><p>Follow up:</p><p>Coud you solve it without converting the integer to a string?</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路是把给的数分成两半，判断两半是否相等。会有两种情况：</p><ul><li>数字位数是偶数，判断两部分是否相等</li><li>数字位数是奇数，将数值大的一半除以10后比较</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span><span class="params">(x)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span> <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> (x % <span class="number">10</span> == <span class="number">0</span> <span class="keyword">and</span> x != <span class="number">0</span>)</span><br><span class="line">  r = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> x &gt; r</span><br><span class="line">    x, mod = x.divmod(<span class="number">10</span>)</span><br><span class="line">    r = r * <span class="number">10</span> + mod</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  x == r <span class="keyword">or</span> x == r / <span class="number">10</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：O(n)，n是数字的位数</li><li>空间复杂度：O(1)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;9-Palindrome-Number&quot;&gt;&lt;a href=&quot;#9-Palindrome-Number&quot; class=&quot;headerlink&quot; title=&quot;9. Palindrome Number&quot;&gt;&lt;/a&gt;9. Palindrome Number&lt;/h1&gt;&lt;h2
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ZigZag Conversion</title>
     <link href="http://jack0pan.github.io/2018/03/02/ZigZag-Conversion/"/>
     <id>http://jack0pan.github.io/2018/03/02/ZigZag-Conversion/</id>
@@ -481,35 +506,6 @@
 &lt;p&gt;在第二篇教程中我们介绍了如何使用工作队列（work queue）在多个工作者（woker）中间分发耗时的任务。&lt;/p&gt;
 &lt;p&gt;可是如果我们需要将一个函数运行在远程计算机上并且等待从那儿获取结果时，该怎么办呢？这就是另外的故事了。这种模式通常被称为远程过程调用（Remote Procedure Call）或者RPC。&lt;/p&gt;
 &lt;p&gt;这篇教程中，我们会使用RabbitMQ来构建一个RPC系统：包含一个客户端和一个RPC服务器。现在的情况是，我们没有一个值得被分发的足够耗时的任务，所以接下来，我们会创建一个模拟RPC服务来返回斐波那契数列。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Ruby" scheme="http://jack0pan.github.io/categories/Ruby/"/>
-    
-    
-      <category term="RabbitMQ" scheme="http://jack0pan.github.io/tags/RabbitMQ/"/>
-    
-      <category term="Ruby" scheme="http://jack0pan.github.io/tags/Ruby/"/>
-    
-      <category term="翻译" scheme="http://jack0pan.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RabbitMQ教程（五）──主题</title>
-    <link href="http://jack0pan.github.io/2017/10/05/RabbitMQ%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89%E2%94%80%E2%94%80%E4%B8%BB%E9%A2%98/"/>
-    <id>http://jack0pan.github.io/2017/10/05/RabbitMQ教程（五）──主题/</id>
-    <published>2017-10-05T14:11:30.000Z</published>
-    <updated>2018-04-13T15:15:09.069Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="RabbitMQ教程（五）──主题"><a href="#RabbitMQ教程（五）──主题" class="headerlink" title="RabbitMQ教程（五）──主题"></a>RabbitMQ教程（五）──主题</h1><p>（使用Bunny）</p><p>上一篇教程里，我们改进了我们的日志系统。我们使用直连交换机替代了扇型交换机，从只能盲目的广播消息改进为有可能选择性的接收日志。</p><p>尽管直连交换机能够改善我们的系统，但是它也有它的限制 ——<br>没办法基于多个标准执行路由操作。</p><p>在我们的日志系统中，我们不只希望订阅基于严重程度的日志，同时还希望订阅基于发送来源的日志。Unix工具<a href="http://en.wikipedia.org/wiki/Syslog" target="_blank" rel="noopener">syslog</a>就是同时基于严重程度-severity<br>(info/warn/crit…) 和 设备-facility (auth/cron/kern…)来路由日志的。</p><p>如果这样的话，将会给予我们非常大的灵活性，我们既可以监听来源于“cron”的严重程度为“critical<br>errors”的日志，也可以监听来源于“kern”的所有日志。</p><p>为了实现这个目的，接下来我们学习如何使用另一种更复杂的交换机 —— 主题交换机。</p><h2 id="主题交换机"><a href="#主题交换机" class="headerlink" title="主题交换机"></a>主题交换机</h2><p>发送到主题交换机（topic<br>exchange）的消息不可以携带随意什么样子的路由键（routing_key），它的路由键必须是一个由.分隔开的词语列表。这些单词随便是什么都可以，但是最好是跟携带它们的消息有关系的词汇。以下是几个推荐的例子：”stock.usd.nyse”,<br>“nyse.vmw”, “quick.orange.rabbit”。词语的个数可以随意，但是不要超过255字节。</p><p>绑定键也必须拥有同样的格式。主题交换机背后的逻辑跟直连交换机很相似 ——<br>一个携带着特定路由键的消息会被主题交换机投递给绑定键与之想匹配的队列。但是它的绑定键和路由键有两个特殊应用方式：</p><ul><li><code>*</code> (星号) 用来表示一个单词.</li><li><code>#</code> (井号) 用来表示任意数量（零个或多个）单词。</li></ul><p>下边用图说明：</p><p><img src="https://www.rabbitmq.com/img/tutorials/python-five.png" alt="python-five"></p><p>这个例子里，我们发送的所有消息都是用来描述小动物的。发送的消息所携带的路由键是由三个单词所组成的，这三个单词被两个.分割开。路由键里的第一个单词描述的是动物的手脚的利索程度，第二个单词是动物的颜色，第三个是动物的种类。所以它看起来是这样的：“<speed>.<colour>.<species>”。</species></colour></speed></p><p>我们创建了三个绑定：Q1的绑定键为“<em>.orange.</em>”，Q2的绑定键为<br>“<em>.</em>.rabbit”和“lazy.#”。</p><p>这三个绑定键被可以总结为：</p><ul><li>Q1 对所有的桔黄色动物都感兴趣。</li><li>Q2 则是对所有的兔子和所有懒惰的动物感兴趣。</li></ul><p>一个携带有“quick.orange.rabbit”的消息将会被分别投递给这两个队列。携带着“lazy.orange.elephant”的消息同样也会给两个队列都投递过去。另一方面携带有“quick.orange.fox”的消息会投递给第一个队列，携带有“lazy.brown.fox”的消息会投递给第二个队列。携带有“lazy.pink.rabbit”的消息只会被投递给第二个队列一次，即使它同时匹配第二个队列的两个绑定。携带着“quick.brown.fox”的消息不会投递给任何一个队列。</p><p>如果我们违反约定，发送了一个携带有一个单词或者四个单词（”orange” or<br>“quick.orange.male.rabbit”）的消息时，发送的消息不会投递给任何一个队列，而且会丢失掉。</p><p>但是另一方面，即使 “lazy.orange.male.rabbit”<br>有四个单词，他还是会匹配最后一个绑定，并且被投递到第二个队列中。</p><blockquote><p><strong>主题交换机</strong></p><p>主题交换机是很强大的，它可以表现出跟其他交换机类似的行为</p><p>当一个队列的绑定键为<code>#</code>（井号）<br>的时候，这个队列将会无视消息的路由键，接收所有的消息。</p><p>当 <code>*</code> (星号) 和 <code>#</code> (井号)<br>这两个特殊字符都未在绑定键中出现的时候，此时主题交换机就拥有的直连交换机的行为。</p></blockquote><h2 id="组合在一起"><a href="#组合在一起" class="headerlink" title="组合在一起"></a>组合在一起</h2><p>接下来我们会将主题交换机应用到我们的日志系统中。在开始工作前，我们假设日志的路由键由两个单词组成，路由键看起来是这样的：“<facility>.<severity>”</severity></facility></p><p>代码跟上一篇教程差不多。</p><p><code>emit_log_topic.rb</code>的代码：<br><code></code>ruby</p><p>#!/usr/bin/env ruby<br>require ‘bunny’</p><p>connection = Bunny.new<br>connection.start</p><p>channel = connection.create_channel<br>exchange = channel.topic(‘topic_logs’)<br>severity = ARGV.shift || ‘anonymous.info’<br>message = ARGV.empty? ? ‘Hello World!’ : ARGV.join(‘ ‘)</p><p>exchange.publish(message, routing_key: severity)<br>puts “ [x] Sent #{severity}:#{message}”</p><p>connection.close<br><code></code></p><p><code>receive_logs_topic.rb</code>的代码：<br><code></code>ruby</p><p>#!/usr/bin/env ruby<br>require ‘bunny’</p><p>abort “Usage: #{$PROGRAM_NAME} [binding key]” if ARGV.empty?</p><p>connection = Bunny.new<br>connection.start</p><p>channel = connection.create_channel<br>exchange = channel.topic(‘topic_logs’)<br>queue = channel.queue(‘’, exclusive: true)</p><p>ARGV.each do |severity|<br>  queue.bind(exchange, routing_key: severity)<br>end</p><p>puts ‘ [*] Waiting for logs. To exit press CTRL+C’</p><p>begin<br>  queue.subscribe(block: true) do |delivery_info, _properties, body|<br>    puts “ [x] #{delivery_info.routing_key}:#{body}”<br>  end<br>rescue Interrupt =&gt; _<br>  channel.close<br>  connection.close</p><p>  exit(0)<br>end<br><code></code></p><p>执行下边命令 接收所有日志：<br><code>bashruby receive_logs_topic.rb &quot;#&quot;</code></p><p>执行下边命令 接收来自”kern“设备的日志：<br><code>bashruby receive_logs_topic.rb &quot;kern.*&quot;</code></p><p>执行下边命令 只接收严重程度为”critical“的日志：<br><code>bashruby receive_logs_topic.rb &quot;*.critical&quot;</code></p><p>执行下边命令 建立多个绑定：<br><code>bashruby receive_logs_topic.rb &quot;kern.*&quot; &quot;*.critical&quot;</code></p><p>执行下边命令 发送路由键为 “kern.critical” 的日志：<br><code>bashruby emit_log_topic.rb &quot;kern.critical&quot; &quot;A critical kernel error&quot;</code></p><p>执行上边命令试试看效果吧。另外，上边代码不会对路由键和绑定键做任何假设，所以你可以在命令中使用超过两个路由键参数。</p><p>（完整代码参见<a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/emit_log_topic.rb" target="_blank" rel="noopener">emit_logs_topic.rb</a><br>和<br><a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/ruby/receive_logs_topic.rb" target="_blank" rel="noopener">receive_logs_topic.rb</a>)</p><p>移步至教程六学习RPC。`</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;RabbitMQ教程（五）──主题&quot;&gt;&lt;a href=&quot;#RabbitMQ教程（五）──主题&quot; class=&quot;headerlink&quot; title=&quot;RabbitMQ教程（五）──主题&quot;&gt;&lt;/a&gt;RabbitMQ教程（五）──主题&lt;/h1&gt;&lt;p&gt;（使用Bunny）&lt;
-      
     
     </summary>
     

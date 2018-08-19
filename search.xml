@@ -255,6 +255,27 @@
     </entry>
     
     <entry>
+      <title>Palindrome Number</title>
+      <link href="/2018/03/03/Palindrome-Number/"/>
+      <url>/2018/03/03/Palindrome-Number/</url>
+      <content type="html"><![CDATA[<h1 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9. Palindrome Number"></a>9. Palindrome Number</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 121</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: -121</span><br><span class="line">Output: false</span><br><span class="line">Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: false</span><br><span class="line">Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure></p><p>Follow up:</p><p>Coud you solve it without converting the integer to a string?</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路是把给的数分成两半，判断两半是否相等。会有两种情况：</p><ul><li>数字位数是偶数，判断两部分是否相等</li><li>数字位数是奇数，将数值大的一半除以10后比较</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span><span class="params">(x)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span> <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> (x % <span class="number">10</span> == <span class="number">0</span> <span class="keyword">and</span> x != <span class="number">0</span>)</span><br><span class="line">  r = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> x &gt; r</span><br><span class="line">    x, mod = x.divmod(<span class="number">10</span>)</span><br><span class="line">    r = r * <span class="number">10</span> + mod</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  x == r <span class="keyword">or</span> x == r / <span class="number">10</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：O(n)，n是数字的位数</li><li>空间复杂度：O(1)</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>ZigZag Conversion</title>
       <link href="/2018/03/02/ZigZag-Conversion/"/>
       <url>/2018/03/02/ZigZag-Conversion/</url>
@@ -1133,9 +1154,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
@@ -1156,9 +1177,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
@@ -1179,9 +1200,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
