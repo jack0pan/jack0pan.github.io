@@ -276,6 +276,27 @@
     </entry>
     
     <entry>
+      <title>Merge Two Sorted Lists</title>
+      <link href="/2018/03/09/Merge-Two-Sorted-Lists/"/>
+      <url>/2018/03/09/Merge-Two-Sorted-Lists/</url>
+      <content type="html"><![CDATA[<h1 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21. Merge Two Sorted Lists"></a>21. Merge Two Sorted Lists</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>合并两个有序链表，很好处理。同时遍历两个链表的节点，比较节点大小，取小的节点，然后继续遍历，直到两个链表都遍历完。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :next</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@next</span> = nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; l1</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; l2</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;ListNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_two_lists</span><span class="params">(l1, l2)</span></span></span><br><span class="line">  l = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  c1, c2, c3 = l1, l2, l</span><br><span class="line">  <span class="keyword">while</span> c1 <span class="keyword">or</span> c2</span><br><span class="line">    <span class="keyword">if</span> (c1 <span class="keyword">and</span> c2 <span class="keyword">and</span> c1.val &lt; c2.val) <span class="keyword">or</span> (c1 <span class="keyword">and</span> c2.<span class="literal">nil</span>?)</span><br><span class="line">      n = ListNode.new(c1.val)</span><br><span class="line">      c1 = c1.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">elsif</span> (c1 <span class="keyword">and</span> c2 <span class="keyword">and</span> c1.val &gt;= c2.val) <span class="keyword">or</span> (c2 <span class="keyword">and</span> c1.<span class="literal">nil</span>?)</span><br><span class="line">      n = ListNode.new(c2.val)</span><br><span class="line">      c2 = c2.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    c3.<span class="keyword">next</span> = n</span><br><span class="line">    c3 = n</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  l.<span class="keyword">next</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Valid Parentheses</title>
       <link href="/2018/03/08/Valid-Parentheses/"/>
       <url>/2018/03/08/Valid-Parentheses/</url>
@@ -1280,9 +1301,9 @@
       
         <tags>
             
-            <tag> Exercise </tag>
-            
             <tag> Exploit </tag>
+            
+            <tag> Exercise </tag>
             
         </tags>
       
@@ -1303,9 +1324,9 @@
       
         <tags>
             
-            <tag> Exercise </tag>
-            
             <tag> Exploit </tag>
+            
+            <tag> Exercise </tag>
             
         </tags>
       
@@ -1326,9 +1347,9 @@
       
         <tags>
             
-            <tag> Exercise </tag>
-            
             <tag> Exploit </tag>
+            
+            <tag> Exercise </tag>
             
         </tags>
       
