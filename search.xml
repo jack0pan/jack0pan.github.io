@@ -276,6 +276,27 @@
     </entry>
     
     <entry>
+      <title>Generate Parentheses</title>
+      <link href="/2018/03/10/Generate-Parentheses/"/>
+      <url>/2018/03/10/Generate-Parentheses/</url>
+      <content type="html"><![CDATA[<h1 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22. Generate Parentheses"></a>22. Generate Parentheses</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p><p>For example, given n = 3, a solution set is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &quot;((()))&quot;,</span><br><span class="line">  &quot;(()())&quot;,</span><br><span class="line">  &quot;(())()&quot;,</span><br><span class="line">  &quot;()(())&quot;,</span><br><span class="line">  &quot;()()()&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>提供<code>N</code>对括号，给出格式正确的组合。这个用递归来解决。</p><ul><li>先一直填充<code>N</code>个左括号，再填充N个右括号；</li><li>回退到<code>N-1</code>个左括号情况，先填充个右括号，在填充左括号；</li><li>一直回退到<code>1</code>个左括号情况，最后填充一个右括号即可。</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_parenthesis</span><span class="params">(n)</span></span></span><br><span class="line">  @sol = []</span><br><span class="line">  generate(n*<span class="number">2</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="string">""</span>)</span><br><span class="line">  <span class="keyword">return</span> @sol</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate</span><span class="params">(n, i, open, par)</span></span></span><br><span class="line">  <span class="keyword">if</span>(n == i)</span><br><span class="line">    @sol &lt;&lt; par</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(open == <span class="number">0</span>)</span><br><span class="line">    generate(n, i+<span class="number">1</span>, open+<span class="number">1</span>, par + <span class="string">"("</span>)</span><br><span class="line">  <span class="keyword">elsif</span>(n-i == open)</span><br><span class="line">    generate(n, i+<span class="number">1</span>, open-<span class="number">1</span>, par + <span class="string">")"</span>)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    generate(n, i+<span class="number">1</span>, open+<span class="number">1</span>, par + <span class="string">"("</span>)</span><br><span class="line">    generate(n, i+<span class="number">1</span>, open-<span class="number">1</span>, par + <span class="string">")"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N!)</code></li><li>空间复杂度：<code>O(N!)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Merge Two Sorted Lists</title>
       <link href="/2018/03/09/Merge-Two-Sorted-Lists/"/>
       <url>/2018/03/09/Merge-Two-Sorted-Lists/</url>
