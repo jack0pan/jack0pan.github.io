@@ -276,6 +276,27 @@
     </entry>
     
     <entry>
+      <title>Remove Element</title>
+      <link href="/2018/03/13/Remove-Element/"/>
+      <url>/2018/03/13/Remove-Element/</url>
+      <content type="html"><![CDATA[<h1 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27. Remove Element"></a>27. Remove Element</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.</p><p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p><p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [3,2,2,3], val = 3,</span><br><span class="line"></span><br><span class="line">Your function should return length = 2, with the first two elements of nums being 2.</span><br><span class="line"></span><br><span class="line">It doesn&apos;t matter what you leave beyond the returned length.</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [0,1,2,2,3,0,4,2], val = 2,</span><br><span class="line"></span><br><span class="line">Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</span><br><span class="line"></span><br><span class="line">Note that the order of those five elements can be arbitrary.</span><br><span class="line"></span><br><span class="line">It doesn&apos;t matter what values are set beyond the returned length.</span><br></pre></td></tr></table></figure></p><p>Clarification:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Confused why the returned value is an integer but your answer is an array?</span><br><span class="line"></span><br><span class="line">Note that the input array is passed in by reference, which means modification to the input array will be known to the caller as well.</span><br><span class="line"></span><br><span class="line">Internally you can think of this:</span><br><span class="line"></span><br><span class="line">// nums is passed in by reference. (i.e., without making a copy)</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// any modification to nums in your function would be known by the caller.</span><br><span class="line">// using the length returned by your function, it prints the first len elements.</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这题还是用双指针，下面用例子来解释：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5</span><br><span class="line">ij</span><br><span class="line"></span><br><span class="line">1 2 3 4 5</span><br><span class="line">  ij</span><br><span class="line"></span><br><span class="line">1 3 3 4 5</span><br><span class="line">  i j</span><br><span class="line"></span><br><span class="line">1 3 4 4 5</span><br><span class="line">    i j</span><br><span class="line"></span><br><span class="line">1 3 4 5 5</span><br><span class="line">      i j</span><br></pre></td></tr></table></figure></p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; val</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_element</span><span class="params">(nums, val)</span></span></span><br><span class="line">  i, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> j &lt; nums.length</span><br><span class="line">    <span class="keyword">if</span> nums[j] != val</span><br><span class="line">      nums[i] = nums[j]</span><br><span class="line">      i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    j += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> i</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Remove Duplicates from Sorted Array</title>
       <link href="/2018/03/12/Remove-Duplicates-from-Sorted-Array/"/>
       <url>/2018/03/12/Remove-Duplicates-from-Sorted-Array/</url>
@@ -1364,9 +1385,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
@@ -1387,9 +1408,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
@@ -1410,9 +1431,9 @@
       
         <tags>
             
-            <tag> Exploit </tag>
-            
             <tag> Exercise </tag>
+            
+            <tag> Exploit </tag>
             
         </tags>
       
