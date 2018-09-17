@@ -342,6 +342,31 @@
   </entry>
   
   <entry>
+    <title>Implement strStr()</title>
+    <link href="http://jack0pan.github.io/2018/03/14/Implement-strStr/"/>
+    <id>http://jack0pan.github.io/2018/03/14/Implement-strStr/</id>
+    <published>2018-03-14T14:05:48.000Z</published>
+    <updated>2018-09-17T08:27:01.745Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Implement strStr().</p><p>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack = &quot;hello&quot;, needle = &quot;ll&quot;</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;</span><br><span class="line">Output: -1</span><br></pre></td></tr></table></figure></p><p>Clarification:<br>What should we return when needle is an empty string? This is a great question to ask during an interview.</p><p>For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C’s strstr() and Java’s indexOf().</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路很简单，从长串的头开始取子串长度的字符串，和子串比较，如果一样返回索引。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; haystack</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; needle</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str_str</span><span class="params">(haystack, needle)</span></span></span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> haystack.<span class="literal">nil</span>? <span class="keyword">or</span> needle.<span class="literal">nil</span>? <span class="keyword">or</span> haystack.length &lt; needle.length</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> needle.length == <span class="number">0</span></span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> i + needle.length &lt;= haystack.length</span><br><span class="line">    <span class="keyword">return</span> i <span class="keyword">if</span> needle == haystack[i..(i - <span class="number">1</span> + needle.length)]</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;28-Implement-strStr&quot;&gt;&lt;a href=&quot;#28-Implement-strStr&quot; class=&quot;headerlink&quot; title=&quot;28. Implement strStr()&quot;&gt;&lt;/a&gt;28. Implement strStr()&lt;/h1
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Remove Element</title>
     <link href="http://jack0pan.github.io/2018/03/13/Remove-Element/"/>
     <id>http://jack0pan.github.io/2018/03/13/Remove-Element/</id>
@@ -480,31 +505,6 @@
       
       
         &lt;h1 id=&quot;20-Valid-Parentheses&quot;&gt;&lt;a href=&quot;#20-Valid-Parentheses&quot; class=&quot;headerlink&quot; title=&quot;20. Valid Parentheses&quot;&gt;&lt;/a&gt;20. Valid Parentheses&lt;/h1
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Remove Nth Node From End of List</title>
-    <link href="http://jack0pan.github.io/2018/03/07/Remove-Nth-Node-From-End-of-List/"/>
-    <id>http://jack0pan.github.io/2018/03/07/Remove-Nth-Node-From-End-of-List/</id>
-    <published>2018-03-07T14:01:56.000Z</published>
-    <updated>2018-09-02T08:49:22.226Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="19-Remove-Nth-Node-From-End-of-List"><a href="#19-Remove-Nth-Node-From-End-of-List" class="headerlink" title="19. Remove Nth Node From End of List"></a>19. Remove Nth Node From End of List</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a linked list, remove the n-th node from the end of list and return its head.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</span><br><span class="line"></span><br><span class="line">After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</span><br></pre></td></tr></table></figure></p><p>Note:</p><p>Given n will always be valid.</p><p>Follow up:</p><p>Could you do this in one pass?</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>使用两个指针，开始两个指针都指向head，然后让第一个指针先往前走N个节点，然后两个指针同时往前走。<br>当第一个指针走到末尾时，第二个指针的下一个节点就是要删除的节点。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :next</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@next</span> = nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; head</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;ListNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_nth_from_end</span><span class="params">(head, n)</span></span></span><br><span class="line">  dummy = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  dummy.<span class="keyword">next</span> = head</span><br><span class="line">  first, second = dummy, dummy</span><br><span class="line">  (n + <span class="number">1</span>).times&#123; first = first.<span class="keyword">next</span> &#125;</span><br><span class="line">  <span class="keyword">while</span> first</span><br><span class="line">    first = first.<span class="keyword">next</span></span><br><span class="line">    second = second.<span class="keyword">next</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  second.<span class="keyword">next</span> = second.<span class="keyword">next</span>.<span class="keyword">next</span></span><br><span class="line">  <span class="keyword">return</span> dummy.<span class="keyword">next</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(n)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;19-Remove-Nth-Node-From-End-of-List&quot;&gt;&lt;a href=&quot;#19-Remove-Nth-Node-From-End-of-List&quot; class=&quot;headerlink&quot; title=&quot;19. Remove Nth Node Fr
       
     
     </summary>

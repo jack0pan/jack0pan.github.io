@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/03/14/Implement-strStr/</loc>
+    
+    <lastmod>2018-09-17T08:27:01.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/03/13/Remove-Element/</loc>
     
     <lastmod>2018-09-17T07:17:27.456Z</lastmod>
