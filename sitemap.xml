@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/03/17/Find-First-and-Last-Position-of-Element-in-Sorted-Array/</loc>
+    
+    <lastmod>2018-09-25T15:00:13.930Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/03/16/Search-in-Rotated-Sorted-Array/</loc>
     
     <lastmod>2018-09-20T14:13:02.304Z</lastmod>
