@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/03/15/Permutations/</loc>
+    
+    <lastmod>2018-10-12T14:10:07.268Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/03/21/Multiply-Strings/</loc>
     
     <lastmod>2018-10-11T13:52:00.733Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://jack0pan.github.io/2018/03/16/Search-in-Rotated-Sorted-Array/</loc>
     
     <lastmod>2018-09-20T14:13:02.304Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jack0pan.github.io/2018/03/15/Next-Permutation/</loc>
-    
-    <lastmod>2018-09-19T14:18:42.080Z</lastmod>
     
   </url>
   
