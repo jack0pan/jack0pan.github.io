@@ -255,6 +255,27 @@
     </entry>
     
     <entry>
+      <title>Group Anagrams</title>
+      <link href="/2018/03/23/Group-Anagrams/"/>
+      <url>/2018/03/23/Group-Anagrams/</url>
+      <content type="html"><![CDATA[<h1 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of strings, group anagrams together.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],</span><br><span class="line">  [&quot;nat&quot;,&quot;tan&quot;],</span><br><span class="line">  [&quot;bat&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>Note:</p><ul><li>All inputs will be in lowercase.</li><li>The order of your output does not matter.</li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>用Hash来存结果，把字符串排序后的值作为key，这样就把字母相同顺序不同的字符串全都放在一起。<br>最后返回values数据即可。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String[]&#125; strs</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">group_anagrams</span><span class="params">(strs)</span></span></span><br><span class="line">  result = Hash.new</span><br><span class="line">  strs.each <span class="keyword">do</span> <span class="params">|str|</span></span><br><span class="line">    index = str.chars.sort.join</span><br><span class="line">    <span class="keyword">if</span> result.has_key?(index)</span><br><span class="line">      result[index] &lt;&lt; str</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      result[index] = [str]</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  result.values</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Rotate Image</title>
       <link href="/2018/03/22/Rotate-Image/"/>
       <url>/2018/03/22/Rotate-Image/</url>
