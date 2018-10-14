@@ -317,6 +317,31 @@
   </entry>
   
   <entry>
+    <title>Maximum Subarray</title>
+    <link href="http://jack0pan.github.io/2018/03/25/Maximum-Subarray/"/>
+    <id>http://jack0pan.github.io/2018/03/25/Maximum-Subarray/</id>
+    <published>2018-03-25T13:27:26.000Z</published>
+    <updated>2018-10-14T01:27:53.847Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a>53. Maximum Subarray</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: [4,-1,2,1] has the largest sum = 6.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br>If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>把局部最优都求出来，然后从这些解中找最大值。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_sub_array</span><span class="params">(nums)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> nums.<span class="literal">nil</span>? <span class="keyword">or</span> nums.length == <span class="number">0</span></span><br><span class="line">  local, global = nums[<span class="number">0</span>], nums[<span class="number">0</span>]  </span><br><span class="line">  i = <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length</span><br><span class="line">    local = nums[i] &gt; local + nums[i] ? nums[i] : local + nums[i]</span><br><span class="line">    global = local &gt; global ? local : global</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> global</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;53-Maximum-Subarray&quot;&gt;&lt;a href=&quot;#53-Maximum-Subarray&quot; class=&quot;headerlink&quot; title=&quot;53. Maximum Subarray&quot;&gt;&lt;/a&gt;53. Maximum Subarray&lt;/h1&gt;&lt;h2
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Pow(x, n)</title>
     <link href="http://jack0pan.github.io/2018/03/24/Pow-x-n/"/>
     <id>http://jack0pan.github.io/2018/03/24/Pow-x-n/</id>
@@ -480,31 +505,6 @@
       
       
         &lt;h1 id=&quot;Sudoku&quot;&gt;&lt;a href=&quot;#Sudoku&quot; class=&quot;headerlink&quot; title=&quot;Sudoku&quot;&gt;&lt;/a&gt;Sudoku&lt;/h1&gt;&lt;h2 id=&quot;Valid-Sudoku&quot;&gt;&lt;a href=&quot;#Valid-Sudoku&quot; class=&quot;head
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Search Insert Position</title>
-    <link href="http://jack0pan.github.io/2018/03/18/Search-Insert-Position/"/>
-    <id>http://jack0pan.github.io/2018/03/18/Search-Insert-Position/</id>
-    <published>2018-03-18T14:03:20.000Z</published>
-    <updated>2018-09-26T14:14:31.552Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Search-Insert-Position"><a href="#Search-Insert-Position" class="headerlink" title="Search Insert Position"></a>Search Insert Position</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p><p>You may assume no duplicates in the array.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 7</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure></p><p>Example 4:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 0</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>算法很简单，找到第一个比<code>target</code>小的就直接返回<code>index</code>。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; target</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_insert</span><span class="params">(nums, target)</span></span></span><br><span class="line">  nums.each_with_index <span class="keyword">do</span> <span class="params">|n, index|</span></span><br><span class="line">   <span class="keyword">return</span> index <span class="keyword">if</span> target &lt;= n</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> nums.length</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Search-Insert-Position&quot;&gt;&lt;a href=&quot;#Search-Insert-Position&quot; class=&quot;headerlink&quot; title=&quot;Search Insert Position&quot;&gt;&lt;/a&gt;Search Insert Positi
       
     
     </summary>
