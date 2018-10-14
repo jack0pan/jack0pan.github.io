@@ -317,6 +317,31 @@
   </entry>
   
   <entry>
+    <title>Jump Game</title>
+    <link href="http://jack0pan.github.io/2018/03/27/Jump-Game/"/>
+    <id>http://jack0pan.github.io/2018/03/27/Jump-Game/</id>
+    <published>2018-03-27T14:29:03.000Z</published>
+    <updated>2018-10-14T02:30:21.588Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Determine if you are able to reach the last index.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,1,0,4]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: You will always arrive at index 3 no matter what. Its maximum</span><br><span class="line">             jump length is 0, which makes it impossible to reach the last index.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路很简单，从后往前推，最终能到起点，则可以到达。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">can_jump</span><span class="params">(nums)</span></span></span><br><span class="line">  last = nums.length - <span class="number">1</span></span><br><span class="line">  i = nums.length - <span class="number">2</span></span><br><span class="line">  <span class="keyword">while</span> i &gt;= <span class="number">0</span></span><br><span class="line">    last = i <span class="keyword">if</span> i + nums[i] &gt;= last</span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  last == <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;55-Jump-Game&quot;&gt;&lt;a href=&quot;#55-Jump-Game&quot; class=&quot;headerlink&quot; title=&quot;55. Jump Game&quot;&gt;&lt;/a&gt;55. Jump Game&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spiral Matrix</title>
     <link href="http://jack0pan.github.io/2018/03/26/Spiral-Matrix/"/>
     <id>http://jack0pan.github.io/2018/03/26/Spiral-Matrix/</id>
@@ -480,31 +505,6 @@
       
       
         &lt;h1 id=&quot;Combinations&quot;&gt;&lt;a href=&quot;#Combinations&quot; class=&quot;headerlink&quot; title=&quot;Combinations&quot;&gt;&lt;/a&gt;Combinations&lt;/h1&gt;&lt;h2 id=&quot;39-Combination-Sum&quot;&gt;&lt;a hr
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Count and Say</title>
-    <link href="http://jack0pan.github.io/2018/03/19/Count-and-Say/"/>
-    <id>http://jack0pan.github.io/2018/03/19/Count-and-Say/</id>
-    <published>2018-03-19T13:39:19.000Z</published>
-    <updated>2018-09-28T13:53:39.123Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>The count-and-say sequence is the sequence of integers with the first five terms as following:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure></p><ul><li>1 is read off as “one 1” or 11.</li><li>11 is read off as “two 1s” or 21.</li><li>21 is read off as “one 2, then one 1” or 1211.</li></ul><p>Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the count-and-say sequence.</p><p>Note: Each term of the sequence of integers will be represented as a string.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: &quot;1&quot;</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: &quot;1211&quot;</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>用递归思路实现：</p><ul><li>n = 1时，直接返回字符串“1”；</li><li>n &gt; 1时，拿到n-1的字符串，用循环统计。</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_and_say</span><span class="params">(n)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span> <span class="keyword">if</span> n &lt;= <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"1"</span> <span class="keyword">if</span> n == <span class="number">1</span></span><br><span class="line">  pre = count_and_say(n - <span class="number">1</span>) + <span class="string">"#"</span></span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  count = <span class="number">1</span></span><br><span class="line">  s = <span class="string">""</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; pre.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> pre[i] == pre[i + <span class="number">1</span>]</span><br><span class="line">      count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      s &lt;&lt; <span class="string">"<span class="subst">#&#123;count.to_s&#125;</span><span class="subst">#&#123;pre[i]&#125;</span>"</span></span><br><span class="line">      count = <span class="number">1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N!)</code></li><li>空间复杂度：<code>O(N!)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;38-Count-and-Say&quot;&gt;&lt;a href=&quot;#38-Count-and-Say&quot; class=&quot;headerlink&quot; title=&quot;38. Count and Say&quot;&gt;&lt;/a&gt;38. Count and Say&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a 
       
     
     </summary>

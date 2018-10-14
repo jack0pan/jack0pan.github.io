@@ -255,6 +255,27 @@
     </entry>
     
     <entry>
+      <title>Jump Game</title>
+      <link href="/2018/03/27/Jump-Game/"/>
+      <url>/2018/03/27/Jump-Game/</url>
+      <content type="html"><![CDATA[<h1 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Determine if you are able to reach the last index.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,1,0,4]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: You will always arrive at index 3 no matter what. Its maximum</span><br><span class="line">             jump length is 0, which makes it impossible to reach the last index.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路很简单，从后往前推，最终能到起点，则可以到达。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">can_jump</span><span class="params">(nums)</span></span></span><br><span class="line">  last = nums.length - <span class="number">1</span></span><br><span class="line">  i = nums.length - <span class="number">2</span></span><br><span class="line">  <span class="keyword">while</span> i &gt;= <span class="number">0</span></span><br><span class="line">    last = i <span class="keyword">if</span> i + nums[i] &gt;= last</span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  last == <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Spiral Matrix</title>
       <link href="/2018/03/26/Spiral-Matrix/"/>
       <url>/2018/03/26/Spiral-Matrix/</url>
