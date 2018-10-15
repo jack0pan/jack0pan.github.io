@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/03/15/Permutations/</loc>
+    
+    <lastmod>2018-10-15T14:00:21.644Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/03/29/Length-of-Last-Word/</loc>
+    
+    <lastmod>2018-10-15T13:41:19.014Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/03/28/Merge-Intervals/</loc>
     
-    <lastmod>2018-10-15T13:32:56.226Z</lastmod>
+    <lastmod>2018-10-15T13:37:06.912Z</lastmod>
     
   </url>
   
@@ -54,13 +68,6 @@
     <loc>http://jack0pan.github.io/2018/03/22/Rotate-Image/</loc>
     
     <lastmod>2018-10-12T14:13:05.178Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jack0pan.github.io/2018/03/15/Permutations/</loc>
-    
-    <lastmod>2018-10-12T14:10:07.268Z</lastmod>
     
   </url>
   
