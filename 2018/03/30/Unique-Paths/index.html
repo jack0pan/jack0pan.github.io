@@ -6,18 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+    <meta name="description" content="Unique Paths62. Unique Paths题目A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below). The robot can only move either down or right at any point in time. The ro">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Partition List">
-<meta property="og:url" content="http://jack0pan.github.io/2018/04/20/Partition-List/index.html">
+<meta property="og:title" content="Unique Paths">
+<meta property="og:url" content="http://jack0pan.github.io/2018/03/30/Unique-Paths/index.html">
 <meta property="og:site_name" content="Jack Pan">
-<meta property="og:description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+<meta property="og:description" content="Unique Paths62. Unique Paths题目A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below). The robot can only move either down or right at any point in time. The ro">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T15:37:25.813Z">
+<meta property="og:image" content="https://leetcode.com/static/images/problemset/robot_maze.png">
+<meta property="og:image" content="https://leetcode.com/static/images/problemset/robot_maze.png">
+<meta property="og:updated_time" content="2018-10-16T15:56:41.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Partition List">
-<meta name="twitter:description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+<meta name="twitter:title" content="Unique Paths">
+<meta name="twitter:description" content="Unique Paths62. Unique Paths题目A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below). The robot can only move either down or right at any point in time. The ro">
+<meta name="twitter:image" content="https://leetcode.com/static/images/problemset/robot_maze.png">
     
     
         
@@ -37,7 +40,7 @@
         
     
     <!-- title -->
-    <title>Partition List</title>
+    <title>Unique Paths</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -71,10 +74,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/04/23/Gray-Code/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/04/20/Partition-List/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/03/30/Unique-Paths/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/29/Length-of-Last-Word/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -87,21 +90,21 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/20/Partition-List/&text=Partition List"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/20/Partition-List/&is_video=false&description=Partition List"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Partition List&body=Check out this article: http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/20/Partition-List/&name=Partition List&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/30/Unique-Paths/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&text=Unique Paths"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&is_video=false&description=Unique Paths"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Unique Paths&body=Check out this article: http://jack0pan.github.io/2018/03/30/Unique-Paths/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&name=Unique Paths&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#86-Partition-List"><span class="toc-number">1.</span> <span class="toc-text">86. Partition List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unique-Paths"><span class="toc-number">1.</span> <span class="toc-text">Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#62-Unique-Paths"><span class="toc-number">1.1.</span> <span class="toc-text">62. Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#63-Unique-Paths-II"><span class="toc-number">1.2.</span> <span class="toc-text">63. Unique Paths II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +116,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Partition List
+        Unique Paths
     </h1>
 
 
@@ -124,7 +127,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-04-20T14:05:10.000Z" itemprop="datePublished">2018-04-20</time>
+        <time datetime="2018-03-30T14:07:45.000Z" itemprop="datePublished">2018-03-30</time>
     </div>
 
 
@@ -140,14 +143,27 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="86-Partition-List"><a href="#86-Partition-List" class="headerlink" title="86. Partition List"></a>86. Partition List</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
-<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</span><br><span class="line">Output: 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</span><br></pre></td></tr></table></figure></p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>方法就是从头到尾遍历链表，把小于给定值的节点从当前链表摘除，添加到新链表中。然后把链表添加到新链表尾部即可。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :next</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@next</span> = nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; head</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;ListNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(head, x)</span></span></span><br><span class="line">  dummy = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  new_dummy = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  dummy.<span class="keyword">next</span> = head</span><br><span class="line">  cur, new_cur = dummy, new_dummy</span><br><span class="line">  <span class="keyword">while</span> cur.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">if</span> cur.<span class="keyword">next</span>.val &lt; x</span><br><span class="line">      new_cur.<span class="keyword">next</span> = cur.<span class="keyword">next</span></span><br><span class="line">      new_cur = new_cur.<span class="keyword">next</span></span><br><span class="line">      cur.<span class="keyword">next</span> = cur.<span class="keyword">next</span>.<span class="keyword">next</span></span><br><span class="line">      new_cur.<span class="keyword">next</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      cur = cur.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  new_cur.<span class="keyword">next</span> = dummy.<span class="keyword">next</span></span><br><span class="line">  <span class="keyword">return</span> new_dummy.<span class="keyword">next</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul>
-<li>时间复杂度：<code>O(n)</code></li>
+    <h1 id="Unique-Paths"><a href="#Unique-Paths" class="headerlink" title="Unique Paths"></a>Unique Paths</h1><h2 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>How many possible unique paths are there?<br><img src="https://leetcode.com/static/images/problemset/robot_maze.png" alt="robot_maze"><br>Above is a 7 x 3 grid. How many possible unique paths are there?</p>
+<p>Note: m and n will be at most 100.<br>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: m = 3, n = 2</span><br><span class="line">Output: 3</span><br><span class="line">Explanation:</span><br><span class="line">From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:</span><br><span class="line">1. Right -&gt; Right -&gt; Down</span><br><span class="line">2. Right -&gt; Down -&gt; Right</span><br><span class="line">3. Down -&gt; Right -&gt; Right</span><br></pre></td></tr></table></figure></p>
+<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: m = 7, n = 3</span><br><span class="line">Output: 28</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>一开始考虑用动态规划来解，公式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unique_paths(m, n) = unique_paths(m - 1, n) + unique_paths(m, n - 1)</span><br></pre></td></tr></table></figure></p>
+<p>这种解法的时间复杂度是<code>O(m * n)</code>，m或n的数稍大就会超时。<br>换个思路，机器人总共走<code>m + n - 2</code>步，<code>m - 1</code>步往下走，<code>n - 1</code>步往右走，所以最终可以归结为组合的问题，从<code>m + n - 2</code>个数中取<code>m - 1</code>的组合数。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; m</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unique_paths</span><span class="params">(m, n)</span></span></span><br><span class="line">  low = m - <span class="number">1</span></span><br><span class="line">  high = m + n - <span class="number">2</span></span><br><span class="line">  delta = high - low + <span class="number">1</span></span><br><span class="line">  dom, dedom = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> high &gt;= delta</span><br><span class="line">    dedom *= high</span><br><span class="line">    high -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">while</span> low &gt; <span class="number">0</span></span><br><span class="line">    dom *= low</span><br><span class="line">    low -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> dedom / dom</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(m + n)</code></li>
 <li>空间复杂度：<code>O(1)</code></li>
+</ul>
+<h2 id="63-Unique-Paths-II"><a href="#63-Unique-Paths-II" class="headerlink" title="63. Unique Paths II"></a>63. Unique Paths II</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>Now consider if some obstacles are added to the grids. How many unique paths would there be?<br><img src="https://leetcode.com/static/images/problemset/robot_maze.png" alt="robot_maze"><br>An obstacle and empty space is marked as 1 and 0 respectively in the grid.</p>
+<p>Note: m and n will be at most 100.</p>
+<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [0,0,0],</span><br><span class="line">  [0,1,0],</span><br><span class="line">  [0,0,0]</span><br><span class="line">]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation:</span><br><span class="line">There is one obstacle in the middle of the 3x3 grid above.</span><br><span class="line">There are two ways to reach the bottom-right corner:</span><br><span class="line">1. Right -&gt; Right -&gt; Down -&gt; Down</span><br><span class="line">2. Down -&gt; Down -&gt; Right -&gt; Right</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>还是用动态规划的思路，只是这里是一行行遍历，所以用一维数组即可。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[][]&#125; obstacle_grid</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unique_paths_with_obstacles</span><span class="params">(obstacle_grid)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> obstacle_grid.size == <span class="number">0</span> <span class="keyword">or</span> obstacle_grid[<span class="number">0</span>].size == <span class="number">0</span></span><br><span class="line">  m = obstacle_grid.size</span><br><span class="line">  n = obstacle_grid[<span class="number">0</span>].size</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> obstacle_grid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span></span><br><span class="line">  dp = Array.new(n, <span class="number">0</span>)</span><br><span class="line">  i, dp[<span class="number">0</span>] = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; m</span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; n</span><br><span class="line">      <span class="keyword">if</span> obstacle_grid[i][j] == <span class="number">1</span></span><br><span class="line">        dp[j] = <span class="number">0</span></span><br><span class="line">      <span class="keyword">elsif</span> j &gt; <span class="number">0</span></span><br><span class="line">        dp[j] += dp[j - <span class="number">1</span>]</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> dp[n - <span class="number">1</span>]</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(m * n)</code>，需要把地图矩阵遍历一遍。</li>
+<li>空间复杂度：<code>O(n)</code>，需要一个一维数组来存放中间结果。</li>
 </ul>
 
   </div>
@@ -187,21 +203,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#86-Partition-List"><span class="toc-number">1.</span> <span class="toc-text">86. Partition List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unique-Paths"><span class="toc-number">1.</span> <span class="toc-text">Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#62-Unique-Paths"><span class="toc-number">1.1.</span> <span class="toc-text">62. Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#63-Unique-Paths-II"><span class="toc-number">1.2.</span> <span class="toc-text">63. Unique Paths II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/20/Partition-List/&text=Partition List"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/20/Partition-List/&is_video=false&description=Partition List"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Partition List&body=Check out this article: http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/20/Partition-List/&name=Partition List&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/30/Unique-Paths/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&text=Unique Paths"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&is_video=false&description=Unique Paths"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Unique Paths&body=Check out this article: http://jack0pan.github.io/2018/03/30/Unique-Paths/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&title=Unique Paths"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/30/Unique-Paths/&name=Unique Paths&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
