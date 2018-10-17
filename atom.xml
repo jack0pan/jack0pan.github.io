@@ -317,6 +317,31 @@
   </entry>
   
   <entry>
+    <title>Minimum Path Sum</title>
+    <link href="http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"/>
+    <id>http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/</id>
+    <published>2018-03-31T13:26:25.000Z</published>
+    <updated>2018-10-17T13:27:02.295Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="64-Minimum-Path-Sum"><a href="#64-Minimum-Path-Sum" class="headerlink" title="64. Minimum Path Sum"></a>64. Minimum Path Sum</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.</p><p>Note: You can only move either down or right at any point in time.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [1,3,1],</span><br><span class="line">  [1,5,1],</span><br><span class="line">  [4,2,1]</span><br><span class="line">]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Because the path 1→3→1→1→1 minimizes the sum.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>典型的动态规划问题。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[][]&#125; grid</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_path_sum</span><span class="params">(grid)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> grid.size == <span class="number">0</span> <span class="keyword">or</span> grid[<span class="number">0</span>].size == <span class="number">0</span></span><br><span class="line">  m, n = grid.size, grid[<span class="number">0</span>].size</span><br><span class="line">  <span class="comment"># return helper(grid, m - 1, n - 1)</span></span><br><span class="line">  dp = Array.new(m)&#123; Array.new(n, <span class="number">0</span>) &#125;</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>] = grid[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(m - <span class="number">1</span>); dp[i][<span class="number">0</span>] = grid[i][<span class="number">0</span>] + dp[i - <span class="number">1</span>][<span class="number">0</span>]; <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(n - <span class="number">1</span>); dp[<span class="number">0</span>][i] = grid[<span class="number">0</span>][i] + dp[<span class="number">0</span>][i - <span class="number">1</span>]; <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(m - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span>..(n - <span class="number">1</span>)</span><br><span class="line">      dp[i][j] = grid[i][j] + [dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]].min</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(grid, m, n)</span></span></span><br><span class="line">  <span class="keyword">if</span> m == <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n]</span><br><span class="line">  <span class="keyword">elsif</span> m == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + helper(grid, m, n - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">elsif</span> n == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + helper(grid, m - <span class="number">1</span>, n)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + [helper(grid, m, n - <span class="number">1</span>), helper(grid, m - <span class="number">1</span>, n)].min</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(m * n)</code>，遍历一遍数组。</li><li>空间复杂度：<code>O(m * n)</code>，需要一个数组存到每个点的最小路径和。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;64-Minimum-Path-Sum&quot;&gt;&lt;a href=&quot;#64-Minimum-Path-Sum&quot; class=&quot;headerlink&quot; title=&quot;64. Minimum Path Sum&quot;&gt;&lt;/a&gt;64. Minimum Path Sum&lt;/h1&gt;&lt;h2
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Unique Paths</title>
     <link href="http://jack0pan.github.io/2018/03/30/Unique-Paths/"/>
     <id>http://jack0pan.github.io/2018/03/30/Unique-Paths/</id>
@@ -480,31 +505,6 @@
       
       
         &lt;h1 id=&quot;50-Pow-x-n&quot;&gt;&lt;a href=&quot;#50-Pow-x-n&quot; class=&quot;headerlink&quot; title=&quot;50. Pow(x, n)&quot;&gt;&lt;/a&gt;50. Pow(x, n)&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;he
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Group Anagrams</title>
-    <link href="http://jack0pan.github.io/2018/03/23/Group-Anagrams/"/>
-    <id>http://jack0pan.github.io/2018/03/23/Group-Anagrams/</id>
-    <published>2018-03-23T13:56:15.000Z</published>
-    <updated>2018-10-13T15:13:20.082Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of strings, group anagrams together.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],</span><br><span class="line">  [&quot;nat&quot;,&quot;tan&quot;],</span><br><span class="line">  [&quot;bat&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>Note:</p><ul><li>All inputs will be in lowercase.</li><li>The order of your output does not matter.</li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>用Hash来存结果，把字符串排序后的值作为key，这样就把字母相同顺序不同的字符串全都放在一起。<br>最后返回values数据即可。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String[]&#125; strs</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">group_anagrams</span><span class="params">(strs)</span></span></span><br><span class="line">  result = Hash.new</span><br><span class="line">  strs.each <span class="keyword">do</span> <span class="params">|str|</span></span><br><span class="line">    index = str.chars.sort.join</span><br><span class="line">    <span class="keyword">if</span> result.has_key?(index)</span><br><span class="line">      result[index] &lt;&lt; str</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      result[index] = [str]</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  result.values</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;49-Group-Anagrams&quot;&gt;&lt;a href=&quot;#49-Group-Anagrams&quot; class=&quot;headerlink&quot; title=&quot;49. Group Anagrams&quot;&gt;&lt;/a&gt;49. Group Anagrams&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;
       
     
     </summary>

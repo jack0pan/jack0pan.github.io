@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="28. Implement strStr()题目Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Example 1:12Input: haystack = &amp;quot;hello&amp;quot;, ne">
+    <meta name="description" content="64. Minimum Path Sum题目Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move eith">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Implement strStr()">
-<meta property="og:url" content="http://jack0pan.github.io/2018/03/14/Implement-strStr/index.html">
+<meta property="og:title" content="Minimum Path Sum">
+<meta property="og:url" content="http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/index.html">
 <meta property="og:site_name" content="Jack Pan">
-<meta property="og:description" content="28. Implement strStr()题目Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Example 1:12Input: haystack = &amp;quot;hello&amp;quot;, ne">
+<meta property="og:description" content="64. Minimum Path Sum题目Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move eith">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-17T08:27:01.745Z">
+<meta property="og:updated_time" content="2018-10-17T13:27:02.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Implement strStr()">
-<meta name="twitter:description" content="28. Implement strStr()题目Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Example 1:12Input: haystack = &amp;quot;hello&amp;quot;, ne">
+<meta name="twitter:title" content="Minimum Path Sum">
+<meta name="twitter:description" content="64. Minimum Path Sum题目Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move eith">
     
     
         
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>Implement strStr()</title>
+    <title>Minimum Path Sum</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -71,10 +71,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/03/15/Divide-Two-Integers/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/04/20/Partition-List/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/03/13/Remove-Element/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/30/Unique-Paths/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -87,21 +87,21 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/14/Implement-strStr/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&text=Implement strStr()"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&is_video=false&description=Implement strStr()"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Implement strStr()&body=Check out this article: http://jack0pan.github.io/2018/03/14/Implement-strStr/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&name=Implement strStr()&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&text=Minimum Path Sum"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&is_video=false&description=Minimum Path Sum"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Minimum Path Sum&body=Check out this article: http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&name=Minimum Path Sum&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#28-Implement-strStr"><span class="toc-number">1.</span> <span class="toc-text">28. Implement strStr()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#64-Minimum-Path-Sum"><span class="toc-number">1.</span> <span class="toc-text">64. Minimum Path Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +113,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Implement strStr()
+        Minimum Path Sum
     </h1>
 
 
@@ -124,7 +124,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-03-14T14:05:48.000Z" itemprop="datePublished">2018-03-14</time>
+        <time datetime="2018-03-31T13:26:25.000Z" itemprop="datePublished">2018-03-31</time>
     </div>
 
 
@@ -140,17 +140,14 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Implement strStr().</p>
-<p>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
-<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack = &quot;hello&quot;, needle = &quot;ll&quot;</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p>
-<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;</span><br><span class="line">Output: -1</span><br></pre></td></tr></table></figure></p>
-<p>Clarification:<br>What should we return when needle is an empty string? This is a great question to ask during an interview.</p>
-<p>For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C’s strstr() and Java’s indexOf().</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>思路很简单，从长串的头开始取子串长度的字符串，和子串比较，如果一样返回索引。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; haystack</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; needle</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str_str</span><span class="params">(haystack, needle)</span></span></span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> haystack.<span class="literal">nil</span>? <span class="keyword">or</span> needle.<span class="literal">nil</span>? <span class="keyword">or</span> haystack.length &lt; needle.length</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> needle.length == <span class="number">0</span></span><br><span class="line">  i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> i + needle.length &lt;= haystack.length</span><br><span class="line">    <span class="keyword">return</span> i <span class="keyword">if</span> needle == haystack[i..(i - <span class="number">1</span> + needle.length)]</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+    <h1 id="64-Minimum-Path-Sum"><a href="#64-Minimum-Path-Sum" class="headerlink" title="64. Minimum Path Sum"></a>64. Minimum Path Sum</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.</p>
+<p>Note: You can only move either down or right at any point in time.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [1,3,1],</span><br><span class="line">  [1,5,1],</span><br><span class="line">  [4,2,1]</span><br><span class="line">]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Because the path 1→3→1→1→1 minimizes the sum.</span><br></pre></td></tr></table></figure></p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>典型的动态规划问题。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[][]&#125; grid</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_path_sum</span><span class="params">(grid)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> grid.size == <span class="number">0</span> <span class="keyword">or</span> grid[<span class="number">0</span>].size == <span class="number">0</span></span><br><span class="line">  m, n = grid.size, grid[<span class="number">0</span>].size</span><br><span class="line">  <span class="comment"># return helper(grid, m - 1, n - 1)</span></span><br><span class="line">  dp = Array.new(m)&#123; Array.new(n, <span class="number">0</span>) &#125;</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>] = grid[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(m - <span class="number">1</span>); dp[i][<span class="number">0</span>] = grid[i][<span class="number">0</span>] + dp[i - <span class="number">1</span>][<span class="number">0</span>]; <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(n - <span class="number">1</span>); dp[<span class="number">0</span>][i] = grid[<span class="number">0</span>][i] + dp[<span class="number">0</span>][i - <span class="number">1</span>]; <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..(m - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span>..(n - <span class="number">1</span>)</span><br><span class="line">      dp[i][j] = grid[i][j] + [dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]].min</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(grid, m, n)</span></span></span><br><span class="line">  <span class="keyword">if</span> m == <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n]</span><br><span class="line">  <span class="keyword">elsif</span> m == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + helper(grid, m, n - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">elsif</span> n == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + helper(grid, m - <span class="number">1</span>, n)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> grid[m][n] + [helper(grid, m, n - <span class="number">1</span>), helper(grid, m - <span class="number">1</span>, n)].min</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul>
-<li>时间复杂度：<code>O(N)</code></li>
-<li>空间复杂度：<code>O(1)</code></li>
+<li>时间复杂度：<code>O(m * n)</code>，遍历一遍数组。</li>
+<li>空间复杂度：<code>O(m * n)</code>，需要一个数组存到每个点的最小路径和。</li>
 </ul>
 
   </div>
@@ -190,21 +187,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#28-Implement-strStr"><span class="toc-number">1.</span> <span class="toc-text">28. Implement strStr()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#64-Minimum-Path-Sum"><span class="toc-number">1.</span> <span class="toc-text">64. Minimum Path Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/14/Implement-strStr/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&text=Implement strStr()"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&is_video=false&description=Implement strStr()"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Implement strStr()&body=Check out this article: http://jack0pan.github.io/2018/03/14/Implement-strStr/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&title=Implement strStr()"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/14/Implement-strStr/&name=Implement strStr()&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&text=Minimum Path Sum"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&is_video=false&description=Minimum Path Sum"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Minimum Path Sum&body=Check out this article: http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&title=Minimum Path Sum"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/&name=Minimum Path Sum&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
