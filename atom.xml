@@ -317,6 +317,31 @@
   </entry>
   
   <entry>
+    <title>Plus One</title>
+    <link href="http://jack0pan.github.io/2018/04/01/Plus-One/"/>
+    <id>http://jack0pan.github.io/2018/04/01/Plus-One/</id>
+    <published>2018-04-01T13:29:02.000Z</published>
+    <updated>2018-10-17T13:35:50.045Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="66-Plus-One"><a href="#66-Plus-One" class="headerlink" title="66. Plus One"></a>66. Plus One</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a non-empty array of digits representing a non-negative integer, plus one to the integer.</p><p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.</p><p>You may assume the integer does not contain any leading zero, except the number 0 itself.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3]</span><br><span class="line">Output: [1,2,4]</span><br><span class="line">Explanation: The array represents the integer 123.</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [4,3,2,1]</span><br><span class="line">Output: [4,3,2,2]</span><br><span class="line">Explanation: The array represents the integer 4321.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>给最后一位数加一，并计算进位，前面的数字都要加上进位。最后判断最前面的进位是否为0，0的话需要去掉。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; digits</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus_one</span><span class="params">(digits)</span></span></span><br><span class="line">  c = <span class="number">0</span></span><br><span class="line">  n = Array.new(digits.length + <span class="number">1</span>)</span><br><span class="line">  i = digits.length - <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> i &gt;= <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> i == digits.length - <span class="number">1</span></span><br><span class="line">      s = digits[i] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      s = digits[i] + c</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    n[i + <span class="number">1</span>] = s % <span class="number">10</span></span><br><span class="line">    c = s / <span class="number">10</span></span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">if</span> c == <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> n[<span class="number">1</span>..-<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    n[<span class="number">0</span>] = c</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;66-Plus-One&quot;&gt;&lt;a href=&quot;#66-Plus-One&quot; class=&quot;headerlink&quot; title=&quot;66. Plus One&quot;&gt;&lt;/a&gt;66. Plus One&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;he
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Minimum Path Sum</title>
     <link href="http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/"/>
     <id>http://jack0pan.github.io/2018/03/31/Minimum-Path-Sum/</id>
@@ -480,31 +505,6 @@
       
       
         &lt;h1 id=&quot;53-Maximum-Subarray&quot;&gt;&lt;a href=&quot;#53-Maximum-Subarray&quot; class=&quot;headerlink&quot; title=&quot;53. Maximum Subarray&quot;&gt;&lt;/a&gt;53. Maximum Subarray&lt;/h1&gt;&lt;h2
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pow(x, n)</title>
-    <link href="http://jack0pan.github.io/2018/03/24/Pow-x-n/"/>
-    <id>http://jack0pan.github.io/2018/03/24/Pow-x-n/</id>
-    <published>2018-03-24T14:11:47.000Z</published>
-    <updated>2018-10-13T15:21:36.837Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50. Pow(x, n)"></a>50. Pow(x, n)</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Implement pow(x, n), which calculates x raised to the power n (xn).</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.00000, 10</span><br><span class="line">Output: 1024.00000</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.10000, 3</span><br><span class="line">Output: 9.26100</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.00000, -2</span><br><span class="line">Output: 0.25000</span><br><span class="line">Explanation: 2-2 = 1/22 = 1/4 = 0.25</span><br></pre></td></tr></table></figure></p><p>Note:</p><ul><li>-100.0 &lt; x &lt; 100.0</li><li>n is a 32-bit signed integer, within the range [−231, 231 − 1]</li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>实现指数运算函数，把指数分解成二进制表示。举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5 = 2^2 + 1</span><br><span class="line">x^5 = x^4 * x</span><br></pre></td></tr></table></figure></p><p>这样就简化了运算，x^2、x^4等中间结果可以重复利用。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Float&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Float&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_pow</span><span class="params">(x, n)</span></span></span><br><span class="line">  res = <span class="number">1.0</span></span><br><span class="line">  i = n.abs</span><br><span class="line">  <span class="keyword">while</span> i != <span class="number">0</span></span><br><span class="line">    res *= x <span class="keyword">if</span> (i % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">    x *= x</span><br><span class="line">    i /= <span class="number">2</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> n &lt; <span class="number">0</span> ? <span class="number">1</span> / res : res</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;50-Pow-x-n&quot;&gt;&lt;a href=&quot;#50-Pow-x-n&quot; class=&quot;headerlink&quot; title=&quot;50. Pow(x, n)&quot;&gt;&lt;/a&gt;50. Pow(x, n)&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;he
       
     
     </summary>
