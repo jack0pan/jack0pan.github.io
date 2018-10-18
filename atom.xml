@@ -317,6 +317,106 @@
   </entry>
   
   <entry>
+    <title>Simplify Path</title>
+    <link href="http://jack0pan.github.io/2018/04/05/Simplify-Path/"/>
+    <id>http://jack0pan.github.io/2018/04/05/Simplify-Path/</id>
+    <published>2018-04-05T13:10:27.000Z</published>
+    <updated>2018-10-18T13:29:51.535Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71. Simplify Path"></a>71. Simplify Path</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an absolute path for a file (Unix-style), simplify it. </p><p>For example,<br>path = “/home/“, =&gt; “/home”<br>path = “/a/./b/../../c/“, =&gt; “/c”<br>path = “/a/../../b/../c//.//“, =&gt; “/c”<br>path = “/a//b////c/d//././/..”, =&gt; “/a/b/c”</p><p>In a UNIX-style file system, a period (‘.’) refers to the current directory, so it can be ignored in a simplified path. Additionally, a double period (“..”) moves up a directory, so it cancels out whatever the last directory was. For more information, look here: <a href="https://en.wikipedia.org/wiki/Path_(computing)#Unix_style" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Path_(computing)#Unix_style</a></p><p>Corner Cases:</p><ul><li>Did you consider the case where path = “/../“? In this case, you should return “/“.</li><li>Another corner case is the path might contain multiple slashes ‘/‘ together, such as “/home//foo/“. In this case, you should ignore redundant slashes and return “/home/foo”.</li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这题用栈数据结构来解决特别简单，先把字符串用“/”来分割，然后遍历结果：</p><ul><li>遇到“..”就弹栈</li><li>遇到“.”或者空就忽略</li><li>其他情况就压栈<br>最后把栈中的内容用“/”拼接起来。</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; path</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">simplify_path</span><span class="params">(path)</span></span></span><br><span class="line">  names = path.split(<span class="string">"/"</span>)</span><br><span class="line">  stack = Array.new</span><br><span class="line">  names.each <span class="keyword">do</span> <span class="params">|name|</span></span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">".."</span></span><br><span class="line">      stack.pop</span><br><span class="line">    <span class="keyword">elsif</span> name == <span class="string">"."</span> <span class="keyword">or</span> name.size == <span class="number">0</span></span><br><span class="line">      <span class="keyword">next</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      stack.push name</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"/"</span> + stack.join(<span class="string">"/"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;71-Simplify-Path&quot;&gt;&lt;a href=&quot;#71-Simplify-Path&quot; class=&quot;headerlink&quot; title=&quot;71. Simplify Path&quot;&gt;&lt;/a&gt;71. Simplify Path&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Climbing Stairs</title>
+    <link href="http://jack0pan.github.io/2018/04/04/Climbing-Stairs/"/>
+    <id>http://jack0pan.github.io/2018/04/04/Climbing-Stairs/</id>
+    <published>2018-04-04T13:41:25.000Z</published>
+    <updated>2018-10-17T13:43:45.642Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a>70. Climbing Stairs</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p><p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p><p>Note: Given n will be a positive integer.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There are two ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step</span><br><span class="line">2. 2 steps</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: There are three ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step + 1 step</span><br><span class="line">2. 1 step + 2 steps</span><br><span class="line">3. 2 steps + 1 step</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>每一步都有两种走法：一步或者两步，把这两种情况的数量加起来即可。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climb_stairs</span><span class="params">(n)</span></span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  first, second, i = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line">  <span class="keyword">while</span> i &lt;= n</span><br><span class="line">    third = first + second</span><br><span class="line">    first = second</span><br><span class="line">    second = third</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> second;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;70-Climbing-Stairs&quot;&gt;&lt;a href=&quot;#70-Climbing-Stairs&quot; class=&quot;headerlink&quot; title=&quot;70. Climbing Stairs&quot;&gt;&lt;/a&gt;70. Climbing Stairs&lt;/h1&gt;&lt;h2 id=
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sqrt(x)</title>
+    <link href="http://jack0pan.github.io/2018/04/03/Sqrt-x/"/>
+    <id>http://jack0pan.github.io/2018/04/03/Sqrt-x/</id>
+    <published>2018-04-03T13:41:25.000Z</published>
+    <updated>2018-10-17T13:42:07.525Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="69-Sqrt-x"><a href="#69-Sqrt-x" class="headerlink" title="69. Sqrt(x)"></a>69. Sqrt(x)</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Implement int sqrt(int x).</p><p>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.</p><p>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 8</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The square root of 8 is 2.82842..., and since </span><br><span class="line">             the decimal part is truncated, 2 is returned.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>简单思路就是从1到x开始遍历，这里用了二分查找来降低复杂度。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sqrt</span><span class="params">(x)</span></span></span><br><span class="line">  <span class="keyword">return</span> x <span class="keyword">if</span> x == <span class="number">0</span> <span class="params">||</span> x == <span class="number">1</span></span><br><span class="line">  low = <span class="number">1</span></span><br><span class="line">  high = x - <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> low &lt; high - <span class="number">1</span></span><br><span class="line">    middle = low + (high - low) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> middle * middle == x</span><br><span class="line">      <span class="keyword">return</span> middle</span><br><span class="line">    <span class="keyword">elsif</span> middle * middle &gt; x</span><br><span class="line">      high = middle</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      low = middle</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> low</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(logN)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;69-Sqrt-x&quot;&gt;&lt;a href=&quot;#69-Sqrt-x&quot; class=&quot;headerlink&quot; title=&quot;69. Sqrt(x)&quot;&gt;&lt;/a&gt;69. Sqrt(x)&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Add Binary</title>
+    <link href="http://jack0pan.github.io/2018/04/02/Add-Binary/"/>
+    <id>http://jack0pan.github.io/2018/04/02/Add-Binary/</id>
+    <published>2018-04-02T13:36:55.000Z</published>
+    <updated>2018-10-17T13:37:38.624Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67. Add Binary"></a>67. Add Binary</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given two binary strings, return their sum (also a binary string).</p><p>The input strings are both non-empty and contains only characters 1 or 0.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">Output: &quot;100&quot;</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">Output: &quot;10101&quot;</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>直接从后往前相加，中间保存进位即可。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; a</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; b</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_binary</span><span class="params">(a, b)</span></span></span><br><span class="line">  i = a.length - <span class="number">1</span></span><br><span class="line">  j = b.length - <span class="number">1</span></span><br><span class="line">  carry = <span class="number">0</span></span><br><span class="line">  c = <span class="string">""</span></span><br><span class="line">  <span class="keyword">while</span> i &gt;= <span class="number">0</span> <span class="keyword">or</span> j &gt;= <span class="number">0</span></span><br><span class="line">    x = i &gt;= <span class="number">0</span> ? a[i].to_i : <span class="number">0</span></span><br><span class="line">    y = j &gt;= <span class="number">0</span> ? b[j].to_i : <span class="number">0</span></span><br><span class="line">    sum = x + y + carry</span><br><span class="line">    c = (sum % <span class="number">2</span>).to_s + c</span><br><span class="line">    carry = sum / <span class="number">2</span></span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">    j -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  c = <span class="string">"1"</span> + c <span class="keyword">if</span> carry == <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> c</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(N)</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;67-Add-Binary&quot;&gt;&lt;a href=&quot;#67-Add-Binary&quot; class=&quot;headerlink&quot; title=&quot;67. Add Binary&quot;&gt;&lt;/a&gt;67. Add Binary&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; c
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Plus One</title>
     <link href="http://jack0pan.github.io/2018/04/01/Plus-One/"/>
     <id>http://jack0pan.github.io/2018/04/01/Plus-One/</id>
@@ -405,106 +505,6 @@
       
       
         &lt;h1 id=&quot;58-Length-of-Last-Word&quot;&gt;&lt;a href=&quot;#58-Length-of-Last-Word&quot; class=&quot;headerlink&quot; title=&quot;58. Length of Last Word&quot;&gt;&lt;/a&gt;58. Length of Last 
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Merge Intervals</title>
-    <link href="http://jack0pan.github.io/2018/03/28/Merge-Intervals/"/>
-    <id>http://jack0pan.github.io/2018/03/28/Merge-Intervals/</id>
-    <published>2018-03-28T13:32:05.000Z</published>
-    <updated>2018-10-15T13:37:06.912Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="56-Merge-Intervals"><a href="#56-Merge-Intervals" class="headerlink" title="56. Merge Intervals"></a>56. Merge Intervals</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a collection of intervals, merge all overlapping intervals.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,3],[2,6],[8,10],[15,18]]</span><br><span class="line">Output: [[1,6],[8,10],[15,18]]</span><br><span class="line">Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,4],[4,5]]</span><br><span class="line">Output: [[1,5]]</span><br><span class="line">Explanation: Intervals [1,4] and [4,5] are considerred overlapping.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>拿到数组后先按<code>start</code>从小到大排序，然后做以下判断：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intervals[i - 1].end &lt; intervals[i].start</span><br></pre></td></tr></table></figure></p><p>如果满足，直接把当前<code>interval</code>添加到新数组中即可；如果不满足，则<code>end</code>的取值为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max(intervals[i - 1].end, interval[i].end)</span><br></pre></td></tr></table></figure></p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for an interval.</span></span><br><span class="line"><span class="comment"># class Interval</span></span><br><span class="line"><span class="comment">#     attr_accessor :start, :end</span></span><br><span class="line"><span class="comment">#     def initialize(s=0, e=0)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@start</span> = s</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@end</span> = e</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Interval[]&#125; intervals</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Interval[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(intervals)</span></span></span><br><span class="line">  intervals.sort! &#123; <span class="params">|a, b|</span> a.start &lt;=&gt; b.start &#125;</span><br><span class="line">  merged = []</span><br><span class="line">  intervals.each <span class="keyword">do</span> <span class="params">|interval|</span></span><br><span class="line">    <span class="keyword">if</span> merged.length == <span class="number">0</span> <span class="keyword">or</span> merged[-<span class="number">1</span>].<span class="keyword">end</span> &lt; interval.start</span><br><span class="line">      merged.push interval</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      merged[-<span class="number">1</span>].<span class="keyword">end</span> = [merged[-<span class="number">1</span>].<span class="keyword">end</span>, interval.<span class="keyword">end</span>].max</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  merged</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(nlgn)</code>，排序算法的复杂度是<code>O(nlgn)</code>，整个过程只需遍历一遍<code>intervals</code>，总共复杂度为<code>O(nlgn) + O(n)</code>。</li><li>空间复杂度：<code>O(n)</code>，我们需要拷贝一份<code>intervals</code>。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;56-Merge-Intervals&quot;&gt;&lt;a href=&quot;#56-Merge-Intervals&quot; class=&quot;headerlink&quot; title=&quot;56. Merge Intervals&quot;&gt;&lt;/a&gt;56. Merge Intervals&lt;/h1&gt;&lt;h2 id=
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jump Game</title>
-    <link href="http://jack0pan.github.io/2018/03/27/Jump-Game/"/>
-    <id>http://jack0pan.github.io/2018/03/27/Jump-Game/</id>
-    <published>2018-03-27T14:29:03.000Z</published>
-    <updated>2018-10-14T02:33:29.340Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Determine if you are able to reach the last index.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,1,0,4]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: You will always arrive at index 3 no matter what. Its maximum</span><br><span class="line">             jump length is 0, which makes it impossible to reach the last index.</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>假设，我们能到达终点，那我们就找前一步如何到达这里，这样一直往前走，看看能不能到达起点。总结成公式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">current_position + nums[current_position] &gt;= left_most_good_index</span><br></pre></td></tr></table></figure></p><p>利用这个公式，从右往左一直找，看看能不能找回起点。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">can_jump</span><span class="params">(nums)</span></span></span><br><span class="line">  last = nums.length - <span class="number">1</span></span><br><span class="line">  i = nums.length - <span class="number">2</span></span><br><span class="line">  <span class="keyword">while</span> i &gt;= <span class="number">0</span></span><br><span class="line">    last = i <span class="keyword">if</span> i + nums[i] &gt;= last</span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  last == <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;55-Jump-Game&quot;&gt;&lt;a href=&quot;#55-Jump-Game&quot; class=&quot;headerlink&quot; title=&quot;55. Jump Game&quot;&gt;&lt;/a&gt;55. Jump Game&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spiral Matrix</title>
-    <link href="http://jack0pan.github.io/2018/03/26/Spiral-Matrix/"/>
-    <id>http://jack0pan.github.io/2018/03/26/Spiral-Matrix/</id>
-    <published>2018-03-26T13:29:03.000Z</published>
-    <updated>2018-10-14T01:30:06.233Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Spiral-Matrix"><a href="#Spiral-Matrix" class="headerlink" title="Spiral Matrix"></a>Spiral Matrix</h1><h2 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line"> [ 1, 2, 3 ],</span><br><span class="line"> [ 4, 5, 6 ],</span><br><span class="line"> [ 7, 8, 9 ]</span><br><span class="line">]</span><br><span class="line">Output: [1,2,3,6,9,8,7,4,5]</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [1, 2, 3, 4],</span><br><span class="line">  [5, 6, 7, 8],</span><br><span class="line">  [9,10,11,12]</span><br><span class="line">]</span><br><span class="line">Output: [1,2,3,4,8,12,11,10,9,5,6,7]</span><br></pre></td></tr></table></figure></p><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul><li>先取矩阵第一行</li><li>把矩阵转置，在逆序</li><li>重复第一步，知道矩阵为空</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[][]&#125; matrix</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spiral_order</span><span class="params">(matrix)</span></span></span><br><span class="line">  result = []</span><br><span class="line">  <span class="keyword">while</span> matrix.size &gt; <span class="number">0</span></span><br><span class="line">    result.concat matrix.shift</span><br><span class="line">    matrix = matrix.transpose.reverse</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  result</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul><li>时间复杂度：<code>O(N^3)</code></li><li>空间复杂度：<code>O(N^2)</code></li></ul><h2 id="59-Spiral-Matrix-II"><a href="#59-Spiral-Matrix-II" class="headerlink" title="59. Spiral Matrix II"></a>59. Spiral Matrix II</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>Given a positive integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line"> [ 1, 2, 3 ],</span><br><span class="line"> [ 8, 9, 4 ],</span><br><span class="line"> [ 7, 6, 5 ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>先把数列生成，然后以螺旋的方式填入矩阵，控制好在矩阵中移动指针的方向即可。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; n</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_matrix</span><span class="params">(n)</span></span></span><br><span class="line">  <span class="keyword">return</span> [ [ <span class="number">1</span> ] ] <span class="keyword">if</span> n == <span class="number">1</span></span><br><span class="line">  matrix = Array.new(n)&#123; Array.new(n, <span class="number">0</span>) &#125;</span><br><span class="line">  seen = Array.new(n)&#123; Array.new(n, <span class="literal">false</span>) &#125;</span><br><span class="line">  dr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">  dc = [<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line">  r = c = di = <span class="number">0</span></span><br><span class="line">  (n * n).times.each <span class="keyword">do</span> <span class="params">| i |</span></span><br><span class="line">    matrix[r][c] = i + <span class="number">1</span></span><br><span class="line">    seen[r][c] = <span class="literal">true</span></span><br><span class="line">    cr, cc = r + dr[di], c + dc[di]</span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> &lt;= cr <span class="keyword">and</span> cr &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= cc <span class="keyword">and</span> cc &lt; n <span class="keyword">and</span> <span class="keyword">not</span> seen[cr][cc]</span><br><span class="line">      r, c = cr, cc</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      di = (di + <span class="number">1</span>) % <span class="number">4</span></span><br><span class="line">      r, c = r + dr[di], c + dc[di]</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> matrix</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h3 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h3><ul><li>时间复杂度：<code>O(N^2)</code>，N为提供的数字大小</li><li>空间复杂度：<code>O(N^2)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Spiral-Matrix&quot;&gt;&lt;a href=&quot;#Spiral-Matrix&quot; class=&quot;headerlink&quot; title=&quot;Spiral Matrix&quot;&gt;&lt;/a&gt;Spiral Matrix&lt;/h1&gt;&lt;h2 id=&quot;54-Spiral-Matrix&quot;&gt;&lt;a 
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://jack0pan.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maximum Subarray</title>
-    <link href="http://jack0pan.github.io/2018/03/25/Maximum-Subarray/"/>
-    <id>http://jack0pan.github.io/2018/03/25/Maximum-Subarray/</id>
-    <published>2018-03-25T13:27:26.000Z</published>
-    <updated>2018-10-14T01:27:53.847Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a>53. Maximum Subarray</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: [4,-1,2,1] has the largest sum = 6.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br>If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>把局部最优都求出来，然后从这些解中找最大值。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_sub_array</span><span class="params">(nums)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> nums.<span class="literal">nil</span>? <span class="keyword">or</span> nums.length == <span class="number">0</span></span><br><span class="line">  local, global = nums[<span class="number">0</span>], nums[<span class="number">0</span>]  </span><br><span class="line">  i = <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length</span><br><span class="line">    local = nums[i] &gt; local + nums[i] ? nums[i] : local + nums[i]</span><br><span class="line">    global = local &gt; global ? local : global</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> global</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(N)</code></li><li>空间复杂度：<code>O(1)</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;53-Maximum-Subarray&quot;&gt;&lt;a href=&quot;#53-Maximum-Subarray&quot; class=&quot;headerlink&quot; title=&quot;53. Maximum Subarray&quot;&gt;&lt;/a&gt;53. Maximum Subarray&lt;/h1&gt;&lt;h2
       
     
     </summary>
