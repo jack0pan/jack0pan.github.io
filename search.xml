@@ -255,6 +255,27 @@
     </entry>
     
     <entry>
+      <title>Search a 2D Matrix</title>
+      <link href="/2018/04/07/Search-a-2D-Matrix/"/>
+      <url>/2018/04/07/Search-a-2D-Matrix/</url>
+      <content type="html"><![CDATA[<h1 id="74-Search-a-2D-Matrix"><a href="#74-Search-a-2D-Matrix" class="headerlink" title="74. Search a 2D Matrix"></a>74. Search a 2D Matrix</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:</p><p>Integers in each row are sorted from left to right.<br>The first integer of each row is greater than the last integer of the previous row.<br>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">matrix = [</span><br><span class="line">  [1,   3,  5,  7],</span><br><span class="line">  [10, 11, 16, 20],</span><br><span class="line">  [23, 30, 34, 50]</span><br><span class="line">]</span><br><span class="line">target = 3</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">matrix = [</span><br><span class="line">  [1,   3,  5,  7],</span><br><span class="line">  [10, 11, 16, 20],</span><br><span class="line">  [23, 30, 34, 50]</span><br><span class="line">]</span><br><span class="line">target = 13</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>最直接的办法就是每个数都遍历一遍，但是我们可以利用数组是有序的特性。<br>先通过每行的首尾数字确定在哪一行，然后再遍历此行即可。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[][]&#125; matrix</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; target</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_matrix</span><span class="params">(matrix, target)</span></span></span><br><span class="line">  m = matrix.size</span><br><span class="line">  (<span class="number">0</span>..(m - <span class="number">1</span>)).each <span class="keyword">do</span> <span class="params">|i|</span></span><br><span class="line">    n = matrix[i].size</span><br><span class="line">    <span class="keyword">next</span> <span class="keyword">if</span> n == <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> matrix[i][<span class="number">0</span>] &lt;= target <span class="keyword">and</span> target &lt;= matrix[i][-<span class="number">1</span>]</span><br><span class="line">      (<span class="number">0</span>..(n - <span class="number">1</span>)).each <span class="keyword">do</span> <span class="params">|j|</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span> <span class="keyword">if</span> matrix[i][j] == target</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul><li>时间复杂度：<code>O(m + n)</code>，先按行遍历，再按列遍历一行。</li><li>空间复杂度：<code>O(1)</code>，不需要额外空间。</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Set Matrix Zeroes</title>
       <link href="/2018/04/06/Set-Matrix-Zeroes/"/>
       <url>/2018/04/06/Set-Matrix-Zeroes/</url>
