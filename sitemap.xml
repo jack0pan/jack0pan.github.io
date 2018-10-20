@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/04/11/Remove-Duplicates-from-Sorted-List/</loc>
+    
+    <lastmod>2018-10-20T04:09:45.265Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/10/Word-Search/</loc>
+    
+    <lastmod>2018-10-20T03:01:00.766Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/09/Subsets/</loc>
+    
+    <lastmod>2018-10-18T13:40:24.525Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/04/08/Sort-Colors/</loc>
     
     <lastmod>2018-10-18T13:35:51.552Z</lastmod>
@@ -341,13 +362,6 @@
     <loc>http://jack0pan.github.io/2018/04/23/Gray-Code/</loc>
     
     <lastmod>2018-05-12T14:57:40.804Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jack0pan.github.io/2018/04/24/Subsets/</loc>
-    
-    <lastmod>2018-05-06T03:37:25.091Z</lastmod>
     
   </url>
   

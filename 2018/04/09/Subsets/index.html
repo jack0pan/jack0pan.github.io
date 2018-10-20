@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+    <meta name="description" content="Subsets78. Subsets题目Given a set of distinct integers, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets. Example:123456789101112Input: nums =">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Partition List">
-<meta property="og:url" content="http://jack0pan.github.io/2018/04/20/Partition-List/index.html">
+<meta property="og:title" content="Subsets">
+<meta property="og:url" content="http://jack0pan.github.io/2018/04/09/Subsets/index.html">
 <meta property="og:site_name" content="Jack Pan">
-<meta property="og:description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+<meta property="og:description" content="Subsets78. Subsets题目Given a set of distinct integers, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets. Example:123456789101112Input: nums =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T15:37:25.813Z">
+<meta property="og:updated_time" content="2018-10-18T13:40:24.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Partition List">
-<meta name="twitter:description" content="86. Partition List题目Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the">
+<meta name="twitter:title" content="Subsets">
+<meta name="twitter:description" content="Subsets78. Subsets题目Given a set of distinct integers, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets. Example:123456789101112Input: nums =">
     
     
         
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>Partition List</title>
+    <title>Subsets</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -71,10 +71,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/04/23/Gray-Code/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/04/10/Word-Search/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/04/11/Remove-Duplicates-from-Sorted-List/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/04/08/Sort-Colors/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -87,21 +87,21 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/20/Partition-List/&text=Partition List"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/20/Partition-List/&is_video=false&description=Partition List"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Partition List&body=Check out this article: http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/20/Partition-List/&name=Partition List&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/09/Subsets/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/09/Subsets/&text=Subsets"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/09/Subsets/&is_video=false&description=Subsets"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Subsets&body=Check out this article: http://jack0pan.github.io/2018/04/09/Subsets/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/09/Subsets/&name=Subsets&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#86-Partition-List"><span class="toc-number">1.</span> <span class="toc-text">86. Partition List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Subsets"><span class="toc-number">1.</span> <span class="toc-text">Subsets</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#78-Subsets"><span class="toc-number">1.1.</span> <span class="toc-text">78. Subsets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#90-Subsets-II"><span class="toc-number">1.2.</span> <span class="toc-text">90. Subsets II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +113,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Partition List
+        Subsets
     </h1>
 
 
@@ -124,7 +124,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-04-20T14:05:10.000Z" itemprop="datePublished">2018-04-20</time>
+        <time datetime="2018-04-09T13:56:24.000Z" itemprop="datePublished">2018-04-09</time>
     </div>
 
 
@@ -140,14 +140,24 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="86-Partition-List"><a href="#86-Partition-List" class="headerlink" title="86. Partition List"></a>86. Partition List</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
-<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</span><br><span class="line">Output: 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</span><br></pre></td></tr></table></figure></p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>方法就是从头到尾遍历链表，把小于给定值的节点从当前链表摘除，添加到新链表中。然后把链表添加到新链表尾部即可。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :next</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@next</span> = nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; head</span></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer&#125; x</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;ListNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(head, x)</span></span></span><br><span class="line">  dummy = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  new_dummy = ListNode.new(<span class="number">0</span>)</span><br><span class="line">  dummy.<span class="keyword">next</span> = head</span><br><span class="line">  cur, new_cur = dummy, new_dummy</span><br><span class="line">  <span class="keyword">while</span> cur.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">if</span> cur.<span class="keyword">next</span>.val &lt; x</span><br><span class="line">      new_cur.<span class="keyword">next</span> = cur.<span class="keyword">next</span></span><br><span class="line">      new_cur = new_cur.<span class="keyword">next</span></span><br><span class="line">      cur.<span class="keyword">next</span> = cur.<span class="keyword">next</span>.<span class="keyword">next</span></span><br><span class="line">      new_cur.<span class="keyword">next</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      cur = cur.<span class="keyword">next</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  new_cur.<span class="keyword">next</span> = dummy.<span class="keyword">next</span></span><br><span class="line">  <span class="keyword">return</span> new_dummy.<span class="keyword">next</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul>
-<li>时间复杂度：<code>O(n)</code></li>
-<li>空间复杂度：<code>O(1)</code></li>
+    <h1 id="Subsets"><a href="#Subsets" class="headerlink" title="Subsets"></a>Subsets</h1><h2 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a set of distinct integers, nums, return all possible subsets (the power set).</p>
+<p>Note: The solution set must not contain duplicate subsets.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1,2,3]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [1],</span><br><span class="line">  [2],</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [1,3],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  []</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>利用深度优先算法，把所有组合情况都遍历一遍。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(nums)</span></span></span><br><span class="line">  nums.sort!</span><br><span class="line">  path, result = [], []</span><br><span class="line">  _subsets(nums, <span class="number">0</span>, path, result)</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> _subsets<span class="params">(nums, index, path, result)</span></span></span><br><span class="line">  result.push(path.dup)</span><br><span class="line">  i = index</span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length</span><br><span class="line">    path.push(nums[i]);</span><br><span class="line">    _subsets(nums, i + <span class="number">1</span>, path, result)</span><br><span class="line">    path.pop</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n!)</code></li>
+<li>空间复杂度：<code>O(n!)</code></li>
+</ul>
+<h2 id="90-Subsets-II"><a href="#90-Subsets-II" class="headerlink" title="90. Subsets II"></a>90. Subsets II</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).</p>
+<p>Note: The solution set must not contain duplicate subsets.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,2]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [2],</span><br><span class="line">  [1],</span><br><span class="line">  [1,2,2],</span><br><span class="line">  [2,2],</span><br><span class="line">  [1,2],</span><br><span class="line">  []</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>这道题和<a href="https://leetcode.com/problems/subsets/description/" target="_blank" rel="noopener">Subsets</a>的区别在于去掉重复元素，最直接的办法就是在添加一种新组合前，判断一下是否已经含有这种组合。但是，这种做法增加了时间复杂度，LeetCode上的运行时间是<code>100ms</code>。</p>
+<p>还有一种更有效的办法，在把元素添加到组合中，直接跳过重复元素。这种做法可以把时间缩短到<code>40ms</code>。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer[][]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subsets_with_dup</span><span class="params">(nums)</span></span></span><br><span class="line">  nums.sort!</span><br><span class="line">  path, result = [], []</span><br><span class="line">  _subsets(nums, <span class="number">0</span>, path, result)</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> _subsets<span class="params">(nums, index, path, result)</span></span></span><br><span class="line">  result.push(path.dup)</span><br><span class="line">  i = index</span><br><span class="line">  <span class="keyword">while</span> i &lt; nums.length</span><br><span class="line">    path.push(nums[i]);</span><br><span class="line">    _subsets(nums, i + <span class="number">1</span>, path, result)</span><br><span class="line">    path.pop</span><br><span class="line">    i += <span class="number">1</span> <span class="keyword">while</span> i &lt; nums.length - <span class="number">1</span> <span class="keyword">and</span> nums[i] == nums[i + <span class="number">1</span>]</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h2><ul>
+<li>时间复杂度：<code>O(n!)</code></li>
+<li>空间复杂度：<code>O(n!)</code></li>
 </ul>
 
   </div>
@@ -187,21 +197,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#86-Partition-List"><span class="toc-number">1.</span> <span class="toc-text">86. Partition List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Subsets"><span class="toc-number">1.</span> <span class="toc-text">Subsets</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#78-Subsets"><span class="toc-number">1.1.</span> <span class="toc-text">78. Subsets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#90-Subsets-II"><span class="toc-number">1.2.</span> <span class="toc-text">90. Subsets II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/20/Partition-List/&text=Partition List"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/20/Partition-List/&is_video=false&description=Partition List"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Partition List&body=Check out this article: http://jack0pan.github.io/2018/04/20/Partition-List/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/20/Partition-List/&title=Partition List"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/20/Partition-List/&name=Partition List&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/09/Subsets/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/09/Subsets/&text=Subsets"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/09/Subsets/&is_video=false&description=Subsets"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Subsets&body=Check out this article: http://jack0pan.github.io/2018/04/09/Subsets/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/09/Subsets/&title=Subsets"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/09/Subsets/&name=Subsets&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
