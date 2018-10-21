@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/</loc>
+    
+    <lastmod>2018-10-21T03:50:51.337Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jack0pan.github.io/2018/04/23/Binary-Tree-Level-Order-Traversal/</loc>
+    
+    <lastmod>2018-10-21T03:18:50.924Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jack0pan.github.io/2018/04/22/Symmetric-Tree/</loc>
     
     <lastmod>2018-10-20T12:24:32.119Z</lastmod>
@@ -432,13 +446,6 @@
     <loc>http://jack0pan.github.io/2018/05/04/Construct-Binary-Tree-from-Traversal/</loc>
     
     <lastmod>2018-05-04T14:33:00.420Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jack0pan.github.io/2018/05/04/Binary-Tree-Level-Order-Traversal/</loc>
-    
-    <lastmod>2018-05-04T14:29:10.445Z</lastmod>
     
   </url>
   
