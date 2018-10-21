@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Convert Sorted Array and List to Binary Search Tree108. Convert Sorted Array to Binary Search Tree题目Given an array where elements are sorted in ascending order, convert it to a height balanced BST. Fo">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convert Sorted Array and List to Binary Search Tree">
+<meta property="og:url" content="http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/index.html">
+<meta property="og:site_name" content="Jack Pan">
+<meta property="og:description" content="Convert Sorted Array and List to Binary Search Tree108. Convert Sorted Array to Binary Search Tree题目Given an array where elements are sorted in ascending order, convert it to a height balanced BST. Fo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-21T06:36:16.483Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Convert Sorted Array and List to Binary Search Tree">
+<meta name="twitter:description" content="Convert Sorted Array and List to Binary Search Tree108. Convert Sorted Array to Binary Search Tree题目Given an array where elements are sorted in ascending order, convert it to a height balanced BST. Fo">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/favicons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Convert Sorted Array and List to Binary Search Tree</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Jack Pan" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+         
+          <li><a href="/buymeacoffee/">赞赏</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/04/27/Balanced-Binary-Tree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/04/25/Construct-Binary-Tree-from-Traversal/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&text=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&is_video=false&description=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert Sorted Array and List to Binary Search Tree&body=Check out this article: http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&name=Convert Sorted Array and List to Binary Search Tree&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Convert-Sorted-Array-and-List-to-Binary-Search-Tree"><span class="toc-number">1.</span> <span class="toc-text">Convert Sorted Array and List to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#108-Convert-Sorted-Array-to-Binary-Search-Tree"><span class="toc-number">1.1.</span> <span class="toc-text">108. Convert Sorted Array to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#109-Convert-Sorted-List-to-Binary-Search-Tree"><span class="toc-number">1.2.</span> <span class="toc-text">109. Convert Sorted List to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Convert Sorted Array and List to Binary Search Tree
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jack Pan</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-04-26T14:34:53.000Z" itemprop="datePublished">2018-04-26</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/LeetCode/">LeetCode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Convert-Sorted-Array-and-List-to-Binary-Search-Tree"><a href="#Convert-Sorted-Array-and-List-to-Binary-Search-Tree" class="headerlink" title="Convert Sorted Array and List to Binary Search Tree"></a>Convert Sorted Array and List to Binary Search Tree</h1><h2 id="108-Convert-Sorted-Array-to-Binary-Search-Tree"><a href="#108-Convert-Sorted-Array-to-Binary-Search-Tree" class="headerlink" title="108. Convert Sorted Array to Binary Search Tree"></a>108. Convert Sorted Array to Binary Search Tree</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Given the sorted array: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:</span><br><span class="line"></span><br><span class="line">      0</span><br><span class="line">     / \</span><br><span class="line">   -3   9</span><br><span class="line">   /   /</span><br><span class="line"> -10  5</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>这题有点像通过中序遍历恢复二叉树。总体思路就是以中间节点为根节点，递归构造左子树和右子树。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :left, :right</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@left</span>, <span class="doctag">@right</span> = nil, nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;Integer[]&#125; nums</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;TreeNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sorted_array_to_bst</span><span class="params">(nums)</span></span></span><br><span class="line">  helper(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(nums, left, right)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">nil</span> <span class="keyword">if</span> left &gt; right</span><br><span class="line">  m = (left + right) / <span class="number">2</span></span><br><span class="line">  root = TreeNode.new(nums[m])</span><br><span class="line">  root.left = helper(nums, left, m - <span class="number">1</span>)</span><br><span class="line">  root.right = helper(nums, m + <span class="number">1</span>, right)</span><br><span class="line">  root</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(logn)</code></li>
+<li>空间复杂度：<code>O(n)</code></li>
+</ul>
+<h2 id="109-Convert-Sorted-List-to-Binary-Search-Tree"><a href="#109-Convert-Sorted-List-to-Binary-Search-Tree" class="headerlink" title="109. Convert Sorted List to Binary Search Tree"></a>109. Convert Sorted List to Binary Search Tree</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p>Example:</p>
+<p>Given the sorted linked list: [-10,-3,0,5,9],</p>
+<p>One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     0</span><br><span class="line">    / \</span><br><span class="line">  -3   9</span><br><span class="line">  /   /</span><br><span class="line">-10  5</span><br></pre></td></tr></table></figure></p>
+<h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>这个和<a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/" target="_blank" rel="noopener">Convert Sorted Array to Binary Search Tree</a>区别在于链表无法提前知道长度，先把链表遍历一般计算出长度，先遍历左子树，构造根节点，再遍历右子树。这里要用一个元素的空间在存储当前遍历到链表节点。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :next</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@next</span> = nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :left, :right</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@left</span>, <span class="doctag">@right</span> = nil, nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;ListNode&#125; head</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;TreeNode&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sorted_list_to_bst</span><span class="params">(head)</span></span></span><br><span class="line">  count, current = <span class="number">0</span>, head</span><br><span class="line">  <span class="keyword">while</span> current</span><br><span class="line">    count += <span class="number">1</span></span><br><span class="line">    current = current.<span class="keyword">next</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  array = [head]</span><br><span class="line">  helper(array, <span class="number">0</span>, count - <span class="number">1</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(array, left, right)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">nil</span> <span class="keyword">if</span> left &gt; right</span><br><span class="line">  m = (left + right) / <span class="number">2</span></span><br><span class="line">  left_tree = helper(array, left, m - <span class="number">1</span>)</span><br><span class="line">  root = TreeNode.new(array[<span class="number">0</span>].val)</span><br><span class="line">  array[<span class="number">0</span>] = array[<span class="number">0</span>].<span class="keyword">next</span></span><br><span class="line">  right_tree = helper(array, m + <span class="number">1</span>, right)</span><br><span class="line">  root.left = left_tree</span><br><span class="line">  root.right = right_tree</span><br><span class="line">  <span class="keyword">return</span> root</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
+<li>时间复杂度：<code>O(n)</code></li>
+<li>空间复杂度：<code>O(n)</code></li>
+</ul>
+
+  </div>
+</article>
+<div style="margin-top: 4rem; display: block; text-align: center;">
+<a href="/buymeacoffee">
+<svg style="width: 240px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 738 144"><style>.st0{fill:#fd0}.st1{fill:#ff9100}.st2{fill:#fff}.st3,.st4,.st5{fill:none;stroke:#000;stroke-width:4.3189}.st4,.st5{stroke:#050505}.st5{stroke:#eee;stroke-width:6.9583}.st6{fill:#eee}.st7{fill:#ff813f}</style><path id="Combined-Shape" class="st0" d="M146.9 11.9v-3c0-1.7-1.4-3.1-3.1-3.1h-1c-1.7 0-3.1 1.4-3.1 3.1V12h-3.1c-1.7 0-3.1 1.4-3.1 3.1v1c0 1.7 1.4 3.1 3.1 3.1h3.1v3.1c0 1.7 1.4 3.1 3.1 3.1h1c1.7 0 3.1-1.4 3.1-3.1v-3.1h3.1c1.7 0 3.1-1.4 3.1-3.1v-1c0-1.7-1.4-3.1-3.1-3.1h-3.1z"></path><path id="Fill-1" class="st1" d="M80.6 27.7L48.3 27.5 64.2 128.1 67.6 128.1 99.3 128.1 102.7 128.1 118.6 27.5z"></path><path id="Fill-2" class="st0" d="M80.6 27.7L48.3 27.5 64.2 128.1 67.6 128.1 91.2 128.1 94.7 128.1 110.5 27.5z"></path><path id="Fill-3" class="st2" d="M39.1 27.5L122.3 27.5 122.3 18.2 39.1 18.2z"></path><path id="Stroke-4" class="st3" d="M39.1 27.5L122.3 27.5 122.3 18.2 39.1 18.2z"></path><path id="Fill-6" class="st2" d="M106.2 3.1L86.3 3.1 74.5 3.1 54.7 3.1 48.6 17.1 74.5 17.1 86.3 17.1 112.2 17.1z"></path><g id="Group-11" transform="translate(3.455)"><path id="Stroke-7" class="st4" d="M102.7 3.1L82.9 3.1 71.1 3.1 51.2 3.1 45.2 17.1 71.1 17.1 82.9 17.1 108.8 17.1z"></path><path id="Stroke-9" class="st3" d="M77.1 27.7L39.1 27.5 54.9 128.1 58.4 128.1 95.8 128.1 99.3 128.1 115.1 27.5z"></path></g><path id="Fill-12" class="st2" d="M119.7 55.9L81.8 55.9 79.1 55.9 41.1 55.9 48.2 95.9 80.4 95.6 112.6 95.9z"></path><path id="Stroke-13" class="st3" d="M119.7 55.9L81.8 55.9 79.1 55.9 41.1 55.9 48.2 95.9 80.4 95.6 112.6 95.9z"></path><circle id="Oval" class="st5" cx="11.8" cy="41.3" r="8.3"></circle><circle id="Oval_1_" class="st6" cx="135" cy="76.8" r="5.6"></circle><circle id="Oval_2_" class="st7" cx="30.6" cy="108.8" r="5.6"></circle><g><path d="M174 41.6c.4-1.5 1-2.5 2-3s2-.8 3-.7c1 .1 1.9.4 2.7 1 .8.6 1.2 1.3 1.2 2 0 .3 0 .6-.1.9-.1.3-.1.6-.1.8 3.2-1.1 6.3-1.9 9.4-2.3s5.8-.2 8.4.4c2.5.7 4.7 1.9 6.7 3.7 1.9 1.8 3.3 4.2 4.2 7.4.4 1.3.4 2.8.2 4.5-.2 1.7-.6 3.5-1.2 5.2-.6 1.7-1.3 3.3-2.1 4.8s-1.6 2.5-2.5 3.2c1.9.6 3.6 1.6 5 3s2.5 3 3.4 4.8c.8 1.8 1.4 3.8 1.6 5.9.2 2.1.1 4.3-.4 6.4-.5 2.1-1.4 4-2.9 5.8-1.5 1.8-3.3 3.4-5.4 4.8-2.1 1.4-4.5 2.6-7.1 3.5-2.6.9-5.3 1.6-7.9 1.9-2.7.3-5.3.3-7.9 0-2.6-.3-5-1.1-7-2.2-.7 1.1-1.5 1.9-2.4 2.3-.9.4-1.8.6-2.6.4-.8-.2-1.6-.6-2.2-1.4-.6-.8-1-1.9-1.2-3.3.5-4.7.9-9.6 1.4-14.7.5-5.1.9-10.2 1.4-15.4.5-5.2.9-10.3 1.3-15.3.3-4.8.7-9.7 1.1-14.4zm3.7 54.3c1.5 1 3.2 1.7 5.3 2.1 2.1.3 4.2.4 6.5.1 2.2-.3 4.4-.8 6.6-1.7 2.2-.8 4.1-1.9 5.8-3.2 1.6-1.3 2.9-2.9 3.9-4.7.9-1.8 1.3-3.8 1-6-.1-.8-.4-1.5-.9-2.3-.5-.7-1-1.4-1.7-2-1.3-1.1-3-1.8-5.1-2.1-2.2-.3-4.5-.3-6.9-.1-2.4.2-4.8.6-7.1 1.2-2.3.5-4.2 1.1-5.7 1.6l-1.7 17.1zm2.5-27.4c.4 0 1.1 0 2.3-.1 1.2-.1 2.6-.2 4.1-.4 1.6-.2 3.2-.5 5-1 1.7-.4 3.4-1 4.9-1.8 1.5-.8 2.8-1.7 3.9-2.8 1.1-1.1 1.7-2.5 1.9-4.1.3-2 .1-3.7-.5-5-.6-1.3-1.4-2.3-2.6-3.1-1.2-.7-2.5-1.1-4.1-1.3-1.5-.2-3.1-.1-4.7.1s-3.2.6-4.7 1.1c-1.5.5-2.9 1.1-4 1.8l-1.5 16.6zm41.4-5.8c.7-1.3 1.6-2.2 2.6-2.7s2-.6 3-.4c1 .2 1.8.8 2.5 1.7.7.9 1 2.1 1 3.6-.2.6-.4 1.9-.9 3.8-.4 1.9-.9 4-1.4 6.5-.5 2.5-1 5-1.4 7.8-.5 2.7-.8 5.3-.9 7.6-.2 2.3-.1 4.2.1 5.8s.8 2.4 1.6 2.6c1.5.3 2.9-.3 4.2-1.7 1.3-1.4 2.5-3.3 3.6-5.6s2.1-4.9 3-7.8c.9-2.9 1.7-5.6 2.3-8.3.7-2.6 1.2-5 1.6-7 .4-2 .7-3.4.9-4.1.4-1.3.8-2.4 1.4-3.2.6-.8 1.5-1.5 2.8-2 1.8-.2 3.2.2 4.3 1.1 1 1 1.6 2.4 1.6 4.2-.4 2-.9 4.2-1.4 6.5-.5 2.3-1 4.6-1.5 6.8-.5 2.3-.9 4.5-1.2 6.6-.3 2.1-.5 4-.6 5.7-.1 1.7 0 3.1.2 4.2s.7 1.9 1.4 2.2c1.7.3 3.2-.6 4.5-2.6 1.3-2 2.8-5.2 4.3-9.7.5-1.1 1.2-1.9 2.1-2.1.9-.3 1.8-.2 2.6.2s1.4 1.1 1.9 2.1c.4 1 .4 2.2 0 3.6-.3.9-.7 1.9-1.2 3.1-.5 1.2-1 2.4-1.7 3.6-.7 1.3-1.4 2.5-2.2 3.8-.8 1.3-1.6 2.4-2.5 3.4-1.3 1.6-2.8 2.7-4.4 3.3-1.6.7-3.2.9-4.8.7-1.6-.2-3.1-.9-4.5-2s-2.6-2.6-3.4-4.6c-.9 1.4-1.9 2.6-2.9 3.8-1 1.1-2 2.1-3.2 3-1.2.8-2.5 1.4-3.9 1.8-1.4.4-3.1.5-5 .4-1.9-.1-3.4-.6-4.7-1.6-1.2-.9-2.2-2.1-2.9-3.6-.7-1.5-1.1-3.1-1.4-4.8-.3-1.7-.4-3.5-.4-5.3 0-1.8.1-3.5.2-5 .1-1.6.2-2.9.4-4 .2-1.4.4-3.1.7-4.9.3-1.9.7-3.8 1.1-5.8.4-2 .8-3.9 1.2-5.7.7-2 1-3.6 1.3-5z"></path><path d="M263.2 62.7c.5-1.3 1.4-2.1 2.6-2.4 1.2-.4 2.3-.4 3.4 0 1.1.3 2 1 2.6 2 .6 1 .6 2.3 0 3.8-.4 1.3-.9 2.8-1.3 4.6-.5 1.8-.9 3.8-1.3 5.8s-.7 4.1-.9 6.1c-.2 2.1-.3 4-.2 5.7.1 1.7.3 3.2.7 4.3.4 1.1 1.1 1.9 2 2.1 2 .1 3.9-.3 5.7-1.2 1.7-.9 3.4-2.2 4.9-3.8 1.5-1.6 2.9-3.5 4.1-5.6 1.3-2.1 2.4-4.2 3.4-6.5 1-2.2 1.9-4.4 2.7-6.5.8-2.1 1.5-4.1 2.2-5.8.7-1.3 1.6-2.2 2.6-2.7s2-.6 3-.4c1 .2 1.8.8 2.5 1.7.7.9 1 2.1 1 3.6-.9 2.8-1.7 5.6-2.2 8.5-.5 2.9-.8 5.7-1 8.5-.1 2-.1 3.9-.1 5.9 0 1.9.1 3.7.4 5.4.6-.3 1.4-.8 2.4-1.5s2.1-1.5 3.2-2.4c1.1-.9 2.2-2 3.2-3.1s1.9-2.3 2.6-3.6c1-1.3 2.1-1.8 3.1-1.7s1.9.5 2.6 1.3c.7.8 1.1 1.7 1.3 2.8.2 1.1 0 2-.6 2.8-1.9 3.2-4.3 6.2-7.1 9.1-2.9 2.9-6.5 5.2-11 7.1.2 2.2.2 4.8 0 7.7-.2 2.9-.5 5.8-1.1 8.8-.6 3-1.4 5.8-2.4 8.6-1 2.7-2.3 5.1-3.9 7-1.6 1.9-3.5 3.3-5.6 4.1-2.1.8-4.6.8-7.4-.1-2.7-.8-4.7-2.2-5.9-4.1-1.2-1.9-1.8-4.2-1.8-6.8 0-2.6.5-5.4 1.4-8.3 1-3 2.4-5.9 4.1-8.8 1.7-2.9 3.8-5.6 6.1-8.2 2.3-2.6 4.8-4.7 7.4-6.6.1-1.3.1-2.4.1-3.5s0-2.2.1-3.4c-1.3 1.7-2.8 3.3-4.6 4.8-1.7 1.5-3.6 2.9-5.7 4-2 1.1-4.2 1.9-6.4 2.3-2.2.4-4.5.3-6.9-.3-2.2-.6-3.9-1.8-5.2-3.4-1.3-1.7-2.2-3.7-2.8-6-.6-2.3-.8-4.9-.8-7.7.1-2.8.3-5.6.7-8.5.4-2.8 1-5.6 1.8-8.3.6-2.7 1.4-5.1 2.3-7.2zm27.4 49.2c-1.2 1-2.3 2.2-3.4 3.7s-2.1 3-2.9 4.7c-.9 1.6-1.6 3.2-2.2 4.9-.6 1.6-1 3.1-1.2 4.4-.2 1.3-.2 2.4 0 3.3.2.9.7 1.4 1.5 1.5 1 .2 1.9-.2 2.8-1.2.9-1 1.6-2.2 2.3-3.8s1.3-3.3 1.8-5.2c.5-1.9.9-3.7 1.2-5.4.3-1.7.4-3.2.5-4.5 0-1.3-.1-2.1-.4-2.4zm41.9-8.1c.7-4.7 1.3-8.9 1.6-12.5.3-3.6.5-6.7.6-9.4.1-2.7 0-5-.1-6.8-.1-1.9-.3-3.4-.5-4.7-.2-1.3-.4-2.4-.7-3.2-.2-.8-.4-1.5-.4-2.1-.1-.8 0-1.5.2-2.1.2-.6.6-1.1 1-1.5.4-.4 1-.7 1.5-1 .6-.2 1.1-.4 1.7-.4 1.1 0 2 .2 2.7.5.6.4 1.1.9 1.4 1.6.3.7.6 1.6.7 2.6.1 1 .2 2.2.4 3.6.7-1.1 1.5-2.3 2.3-3.5.9-1.2 1.9-2.2 3-3.2 1.1-.9 2.3-1.7 3.6-2.3 1.3-.6 2.8-.9 4.3-.9 1.6 0 3.2.3 4.6.9 1.5.6 2.8 1.4 4 2.5 1.2 1.1 2.2 2.3 3 3.8.8 1.4 1.4 3 1.8 4.7 1.1-2.2 2.4-4.3 3.8-6.3s3.2-3.5 5.6-4.6c2.3-1.1 4.5-1.4 6.6-.9s3.8 1.4 5.4 2.9c1.5 1.4 2.8 3.2 3.6 5.4.9 2.2 1.3 4.4 1.3 6.8 0 2.7-.2 5.6-.5 8.5-.3 3-.6 5.7-.9 8.3-.3 2.6-.4 4.7-.3 6.4.1 1.7.5 2.7 1.4 2.9 1.4.4 2.8-.1 4.1-1.3 1.3-1.2 2.5-2.7 3.6-4.5 1.1-1.8 2-3.6 2.8-5.4.8-1.9 1.4-3.3 1.9-4.3.4-.9 1-1.4 1.8-1.6.8-.2 1.6-.2 2.3.2.8.3 1.4.9 1.9 1.7.5.8.7 1.8.5 2.9-.6 2.6-1.5 5.1-2.6 7.7-1.1 2.6-2.5 4.9-4.1 6.9-1.6 2.1-3.6 3.7-5.9 5-2.3 1.3-4.9 1.9-7.9 1.9-2 0-3.6-.5-4.9-1.6-1.3-1.1-2.3-2.4-3-3.9-.7-1.5-1.2-3.2-1.5-4.9-.3-1.7-.4-3.2-.4-4.5 0-1.9.1-3.7.4-5.4.2-1.7.5-3.4.8-5 .3-1.6.6-3.2.8-4.8.2-1.5.4-3 .4-4.5 0-2-.2-3.5-.7-4.7-.4-1.1-1.1-1.7-1.9-1.7-1.6 0-3.1 1-4.6 2.9-1.4 1.9-2.7 4.4-3.9 7.4-1.2 3-2.2 6.4-3.1 10.2-.9 3.8-1.6 7.6-2.2 11.3-.2 1.3-.7 2.2-1.7 2.8-1 .5-2 .8-3.2.6-1.1-.1-2.1-.5-3.1-1.3-.9-.7-1.4-1.7-1.4-2.9.1-.7.3-1.9.5-3.7.2-1.8.4-3.8.6-6.1.2-2.3.3-4.7.3-7.2s-.1-4.8-.5-6.8c-.3-2.1-.9-3.8-1.7-5.1-.8-1.3-1.9-2-3.4-2-1.2 0-2.3.6-3.4 1.7s-2.2 2.6-3.2 4.5-1.9 4-2.8 6.5c-.8 2.5-1.6 5-2.2 7.7-.7 2.7-1.2 5.5-1.6 8.2-.4 2.8-.7 5.4-.9 7.8-.2 1.3-.8 2.2-1.8 2.7-1.1.5-2.2.7-3.4.6-1.2-.1-2.3-.5-3.2-1.2-.9-.8-1.3-1.7-1.2-2.8z"></path><path d="M433.3 69c-.1 2.6-.6 5.2-1.4 7.9-.8 2.6-2.1 5-3.7 7.1s-3.6 3.8-5.9 5.1c-2.3 1.3-5 1.8-7.9 1.6.1 1.6.2 3.2.5 4.7s.8 2.8 1.5 3.9 1.7 1.8 2.9 2.3c1.2.4 2.7.4 4.5-.2 1.8-.5 3.6-1.4 5.2-2.6 1.7-1.2 3.2-2.6 4.5-4.1 1.3-1.6 2.5-3.2 3.4-5 .9-1.7 1.6-3.5 2-5.1.2-.9.7-1.4 1.5-1.6.8-.2 1.6-.2 2.5.1.9.3 1.6.7 2.2 1.4.6.7.8 1.4.6 2.2-1.1 3-2.3 5.7-3.4 8.1-1.1 2.3-2.4 4.4-3.7 6.2-1.4 1.8-2.9 3.3-4.6 4.6-1.7 1.3-3.7 2.3-6 3.1-3.1 1.1-5.9 1.6-8.5 1.4-2.6-.1-4.9-.8-6.8-2.1-1.9-1.3-3.5-3-4.6-5.3-1.1-2.3-1.8-5.1-1.9-8.4-.1-1.6-.1-3.5-.1-5.7s.2-4.5.4-7 .7-4.9 1.3-7.4c.6-2.5 1.4-4.8 2.3-7 1-2.2 2.2-4.1 3.7-5.7 1.5-1.6 3.3-2.8 5.4-3.6 1.8-.6 3.5-.9 5.2-.7 1.7.2 3.2.7 4.6 1.6 1.3.9 2.4 2.3 3.2 4 .8 1.7 1.2 3.8 1.1 6.2zm-9.8-2c-.7-.5-1.4-.5-2.2-.1-.7.4-1.4 1-2 2-.6.9-1.2 2-1.6 3.2-.5 1.3-.9 2.5-1.2 3.9-.3 1.3-.5 2.6-.7 3.8-.2 1.2-.2 2.2-.1 2.9 2.4-.5 4.3-1.5 5.7-3 1.4-1.5 2.4-3.1 2.9-4.9.5-1.7.7-3.3.5-4.9-.1-1.5-.6-2.5-1.3-2.9zm49 38.2c-3.2 0-5.7-.9-7.6-2.7-1.9-1.8-3.1-4.1-3.9-6.8-.7-2.8-1-5.9-.7-9.3.3-3.4 1-6.7 2.2-10 1.1-3.3 2.6-6.3 4.5-9 1.9-2.8 4-4.9 6.4-6.3 2.4-1.5 5-2.1 7.9-1.9 2.8.2 5.8 1.6 8.9 4.3.3-.9 1-1.5 2-1.7 1-.2 2.1-.1 3.1.3s1.9 1 2.5 2c.7.9.8 2 .4 3.3-.4 1.5-.8 3.2-1.4 5.4s-1.1 4.3-1.7 6.6c-.5 2.3-1 4.6-1.4 6.9-.4 2.3-.6 4.4-.5 6.3 0 1.9.3 3.4.8 4.6.5 1.2 1.4 1.9 2.7 2 1.6.1 3-.4 4.4-1.6 1.4-1.2 2.6-2.6 3.7-4.4 1.1-1.8 2-3.7 2.7-5.6.7-2 1.2-3.7 1.4-5.2.4-1.4 1-2.2 1.8-2.4.9-.2 1.7-.1 2.5.3s1.5 1.1 2 1.9c.5.9.6 1.7.2 2.5-.4 2.1-1.1 4.5-2.2 7.2s-2.5 5.2-4.2 7.7c-1.7 2.4-3.6 4.5-5.8 6.1-2.1 1.7-4.4 2.5-6.9 2.5-1.1 0-2.2-.2-3.4-.6-1.2-.4-2.3-1-3.4-1.8s-2-1.9-2.9-3.2c-.8-1.3-1.4-2.9-1.8-4.8-.5.6-1.1 1.3-2 2.2-.8.9-1.8 1.7-2.9 2.5s-2.3 1.5-3.6 2c-1.1.4-2.4.7-3.8.7zm-.1-9.8c1.7.2 3.1-.2 4.4-1.2 1.3-.9 2.4-2.2 3.4-3.8 1-1.6 1.8-3.4 2.5-5.4.7-2 1.2-3.9 1.7-5.8.4-1.9.8-3.5 1.1-5.1.3-1.5.4-2.6.5-3.3-1.7-1.4-3.2-2.1-4.7-2.2-1.5-.1-2.8.4-4 1.2-1.2.9-2.3 2.1-3.2 3.6-.9 1.6-1.7 3.3-2.4 5.1-.7 1.9-1.1 3.7-1.4 5.7s-.5 3.7-.4 5.3c0 1.6.3 2.9.7 4 .3 1.2 1 1.8 1.8 1.9zM556 75.9c-.1 0-.2 0-.2-.1-.6 1.3-1.3 2.2-2.2 2.7-.9.6-1.8.8-2.8.7-.9-.1-1.8-.6-2.5-1.4-.8-.8-1.3-1.9-1.5-3.3 0-.7.1-1.5.2-2.5.2-1 .3-2 .4-3 .1-1 0-1.8-.1-2.5-.2-.7-.6-1.1-1.3-1.2-1.2.7-2.2 1.8-3.1 3.4-.9 1.6-1.6 3.4-2.2 5.4-.6 2-1 4.1-1.2 6.4-.2 2.2-.3 4.4-.2 6.5.1 2.1.3 3.9.8 5.5.4 1.6 1.1 2.8 1.9 3.5 1 1 2.2 1.6 3.4 1.8 1.3.2 2.6.2 3.9-.1 1.1-.2 2.5-.6 3.9-1.2 1.5-.6 2.9-1.4 4.4-2.5 1.5-1.1 2.9-2.5 4.3-4.2 1.4-1.7 2.6-3.9 3.6-6.5.4-.8 1-1.3 1.9-1.4.9-.2 1.8-.1 2.7.3.9.3 1.6.9 2.1 1.7.5.8.6 1.7.2 2.9-1 2.5-2.3 4.6-3.9 6.6s-3.2 3.6-5 5.1c-1.8 1.5-3.6 2.7-5.6 3.8-1.9 1-3.8 1.9-5.6 2.6-1.4.5-2.9.9-4.5 1.2-1.6.3-3.1.4-4.7.2s-3.1-.6-4.6-1.2c-1.5-.7-2.8-1.7-3.9-3.1-1.4-1.6-2.4-3.6-3.2-6-.8-2.4-1.2-5-1.4-7.7-.2-2.7-.1-5.5.2-8.4.3-2.9.9-5.6 1.7-8.2.8-2.6 1.9-4.9 3.1-7 1.3-2.1 2.8-3.8 4.4-5 2.7-1.8 5.4-2.7 7.9-2.5 2.6.1 4.6 1.3 6.1 3.5 1.2.2 2.2.8 2.9 1.8.7 1 .9 2.2.6 3.6l-.9 9.8z"></path><path d="M589.6 59.3c2.4-.8 4.5-.9 6.3-.5s3.3 1.4 4.5 2.7c1.2 1.4 2.2 3 2.9 5 .7 2 1.2 4.1 1.4 6.4.1 1 .2 2.2.2 3.4 0 1.3 0 2.5-.1 3.8-.1 1.3-.2 2.5-.3 3.6-.1 1.1-.3 2.2-.5 3.1 1.3-.1 2.4-.2 3.4-.5s1.9-.6 2.7-1c.8-.4 1.6-.8 2.4-1.3.8-.5 1.5-.9 2.3-1.3 1-.5 1.8-.6 2.5-.2s1.1 1 1.3 1.8c.2.8.3 1.6.2 2.5-.1.9-.5 1.6-1.1 2.2-2.5 2.3-5.2 4-8.2 5s-6 1.5-9.1 1.5c-2 3.6-4.6 6.3-7.8 8.2-3.2 1.9-6.7 2.8-10.4 2.9-3.5.1-6.4-.7-8.8-2.1-2.4-1.5-4.3-3.4-5.7-5.7s-2.3-5-2.8-8c-.4-3-.4-6 0-9.1s1.3-6 2.7-8.9c1.3-2.9 3-5.4 5.1-7.6 2.1-2.1 4.6-3.8 7.4-4.9 2.7-1.1 5.9-1.5 9.5-1zm-5.7 9c-1.7.4-3.2 1.3-4.6 2.8-1.4 1.5-2.6 3.3-3.6 5.3-1 2.1-1.7 4.3-2.1 6.7-.4 2.4-.5 4.7-.1 6.8.3 2.1 1.1 4 2.4 5.5 1.3 1.6 3.1 2.6 5.4 3.1.8.2 1.8.1 2.8-.2 1-.3 2.1-.8 3.1-1.4 1-.6 1.9-1.4 2.7-2.2.8-.9 1.4-1.7 1.8-2.6-1.5-.9-2.7-2-3.7-3.2-1-1.3-1.9-2.6-2.6-4.1-1.1-2.5-1.8-5.2-2-8-.3-3.1-.1-5.8.5-8.5zm9.7.4c-1.5.9-2.3 2.1-2.5 3.7-.2 1.6 0 3.2.4 4.9.5 1.6 1.1 3.1 2 4.4.8 1.3 1.5 2.1 2.1 2.4.3-.3.6-.9.7-1.8.2-1 .3-2.1.4-3.3.1-1.3 0-2.6-.1-3.9-.1-1.4-.3-2.6-.5-3.6-.3-1-.6-1.8-1-2.4-.4-.6-.9-.7-1.5-.4z"></path><path d="M614.5 41.1c.7-1.3 1.7-2.1 2.8-2.5 1.1-.4 2.2-.4 3.2-.1 1 .3 1.8.9 2.4 1.7.6.8.8 1.8.5 2.9l-4.9 52c2.2-.2 4.4-.6 6.6-1.4 2.1-.8 4.2-1.7 6.2-2.9s3.9-2.5 5.7-4 3.5-2.9 5-4.5c.8-.4 1.6-.3 2.2.5.7.7 1.1 1.7 1.4 2.8.3 1.1.3 2.3.2 3.5-.2 1.2-.7 2.1-1.5 2.6-1.1.8-2.3 1.8-3.7 2.8s-2.7 2-4.1 2.9c-1.4.9-2.7 1.7-4 2.5-1.3.7-2.4 1.2-3.4 1.5 1.6 1.7 2.8 3.9 3.7 6.6.9 2.7 1.4 5.5 1.6 8.5.2 3 .1 6-.4 9s-1.3 5.6-2.5 7.9c-1.2 2.3-2.8 4.1-4.7 5.4-1.9 1.3-4.2 1.8-6.9 1.4-2.5-.3-4.5-1.3-6.1-2.9-1.5-1.6-2.7-3.6-3.6-5.9-.8-2.3-1.4-4.9-1.6-7.8-.3-2.8-.4-5.7-.3-8.5.1-2.8.2-5.5.4-8s.3-4.7.4-6.4c0-1 .1-2.9.3-5.6.2-2.8.5-6 .7-9.8.3-3.8.6-7.8 1-12.1s.8-8.5 1.2-12.6c.4-4.1.8-7.8 1.2-11.3.3-3.5.7-6.3 1-8.2zm5.8 88.7c1.4-.1 2.6-.7 3.5-1.9.9-1.2 1.6-2.7 2.1-4.5.4-1.8.6-3.7.5-5.8-.1-2.1-.5-4.1-1.1-5.9-.6-1.8-1.5-3.4-2.7-4.7-1.2-1.3-2.6-2.1-4.4-2.3-.1.9-.2 2.1-.4 3.8-.2 1.6-.3 3.4-.5 5.2-.1 1.9-.2 3.8-.2 5.7 0 1.9.1 3.7.2 5.2.2 1.6.5 2.8 1 3.8.4 1 1.1 1.5 2 1.4z"></path><path d="M642.9 41.1c.7-1.3 1.7-2.1 2.8-2.5 1.1-.4 2.2-.4 3.2-.1 1 .3 1.8.9 2.4 1.7.6.8.8 1.8.5 2.9l-4.9 52c2.2-.2 4.4-.6 6.6-1.4s4.2-1.7 6.2-2.9 3.9-2.5 5.7-4 3.5-2.9 5-4.5c.8-.4 1.6-.3 2.2.5.7.7 1.1 1.7 1.4 2.8.3 1.1.3 2.3.2 3.5-.2 1.2-.7 2.1-1.5 2.6-1.1.8-2.3 1.8-3.7 2.8s-2.7 2-4.1 2.9c-1.4.9-2.7 1.7-4 2.5-1.3.7-2.4 1.2-3.4 1.5 1.6 1.7 2.8 3.9 3.7 6.6.9 2.7 1.4 5.5 1.6 8.5.2 3 .1 6-.4 9s-1.3 5.6-2.5 7.9c-1.2 2.3-2.8 4.1-4.7 5.4-1.9 1.3-4.2 1.8-6.9 1.4-2.5-.3-4.5-1.3-6.1-2.9-1.5-1.6-2.7-3.6-3.6-5.9-.8-2.3-1.4-4.9-1.6-7.8-.3-2.8-.4-5.7-.3-8.5.1-2.8.2-5.5.4-8s.3-4.7.4-6.4c0-1 .1-2.9.3-5.6.2-2.8.5-6 .7-9.8.3-3.8.6-7.8 1-12.1s.8-8.5 1.2-12.6c.4-4.1.8-7.8 1.2-11.3.2-3.5.6-6.3 1-8.2zm5.7 88.7c1.4-.1 2.6-.7 3.5-1.9.9-1.2 1.6-2.7 2.1-4.5.4-1.8.6-3.7.5-5.8-.1-2.1-.5-4.1-1.1-5.9-.6-1.8-1.5-3.4-2.7-4.7-1.2-1.3-2.7-2.1-4.4-2.3-.1.9-.2 2.1-.4 3.8-.2 1.6-.3 3.4-.5 5.2s-.2 3.8-.2 5.7c0 1.9.1 3.7.2 5.2s.5 2.8 1 3.8c.4 1 1.1 1.5 2 1.4z"></path><path d="M694 69c-.1 2.6-.6 5.2-1.4 7.9-.8 2.6-2.1 5-3.7 7.1s-3.6 3.8-5.9 5.1c-2.3 1.3-5 1.8-7.9 1.6.1 1.6.2 3.2.5 4.7s.8 2.8 1.5 3.9 1.7 1.8 2.9 2.3c1.2.4 2.7.4 4.5-.2 1.8-.5 3.6-1.4 5.2-2.6 1.7-1.2 3.2-2.6 4.5-4.1 1.3-1.6 2.5-3.2 3.4-5 .9-1.7 1.6-3.5 2-5.1.2-.9.7-1.4 1.5-1.6.8-.2 1.6-.2 2.5.1.9.3 1.6.7 2.2 1.4.6.7.8 1.4.6 2.2-1.1 3-2.3 5.7-3.4 8.1-1.1 2.3-2.4 4.4-3.7 6.2-1.4 1.8-2.9 3.3-4.6 4.6-1.7 1.3-3.7 2.3-6 3.1-3.1 1.1-5.9 1.6-8.5 1.4-2.6-.1-4.9-.8-6.8-2.1-1.9-1.3-3.5-3-4.6-5.3-1.1-2.3-1.8-5.1-1.9-8.4-.1-1.6-.1-3.5-.1-5.7s.2-4.5.4-7 .7-4.9 1.3-7.4c.6-2.5 1.4-4.8 2.3-7 1-2.2 2.2-4.1 3.7-5.7 1.5-1.6 3.3-2.8 5.4-3.6 1.8-.6 3.5-.9 5.2-.7 1.7.2 3.2.7 4.6 1.6 1.3.9 2.4 2.3 3.2 4 .8 1.7 1.2 3.8 1.1 6.2zm-9.9-2c-.7-.5-1.4-.5-2.2-.1-.7.4-1.4 1-2 2-.6.9-1.2 2-1.6 3.2-.5 1.3-.9 2.5-1.2 3.9-.3 1.3-.5 2.6-.7 3.8-.2 1.2-.2 2.2-.1 2.9 2.4-.5 4.3-1.5 5.7-3 1.4-1.5 2.4-3.1 2.9-4.9.5-1.7.7-3.3.5-4.9 0-1.5-.5-2.5-1.3-2.9z"></path><path d="M725.6 69c-.1 2.6-.6 5.2-1.4 7.9-.8 2.6-2.1 5-3.7 7.1s-3.6 3.8-5.9 5.1c-2.3 1.3-5 1.8-7.9 1.6.1 1.6.2 3.2.5 4.7s.8 2.8 1.5 3.9 1.7 1.8 2.9 2.3c1.2.4 2.7.4 4.5-.2 1.8-.5 3.6-1.4 5.2-2.6 1.7-1.2 3.2-2.6 4.5-4.1 1.3-1.6 2.5-3.2 3.4-5 .9-1.7 1.6-3.5 2-5.1.2-.9.7-1.4 1.5-1.6.8-.2 1.6-.2 2.5.1.9.3 1.6.7 2.2 1.4.6.7.8 1.4.6 2.2-1.1 3-2.3 5.7-3.4 8.1-1.1 2.3-2.4 4.4-3.7 6.2-1.4 1.8-2.9 3.3-4.6 4.6-1.7 1.3-3.7 2.3-6 3.1-3.1 1.1-5.9 1.6-8.5 1.4-2.6-.1-4.9-.8-6.8-2.1-1.9-1.3-3.5-3-4.6-5.3-1.1-2.3-1.8-5.1-1.9-8.4-.1-1.6-.1-3.5-.1-5.7s.2-4.5.4-7 .7-4.9 1.3-7.4c.6-2.5 1.4-4.8 2.3-7 1-2.2 2.2-4.1 3.7-5.7 1.5-1.6 3.3-2.8 5.4-3.6 1.8-.6 3.5-.9 5.2-.7 1.7.2 3.2.7 4.6 1.6 1.3.9 2.4 2.3 3.2 4 .7 1.7 1.1 3.8 1.1 6.2zm-9.9-2c-.7-.5-1.4-.5-2.2-.1-.7.4-1.4 1-2 2-.6.9-1.2 2-1.6 3.2-.5 1.3-.9 2.5-1.2 3.9-.3 1.3-.5 2.6-.7 3.8-.2 1.2-.2 2.2-.1 2.9 2.4-.5 4.3-1.5 5.7-3 1.4-1.5 2.4-3.1 2.9-4.9.5-1.7.7-3.3.5-4.9 0-1.5-.5-2.5-1.3-2.9z"></path></g></svg>
+</a>
+</div>
+
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+         
+          <li><a href="/buymeacoffee/">赞赏</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Convert-Sorted-Array-and-List-to-Binary-Search-Tree"><span class="toc-number">1.</span> <span class="toc-text">Convert Sorted Array and List to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#108-Convert-Sorted-Array-to-Binary-Search-Tree"><span class="toc-number">1.1.</span> <span class="toc-text">108. Convert Sorted Array to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#109-Convert-Sorted-List-to-Binary-Search-Tree"><span class="toc-number">1.2.</span> <span class="toc-text">109. Convert Sorted List to Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&text=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&is_video=false&description=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert Sorted Array and List to Binary Search Tree&body=Check out this article: http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&title=Convert Sorted Array and List to Binary Search Tree"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/&name=Convert Sorted Array and List to Binary Search Tree&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack Pan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/jack0pan">项目</a></li>
+         
+          <li><a href="/buymeacoffee/">赞赏</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'jack0pan';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

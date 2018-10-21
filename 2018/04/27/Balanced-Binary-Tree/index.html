@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Depth of Binary Tree104. Maximum Depth of Binary Tree题目Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farth">
+    <meta name="description" content="110. Balanced Binary Tree题目Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Depth of Binary Tree">
-<meta property="og:url" content="http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/index.html">
+<meta property="og:title" content="Balanced Binary Tree">
+<meta property="og:url" content="http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/index.html">
 <meta property="og:site_name" content="Jack Pan">
-<meta property="og:description" content="Depth of Binary Tree104. Maximum Depth of Binary Tree题目Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farth">
+<meta property="og:description" content="110. Balanced Binary Tree题目Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-21T03:50:51.337Z">
+<meta property="og:updated_time" content="2018-10-21T06:40:46.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Depth of Binary Tree">
-<meta name="twitter:description" content="Depth of Binary Tree104. Maximum Depth of Binary Tree题目Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farth">
+<meta name="twitter:title" content="Balanced Binary Tree">
+<meta name="twitter:description" content="110. Balanced Binary Tree题目Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees">
     
     
         
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>Depth of Binary Tree</title>
+    <title>Balanced Binary Tree</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -71,10 +71,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/04/25/Construct-Binary-Tree-from-Traversal/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/08/09/金融业网络安全攻防大赛Writeups/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/04/23/Binary-Tree-Level-Order-Traversal/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/04/26/Convert-Sorted-Array-and-List-to-Binary-Search-Tree/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -87,21 +87,21 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&text=Depth of Binary Tree"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&is_video=false&description=Depth of Binary Tree"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Depth of Binary Tree&body=Check out this article: http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&name=Depth of Binary Tree&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&text=Balanced Binary Tree"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&is_video=false&description=Balanced Binary Tree"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Balanced Binary Tree&body=Check out this article: http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&name=Balanced Binary Tree&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Depth-of-Binary-Tree"><span class="toc-number">1.</span> <span class="toc-text">Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#104-Maximum-Depth-of-Binary-Tree"><span class="toc-number">1.1.</span> <span class="toc-text">104. Maximum Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#111-Minimum-Depth-of-Binary-Tree"><span class="toc-number">1.2.</span> <span class="toc-text">111. Minimum Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#110-Balanced-Binary-Tree"><span class="toc-number">1.</span> <span class="toc-text">110. Balanced Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +113,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Depth of Binary Tree
+        Balanced Binary Tree
     </h1>
 
 
@@ -124,7 +124,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-04-24T14:48:44.000Z" itemprop="datePublished">2018-04-24</time>
+        <time datetime="2018-04-27T14:39:29.000Z" itemprop="datePublished">2018-04-27</time>
     </div>
 
 
@@ -140,28 +140,15 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="Depth-of-Binary-Tree"><a href="#Depth-of-Binary-Tree" class="headerlink" title="Depth of Binary Tree"></a>Depth of Binary Tree</h1><h2 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104. Maximum Depth of Binary Tree"></a>104. Maximum Depth of Binary Tree</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a binary tree, find its maximum depth.</p>
-<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
-<p>Note: A leaf is a node with no children.</p>
-<p>Example:</p>
-<p>Given binary tree [3,9,20,null,null,15,7],<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">  /  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure></p>
-<p>return its depth = 3.</p>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>用递归的思路，比较左子树和右子树，取长的子树长度。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :left, :right</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@left</span>, <span class="doctag">@right</span> = nil, nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;TreeNode&#125; root</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_depth</span><span class="params">(root)</span></span></span><br><span class="line">  <span class="keyword">if</span> root</span><br><span class="line">    <span class="keyword">return</span> [max_depth(root.left), max_depth(root.right)].max + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
-<li>时间复杂度：<code>O(N)</code></li>
-<li>空间复杂度：<code>O(1)</code></li>
-</ul>
-<h2 id="111-Minimum-Depth-of-Binary-Tree"><a href="#111-Minimum-Depth-of-Binary-Tree" class="headerlink" title="111. Minimum Depth of Binary Tree"></a>111. Minimum Depth of Binary Tree</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p>Note: A leaf is a node with no children.</p>
-<p>Example:</p>
-<p>Given binary tree [3,9,20,null,null,15,7],<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">  /  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure></p>
-<p>return its minimum depth = 2.</p>
-<h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p>这题不能直接取左右子树最短的，如果左子树为空，那深度就会是1，而实际并不是。<br>所以当左子树为空时，要返回右子树的深度；反之亦然。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :left, :right</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@left</span>, <span class="doctag">@right</span> = nil, nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;TreeNode&#125; root</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Integer&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_depth</span><span class="params">(root)</span></span></span><br><span class="line">  <span class="keyword">if</span> root.<span class="literal">nil</span>?</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">elsif</span> root.left.<span class="literal">nil</span>?</span><br><span class="line">    <span class="keyword">return</span> min_depth(root.right) + <span class="number">1</span></span><br><span class="line">  <span class="keyword">elsif</span> root.right.<span class="literal">nil</span>?</span><br><span class="line">    <span class="keyword">return</span> min_depth(root.left) + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> [min_depth(root.left), min_depth(root.right)].min + <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h3><ul>
-<li>时间复杂度：<code>O(N)</code></li>
+    <h1 id="110-Balanced-Binary-Tree"><a href="#110-Balanced-Binary-Tree" class="headerlink" title="110. Balanced Binary Tree"></a>110. Balanced Binary Tree</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a binary tree, determine if it is height-balanced.</p>
+<p>For this problem, a height-balanced binary tree is defined as:</p>
+<p>a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Given the following tree [3,9,20,null,null,15,7]:</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">Return true.</span><br></pre></td></tr></table></figure></p>
+<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Given the following tree [1,2,2,3,3,null,null,4,4]:</span><br><span class="line"></span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br><span class="line">Return false.</span><br></pre></td></tr></table></figure></p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这题可以利用求树的深度，区别在于，求深度的过程中，同时判断左右子树的深度之差，如果差大于1了，那深度直接返回-1，最后判断深度是否为-1即可。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode</span></span><br><span class="line"><span class="comment">#     attr_accessor :val, :left, :right</span></span><br><span class="line"><span class="comment">#     def initialize(val)</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@val</span> = val</span></span><br><span class="line"><span class="comment">#         <span class="doctag">@left</span>, <span class="doctag">@right</span> = nil, nil</span></span><br><span class="line"><span class="comment">#     end</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;TreeNode&#125; root</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;Boolean&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_balanced</span><span class="params">(root)</span></span></span><br><span class="line">  <span class="keyword">if</span> root</span><br><span class="line">    <span class="keyword">return</span> depth(root) != -<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">depth</span><span class="params">(root)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> root.<span class="literal">nil</span>?</span><br><span class="line">  </span><br><span class="line">  left_depth = depth(root.left)</span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> left_depth == -<span class="number">1</span></span><br><span class="line">  </span><br><span class="line">  right_depth = depth(root.right)</span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> right_depth == -<span class="number">1</span></span><br><span class="line">  </span><br><span class="line">  delta = left_depth - right_depth</span><br><span class="line">  <span class="keyword">if</span> delta &gt; <span class="number">1</span> <span class="keyword">or</span> delta &lt; -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> delta &gt; <span class="number">0</span> ? left_depth + <span class="number">1</span> : right_depth + <span class="number">1</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><ul>
+<li>时间复杂度：<code>O(n)</code></li>
 <li>空间复杂度：<code>O(1)</code></li>
 </ul>
 
@@ -202,21 +189,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Depth-of-Binary-Tree"><span class="toc-number">1.</span> <span class="toc-text">Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#104-Maximum-Depth-of-Binary-Tree"><span class="toc-number">1.1.</span> <span class="toc-text">104. Maximum Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#111-Minimum-Depth-of-Binary-Tree"><span class="toc-number">1.2.</span> <span class="toc-text">111. Minimum Depth of Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#110-Balanced-Binary-Tree"><span class="toc-number">1.</span> <span class="toc-text">110. Balanced Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&text=Depth of Binary Tree"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&is_video=false&description=Depth of Binary Tree"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Depth of Binary Tree&body=Check out this article: http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&title=Depth of Binary Tree"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/24/Depth-of-Binary-Tree/&name=Depth of Binary Tree&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&text=Balanced Binary Tree"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&is_video=false&description=Balanced Binary Tree"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Balanced Binary Tree&body=Check out this article: http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&title=Balanced Binary Tree"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/27/Balanced-Binary-Tree/&name=Balanced Binary Tree&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
