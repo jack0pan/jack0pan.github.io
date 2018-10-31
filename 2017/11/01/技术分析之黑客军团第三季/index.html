@@ -6,18 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="93. Restore IP Addresses算法这题思路主要是用动态规划，没什么好说的。主要在于对IP的每一项的判断要筛掉以下情况：  每一项的值不能大于255 不能以“0”开头（比如：01，00），这种可以通过先转成整数，再转成字符串，和原来比较是否相同。  123456789101112131415161718192021222324252627282930# @param &amp;#123;S">
-<meta name="keywords" content="LeetCode">
+    <meta name="description" content="技术分析之黑客军团第三季第七集WebLogic Serialization Vulnerability图片中显示的是利用WebLogic的序列化漏洞，GitHub上有源码：https://github.com/ZonkSec/weblogic-serialization-exploit-updated 第九集Volatility Volatility是一个内存取证工具，能够对导出的内存镜像进行分析">
+<meta name="keywords" content="美剧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Restore IP Addresses">
-<meta property="og:url" content="http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/index.html">
+<meta property="og:title" content="技术分析之黑客军团第三季">
+<meta property="og:url" content="http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/index.html">
 <meta property="og:site_name" content="Jack Pan">
-<meta property="og:description" content="93. Restore IP Addresses算法这题思路主要是用动态规划，没什么好说的。主要在于对IP的每一项的判断要筛掉以下情况：  每一项的值不能大于255 不能以“0”开头（比如：01，00），这种可以通过先转成整数，再转成字符串，和原来比较是否相同。  123456789101112131415161718192021222324252627282930# @param &amp;#123;S">
+<meta property="og:description" content="技术分析之黑客军团第三季第七集WebLogic Serialization Vulnerability图片中显示的是利用WebLogic的序列化漏洞，GitHub上有源码：https://github.com/ZonkSec/weblogic-serialization-exploit-updated 第九集Volatility Volatility是一个内存取证工具，能够对导出的内存镜像进行分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-20T05:29:02.077Z">
+<meta property="og:image" content="http://jack0pan.github.io/images/s03e07.jpeg">
+<meta property="og:image" content="http://jack0pan.github.io/images/s03e09-volatility.jpeg">
+<meta property="og:image" content="http://jack0pan.github.io/images/s03e10-stepic.png">
+<meta property="og:updated_time" content="2018-10-31T16:28:54.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Restore IP Addresses">
-<meta name="twitter:description" content="93. Restore IP Addresses算法这题思路主要是用动态规划，没什么好说的。主要在于对IP的每一项的判断要筛掉以下情况：  每一项的值不能大于255 不能以“0”开头（比如：01，00），这种可以通过先转成整数，再转成字符串，和原来比较是否相同。  123456789101112131415161718192021222324252627282930# @param &amp;#123;S">
+<meta name="twitter:title" content="技术分析之黑客军团第三季">
+<meta name="twitter:description" content="技术分析之黑客军团第三季第七集WebLogic Serialization Vulnerability图片中显示的是利用WebLogic的序列化漏洞，GitHub上有源码：https://github.com/ZonkSec/weblogic-serialization-exploit-updated 第九集Volatility Volatility是一个内存取证工具，能够对导出的内存镜像进行分析">
+<meta name="twitter:image" content="http://jack0pan.github.io/images/s03e07.jpeg">
     
     
         
@@ -37,7 +41,7 @@
         
     
     <!-- title -->
-    <title>Restore IP Addresses</title>
+    <title>技术分析之黑客军团第三季</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -71,10 +75,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/04/18/Binary-Tree-Deep-Traversal/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/02/22/2-3-4-Sum/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/04/16/Reverse-Linked-List/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2017/10/06/RabbitMQ教程（六）──远程过程调用/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -87,21 +91,21 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&text=Restore IP Addresses"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&is_video=false&description=Restore IP Addresses"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Restore IP Addresses&body=Check out this article: http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&name=Restore IP Addresses&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&text=技术分析之黑客军团第三季"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&is_video=false&description=技术分析之黑客军团第三季"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=技术分析之黑客军团第三季&body=Check out this article: http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&name=技术分析之黑客军团第三季&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#93-Restore-IP-Addresses"><span class="toc-number">1.</span> <span class="toc-text">93. Restore IP Addresses</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.1.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.2.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术分析之黑客军团第三季"><span class="toc-number">1.</span> <span class="toc-text">技术分析之黑客军团第三季</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第七集"><span class="toc-number">1.1.</span> <span class="toc-text">第七集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebLogic-Serialization-Vulnerability"><span class="toc-number">1.1.1.</span> <span class="toc-text">WebLogic Serialization Vulnerability</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九集"><span class="toc-number">1.2.</span> <span class="toc-text">第九集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Volatility"><span class="toc-number">1.2.1.</span> <span class="toc-text">Volatility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十集"><span class="toc-number">1.3.</span> <span class="toc-text">第十集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stepic"><span class="toc-number">1.3.1.</span> <span class="toc-text">stepic</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +117,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Restore IP Addresses
+        技术分析之黑客军团第三季
     </h1>
 
 
@@ -124,14 +128,14 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-04-17T14:01:17.000Z" itemprop="datePublished">2018-04-17</time>
+        <time datetime="2017-10-31T16:22:50.000Z" itemprop="datePublished">2017-11-01</time>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/LeetCode/">LeetCode</a>
+        <a class="tag-link" href="/tags/美剧/">美剧</a>
     </div>
 
 
@@ -140,13 +144,17 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="93-Restore-IP-Addresses"><a href="#93-Restore-IP-Addresses" class="headerlink" title="93. Restore IP Addresses"></a>93. Restore IP Addresses</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>这题思路主要是用动态规划，没什么好说的。主要在于对IP的每一项的判断要筛掉以下情况：</p>
+    <h1 id="技术分析之黑客军团第三季"><a href="#技术分析之黑客军团第三季" class="headerlink" title="技术分析之黑客军团第三季"></a>技术分析之黑客军团第三季</h1><h2 id="第七集"><a href="#第七集" class="headerlink" title="第七集"></a>第七集</h2><h3 id="WebLogic-Serialization-Vulnerability"><a href="#WebLogic-Serialization-Vulnerability" class="headerlink" title="WebLogic Serialization Vulnerability"></a>WebLogic Serialization Vulnerability</h3><p><img src="/images/s03e07.jpeg" alt="s03e07"><br>图片中显示的是利用WebLogic的序列化漏洞，GitHub上有源码：<a href="https://github.com/ZonkSec/weblogic-serialization-exploit-updated" target="_blank" rel="noopener">https://github.com/ZonkSec/weblogic-serialization-exploit-updated</a></p>
+<h2 id="第九集"><a href="#第九集" class="headerlink" title="第九集"></a>第九集</h2><h3 id="Volatility"><a href="#Volatility" class="headerlink" title="Volatility"></a>Volatility</h3><p><img src="/images/s03e09-volatility.jpeg" alt="s03e09"></p>
+<p><a href="https://github.com/volatilityfoundation/volatility" target="_blank" rel="noopener">Volatility</a>是一个内存取证工具，能够对导出的内存镜像进行分析，通过获取内核数据结构，使用插件获取内存的详细情况以及系统的运行状态。<br>特点：</p>
 <ul>
-<li>每一项的值不能大于255</li>
-<li>不能以“0”开头（比如：01，00），这种可以通过先转成整数，再转成字符串，和原来比较是否相同。</li>
+<li>开源：Python编写，易于和基于python的主机防御框架集成。</li>
+<li>支持多平台：Windows，Mac，Linux全支持</li>
+<li>易于扩展：通过插件来扩展Volatility的分析能力</li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">@param</span> &#123;String&#125; s</span></span><br><span class="line"><span class="comment"># <span class="doctag">@return</span> &#123;String[]&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">restore_ip_addresses</span><span class="params">(s)</span></span></span><br><span class="line">  ips = []</span><br><span class="line">  ip = []</span><br><span class="line">  _restore(ips, ip, s, <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">return</span> ips</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_restore</span><span class="params">(ips, ip, s, level)</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">if</span> s.<span class="literal">nil</span>? <span class="keyword">or</span> s.empty?</span><br><span class="line">  <span class="keyword">if</span> level == <span class="number">4</span></span><br><span class="line">    p = s.to_i</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">if</span> p &gt; <span class="number">255</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">if</span> p.to_s != s</span><br><span class="line">    ip.push(s)</span><br><span class="line">    ips.push(ip.join(<span class="string">'.'</span>))</span><br><span class="line">    ip.pop</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="number">3</span>.times.each <span class="keyword">do</span> <span class="params">|i|</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">if</span> s.length &lt; (i + <span class="number">1</span>)</span><br><span class="line">      p = s[<span class="number">0</span>..i].to_i</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">if</span> p &gt; <span class="number">255</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">if</span> p.to_s != s[<span class="number">0</span>..i]</span><br><span class="line">      ip.push(s[<span class="number">0</span>..i])</span><br><span class="line">      _restore(ips, ip, s[(i+<span class="number">1</span>)..-<span class="number">1</span>], level + <span class="number">1</span>)</span><br><span class="line">      ip.pop</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>这题的时间和空间复杂度是固定的，都是<code>O(3^4)</code>。</p>
+<h2 id="第十集"><a href="#第十集" class="headerlink" title="第十集"></a>第十集</h2><h3 id="stepic"><a href="#stepic" class="headerlink" title="stepic"></a>stepic</h3><p><img src="/images/s03e10-stepic.png" alt="s03e10"><br><a href="http://domnit.org/stepic/doc/" target="_blank" rel="noopener">stepic</a>是一个图片隐写工具。<br>运行以下命令，从图片文件中恢复出一个文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stepic -d -i IMG_5528_copy.png -o outfile</span><br></pre></td></tr></table></figure></p>
+<p><code>cat</code>文件内容，是一段<code>Python</code>代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Protocol.KDF <span class="keyword">import</span> PBKDF2</span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"></span><br><span class="line">infile = raw_input(<span class="string">"File: "</span>)</span><br><span class="line">f = open(infile, <span class="string">'r'</span>)</span><br><span class="line">password = getpass.getpass()</span><br><span class="line">f.seek(<span class="number">1024</span>)</span><br><span class="line">salt = f.read(<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line">master = PBKDF2(password, salt, count=<span class="number">10000</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">notrand</span><span class="params">(n)</span>:</span></span><br><span class="line">    notrand.i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> PBKDF2(master, str(notrand.i), dkLen=n, count=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">notrand.i = <span class="number">0</span></span><br><span class="line">RSA_key = RSA.generate(<span class="number">4096</span>, randfunc=notrand)</span><br><span class="line"><span class="keyword">print</span> RSA_key.exportKey()</span><br></pre></td></tr></table></figure></p>
+<p>这段代码的功能是从图片文件中读取32个字节作为<code>salt</code>，用来生产RSA密钥，然后打印出密钥。</p>
 
   </div>
 </article>
@@ -185,21 +193,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#93-Restore-IP-Addresses"><span class="toc-number">1.</span> <span class="toc-text">93. Restore IP Addresses</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.1.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">1.2.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术分析之黑客军团第三季"><span class="toc-number">1.</span> <span class="toc-text">技术分析之黑客军团第三季</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第七集"><span class="toc-number">1.1.</span> <span class="toc-text">第七集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebLogic-Serialization-Vulnerability"><span class="toc-number">1.1.1.</span> <span class="toc-text">WebLogic Serialization Vulnerability</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九集"><span class="toc-number">1.2.</span> <span class="toc-text">第九集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Volatility"><span class="toc-number">1.2.1.</span> <span class="toc-text">Volatility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十集"><span class="toc-number">1.3.</span> <span class="toc-text">第十集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stepic"><span class="toc-number">1.3.1.</span> <span class="toc-text">stepic</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&text=Restore IP Addresses"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&is_video=false&description=Restore IP Addresses"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Restore IP Addresses&body=Check out this article: http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&title=Restore IP Addresses"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2018/04/17/Restore-IP-Addresses/&name=Restore IP Addresses&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&text=技术分析之黑客军团第三季"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&is_video=false&description=技术分析之黑客军团第三季"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=技术分析之黑客军团第三季&body=Check out this article: http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&title=技术分析之黑客军团第三季"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jack0pan.github.io/2017/11/01/技术分析之黑客军团第三季/&name=技术分析之黑客军团第三季&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
